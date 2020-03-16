@@ -1,0 +1,15 @@
+{
+ "name": "sense-ui-cli",
+ "version": "0.1.0",
+ "private": true,
+ "scripts": {
+    "dev":"polymer serve",
+    "build":"polymer build"
+ },
+ "dependencies": {
+  "lit-element": "^2.2.1"
+ },
+ "devDependencies": {
+  "typescript": "^3.8.3"
+ }
+}

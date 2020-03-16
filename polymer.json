@@ -1,0 +1,19 @@
+{
+  "entrypoint": "src/index.html",
+  "shell": "src/js/my-ele.js",
+  "sources": [
+    "src/**.js",
+    "manifest/**",
+    "package.json"
+  ],
+  "builds": [
+    {
+      "name": "dev",
+      "preset": "es5-bundled",
+      "bundle": true,
+      "js": {"minify": true},
+      "css": {"minify": true},
+      "html": {"minify": true}
+    }
+  ]
+}
