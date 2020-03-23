@@ -12,3 +12,4 @@ polymer serve
 
 #### 参考资料
 > - https://open-wc.org/
+- 基于rollup的web Components项目。支持styl https://github.com/danielbarion/instruct-contacts
