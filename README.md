@@ -1,7 +1,6 @@
 # sense-ui
-![logo](./favicon.png)
-![markdown](./favicon.png "markdown")
-<img src="./favicon.png" height="60">
+
+<img src="./favicon.png" alt="logo" height="66">
 
 🖖SenseUI is a Web Components &amp; Custom Elements for Future Web Applications.
 > 基于web标准的组件，vue,react,angular都能使用
