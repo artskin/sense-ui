@@ -3,13 +3,15 @@
  "version": "0.1.0",
  "private": true,
  "scripts": {
-    "dev":"polymer serve",
-    "build":"polymer build"
+  "dev": "polymer serve",
+  "start": "es-dev-server --app-index src/index.html --node-resolve --watch --open",
+  "build": "polymer build"
  },
  "dependencies": {
   "lit-element": "^2.2.1"
  },
  "devDependencies": {
+  "es-dev-server": "^1.45.3",
   "typescript": "^3.8.3"
  }
 }

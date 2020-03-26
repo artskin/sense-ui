@@ -4,18 +4,17 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="icon" href="/favicon.ico">
+    <link rel="icon" href="/favicon.png">
     <title>Web Components</title>
     <!-- <script type="module" src="src/js/my-ele.js"></script> -->
-    <script type="module" src="src/js/my-test-element.js"></script>
-    <script type="module" src="src/js/my-button.js"></script>
+    <script type="module" src="js/index.js"></script>
   </head>
   <body class="sense-ui">
     <h1>Web Components</h1>
     <my-test-element>hello my-test-element</my-test-element>
     <hr>
     <s-button>默认按钮</s-button>
-    <s-button type="primary" onclick="msgBox(this)">主要按钮</s-button>
+    <s-button type="primary">主要按钮</s-button>
     <s-button type="warning">警告按钮：带图标
       <i slot="icon-left" class="heart"></i>
     </s-button>
@@ -25,6 +24,10 @@
       <strong>We're sorry but SenseGuard Standard doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
     <div id="app"></div>
+
+    <s-card .title=${title}>
+      卡片内容
+    </s-card>
     <!-- built files will be auto injected -->
   </body>
 </html>
