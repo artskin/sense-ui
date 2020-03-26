@@ -1,4 +1,5 @@
 # sense-ui
+![logo](./favicon.png)
 <img src="./favicon.png" height="60">
 
 🖖SenseUI is a Web Components &amp; Custom Elements for Future Web Applications.

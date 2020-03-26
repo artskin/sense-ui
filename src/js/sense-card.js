@@ -27,7 +27,7 @@ export class SenseCard extends LitElement {
   }
   constructor(){
     super();
-    this.title = "标题";
+    this.title = "卡片标题";
   }
   render(){
     return html`
@@ -39,7 +39,7 @@ export class SenseCard extends LitElement {
     </style>
     <div>
       <h3>${this.title}</h3>
-      <slot>默认</slot>
+      <slot>默认内容</slot>
     </div>
     `;
   }
