@@ -1,8 +1,9 @@
 # sense-ui
-🖖SenseUI is a Web Components &amp; Custom Elements for Future Web Applications 
+<img src="./favicon.png" height="60">
 
+🖖SenseUI is a Web Components &amp; Custom Elements for Future Web Applications.
 > 基于web标准的组件，vue,react,angular都能使用
-![Image text](./favicon.png)
+
 
 ```shell
 npm install -g polymer-cli
