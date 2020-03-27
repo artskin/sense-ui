@@ -1,4 +1,4 @@
-# sense-ui
+# Sense-UI
 
 <img src="./favicon.png" alt="logo" height="66">
 
