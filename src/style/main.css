@@ -1,0 +1,19 @@
+body{
+--main-color:blue;
+}
+h1{
+color:var(--main-color);
+}
+
+p{
+	&::after{
+		content:'';
+		display:block;
+		width:100%;
+		border-top:1px solid gray;
+	}
+	span{
+		color:red;
+	}
+		
+}

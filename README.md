@@ -28,6 +28,7 @@ es-dev-server
 - [ ] 打包后文件浏览器直接运行
 - [ ] 通过css var 实现换肤
 - [ ] post-css
+- [ ] 添加了scss支持后，css var 变量的值会被编辑问题
 
 #### 参考资料
 > - https://open-wc.org/

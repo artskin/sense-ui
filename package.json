@@ -3,17 +3,32 @@
  "version": "0.1.0",
  "private": true,
  "scripts": {
-  "dev": "polymer serve",
-  "start": "es-dev-server --app-index src/index.html --node-resolve --watch --open",
-  "build": "polymer build"
+  "polymerdev": "polymer serve",
+  "esstart": "es-dev-server --app-index src/index.html --node-resolve --watch --open",
+  "polymerbuild": "polymer build",
+  "build": "rollup -c",
+  "watch": "rollup -c -w",
+  "dev": "npm-run-all --parallel start watch",
+  "start": "serve dist"
  },
  "dependencies": {
   "lit-element": "^2.2.1",
-  "postcss": "^7.0.27",
-  "rollup": "^2.2.0"
+  "node-sass": "^4.13.1",
+  "postcss-scss": "^2.0.0"
  },
  "devDependencies": {
+  "@rollup/plugin-commonjs": "^11.0.2",
+  "@rollup/plugin-node-resolve": "^7.1.1",
+  "cssnano": "^4.1.10",
   "es-dev-server": "^1.45.3",
+  "npm-run-all": "^4.1.5",
+  "postcss": "^7.0.27",
+  "postcss-cssnext": "^3.1.0",
+  "postcss-nested": "^4.2.1",
+  "postcss-simple-vars": "^5.0.2",
+  "rollup": "^2.2.0",
+  "rollup-plugin-postcss": "^2.5.0",
+  "rollup-plugin-terser": "^5.3.0",
   "typescript": "^3.8.3"
  }
 }

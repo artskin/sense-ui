@@ -1,0 +1,172 @@
+/* @mixin button-variant(
+  $background,
+  $border,
+  $color: color-contrast($background),
+  $hover-background: darken($background, 7.5%),
+  $hover-border: darken($border, 10%),
+  $hover-color: color-contrast($hover-background),
+  $active-background: darken($background, 10%),
+  $active-border: darken($border, 12.5%),
+  $active-color: color-contrast($active-background)
+) {
+  color: $color;
+  @include gradient-bg($background);
+  border-color: $border;
+  @include box-shadow($btn-box-shadow);
+
+  &:hover {
+    color: $hover-color;
+    @include gradient-bg($hover-background);
+    border-color: $hover-border;
+  }
+
+  &:focus,
+  &.focus {
+    color: $hover-color;
+    @include gradient-bg($hover-background);
+    border-color: $hover-border;
+    // Avoid using mixin so we can pass custom focus shadow properly
+    @if $enable-shadows {
+      box-shadow: $btn-box-shadow, 0 0 0 $btn-focus-width rgba(mix($color, $border, 15%), .5);
+    } @else {
+      box-shadow: 0 0 0 $btn-focus-width rgba(mix($color, $border, 15%), .5);
+    }
+  }
+} */
+
+@mixin button-variant($type){
+  background-color:var(--$type);
+  border-color:var(--$type);
+  &:hover{
+    background-color:var(--$type);
+    border-color:var(--$type);
+  }
+  &:active{
+    background-color:var(--$type);
+    border-color:var(---$type);
+  }
+  &:focus{border:1px solid green;}
+}
+$hot-color:gold;
+:host{
+  --hot:$hot-color;
+  .btn--hot{
+    --hot:gold;
+    @include button-variant(hot)
+  }
+  .btn--primary,
+  .btn--success,
+  .btn--warning,
+  .btn--danger{
+    color: #fff;
+  }
+
+  .btn--primary{
+    background-color:var(--primary,royalblue);
+    border-color:var(--primary,royalblue);
+
+    &:hover{
+      background-color:var(--primary-hover,royalblue);
+      border-color:var(--primary-hover,royalblue);
+    }
+    &:active{
+      background-color:var(--primary-active,royalblue);
+      border-color:var(---primary-active,royalblue);
+    }
+  }
+
+  
+}
+
+/* :host .btn--success{
+  background-color:var(--success,seagreen);
+  border-color:var(--success,seagreen);
+}
+:host .btn--success:hover{
+background-color:var(--success-hover,seagreen);
+border-color:var(--success-hover,seagreen);
+}
+:host .btn--success:active{
+background-color:var(--success-active,seagreen);
+border-color:var(---success-active,seagreen);
+} */
+:host .btn--warning{
+background-color:var(--warning,coral);
+border-color:var(--warning,coral);
+}
+:host .btn--warning:hover{
+background-color:var(--warning-hover,coral);
+border-color:var(--warning-hover,coral);
+}
+:host .btn--danger{
+background-color:var(--danger,crimson);
+border-color:var(--danger,crimson);
+}
+:host .btn--danger:hover{
+background-color:var(--danger-hover,crimson);
+border-color:var(--danger-hover,crimson);
+}
+:host(.parent-class) {
+/*父级className对应样式*/
+font-size: 21px;
+}
+:host([disabled]) { /* style when host has disabled attribute. */
+/* background: grey; */
+pointer-events: none;
+opacity: 0.4;
+}
+:host .is--circle{
+--borderRadius: 2em;
+
+}
+:host .btn--mini{
+--fontSize: 12px;
+}
+:host .btn--big{
+--fontSize: 18px;
+}
+:host .is--wire{
+background-color: transparent;
+color: rgb(0,0,0);
+}
+
+button{
+padding:0.8em 1.4em;
+border-width: 1px;
+border-style: solid;
+border-radius:var(--borderRadius,0.24em);
+cursor: pointer;
+/* height: 36px; */
+/* font-size: 14px; */
+font-size: var(--fontSize,14px);
+line-height:1;
+/* transform: scale(var(--ggs,1)); */
+/* box-shadow: 1px 2px 3px rgba(0,0,0,.15); */
+outline: none;
+/* display: inline-flex;
+box-sizing: border-box; */
+}
+button:focus{border:1px solid green;}
+button::before{
+content: '';
+position: absolute;
+opacity: 0;
+pointer-events: none;
+top: calc(-50%);
+left: calc(-50%);
+width: 200%;
+height: 200%;
+}
+button slot{
+pointer-events: none;
+}
+button.is--shadow{
+/* position: relative;
+z-index: 100; */
+/* flex: 1 1 auto; */
+/* box-shadow:0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12); */
+box-shadow:0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12)
+}
+button.is--shadow:focus{
+box-shadow: 1px 2px 6px rgba(0,0,0,.35);
+}
