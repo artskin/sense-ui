@@ -1,11 +1,14 @@
 import { LitElement,css, html,unsafeCSS } from 'lit-element';
 
 //import style from '../style/style.styl';
-
+	
+//import styles from "../style/root.css";
+//document.adoptedStyleSheets = [...document.adoptedStyleSheets, styles];
 // const componentCSS = require('./style/root.scss');
 // const componentCSS = require('./style/root.scss');
 //console.log(style)
 export class SenseButton extends LitElement {
+  
   static get styles() {
     return css`
     button{

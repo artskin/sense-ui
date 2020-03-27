@@ -1,5 +1,5 @@
-:root{
-    /***颜色类***/
+h3{color: brown;}
+/* :root{
     --main-color:#858ea1;
     --main-color-hover:#3c4859;
     --main-bg:#f1f3f4;
@@ -24,9 +24,4 @@
 
     --button-bg:cyan;
 
-    /***间距类***/
-
-
-    /***大小类***/
-
-}
+} */

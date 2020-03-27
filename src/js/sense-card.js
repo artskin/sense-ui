@@ -1,5 +1,5 @@
 import { LitElement,css, html,unsafeCSS } from 'lit-element';
-
+//import styles from '../style/root.css';
 //import style from '../style/style.styl';
 
 // const componentCSS = require('./style/root.scss');
@@ -27,11 +27,13 @@ export class SenseCard extends LitElement {
   }
   constructor(){
     super();
+    //this.shadowRoot.adoptedStyleSheets = [styles];
     this.title = "卡片标题";
   }
   render(){
     return html`
     <style>
+      @import url('../style/root.css')
       button{
         /*font-size:16px;*/ 
       }

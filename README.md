@@ -27,6 +27,7 @@ es-dev-server
 - [ ] 集成scss,或styl,或less
 - [ ] 打包后文件浏览器直接运行
 - [ ] 通过css var 实现换肤
+- [ ] post-css
 
 #### 参考资料
 > - https://open-wc.org/
