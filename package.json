@@ -26,8 +26,11 @@
   "postcss-cssnext": "^3.1.0",
   "postcss-nested": "^4.2.1",
   "postcss-simple-vars": "^5.0.2",
+  "poststylus": "^1.0.0",
   "rollup": "^2.2.0",
   "rollup-plugin-postcss": "^2.5.0",
+  "rollup-plugin-stylus-compiler": "^1.0.1",
+  "rollup-plugin-stylus-to-css": "^1.1.0",
   "rollup-plugin-terser": "^5.3.0",
   "typescript": "^3.8.3"
  }

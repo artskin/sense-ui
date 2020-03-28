@@ -1,12 +1,14 @@
 import { LitElement,css, html,unsafeCSS } from 'lit-element';
 
-import root from '../style/root.css';
-import stylebutton from '../style/button.scss';
+// import root from '../style/root.css';
+import stylebutton from '../style/button.styl';
 console.log(stylebutton);
+
 
 export class SenseButton extends LitElement {
   static get styles() {
-		return [css`${unsafeCSS(root)}`,css`${unsafeCSS(stylebutton)}`]
+		//return [css`${unsafeCSS(root)}`,css`${unsafeCSS(stylebutton)}`]
+		return [css`${unsafeCSS(stylebutton)}`]
 	}
   static get properties(){
     return {

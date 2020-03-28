@@ -2,6 +2,9 @@ import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import { terser } from 'rollup-plugin-terser';
 import postcss from 'rollup-plugin-postcss';
+import poststylus from 'poststylus';
+import stylus from 'rollup-plugin-stylus-to-css'
+
 
 import simplevars from 'postcss-simple-vars'; //可以使用Sass风格的变量
 import nested from 'postcss-nested'; //允许使用嵌套规则
@@ -20,14 +23,18 @@ export default {
 		sourcemap: true
 	},
 	plugins: [
+		stylus(),
 		postcss({
 			plugins:[
 				//simplevars(),
+				
 				nested(),
 				cssnext({warnForDuplicates:false}),
 				cssnano(),
 			],
-			extensions: [ '.css' ],
+			modules: true,
+      include: '**/*.css',
+			extensions: [ '.css','.stylus', '.styl' ],
 		}),
 		resolve(), // tells Rollup how to find date-fns in node_modules
 		commonjs(), // converts date-fns to ES modules

@@ -2410,44 +2410,15 @@
     LitElement.render = render$1;
     //# sourceMappingURL=lit-element.js.map
 
-    function styleInject(css, ref) {
-      if ( ref === void 0 ) ref = {};
-      var insertAt = ref.insertAt;
+    var stylebutton = ":host {\n  --success: #67c23a;\n  --warning: #e6a23c;\n  --primary: #409eff;\n  --danger: #f56c6c;\n  --primary-text: #303133;\n}\n:host {\n  --primary-hover: #53a8ff;\n  --primary-active: #208eff;\n  --success-hover: #76ca4c;\n  --success-active: #5daf34;\n  --warning-hover: #e9ab4f;\n  --warning-active: #e39622;\n  --danger-hover: #f67b7b;\n  --danger-active: #f34b4b;\n}\nbody {\n  color: #303133;\n}\nbutton {\n  padding: 0.8em 1.4em;\n  border-width: 1px;\n  border-style: solid;\n  outline: none;\n  border-radius: 4px;\n}\n.btn--primary {\n  color: #fff;\n  background-color: var(--primary);\n  border-color: var(--primary);\n}\n.btn--primary:hover {\n  background-color: var(--primary-hover);\n  border-color: var(--primary-hover);\n}\n.btn--primary:active {\n  background-color: var(--primary-active);\n  border-color: var(--primary-active);\n}\n.btn--primary:focus {\n  border-color: #999;\n  box-shadow: 0 0 6px rgba(0,0,0,0.5);\n}\n.btn--success {\n  color: #fff;\n  background-color: var(--success);\n  border-color: var(--success);\n}\n.btn--success:hover {\n  background-color: var(--success-hover);\n  border-color: var(--success-hover);\n}\n.btn--success:active {\n  background-color: var(--success-active);\n  border-color: var(--success-active);\n}\n.btn--success:focus {\n  border-color: #999;\n  box-shadow: 0 0 6px rgba(0,0,0,0.5);\n}\n.btn--warning {\n  color: #fff;\n  background-color: var(--warning);\n  border-color: var(--warning);\n}\n.btn--warning:hover {\n  background-color: var(--warning-hover);\n  border-color: var(--warning-hover);\n}\n.btn--warning:active {\n  background-color: var(--warning-active);\n  border-color: var(--warning-active);\n}\n.btn--warning:focus {\n  border-color: #999;\n  box-shadow: 0 0 6px rgba(0,0,0,0.5);\n}\n.btn--danger {\n  color: #fff;\n  background-color: var(--danger);\n  border-color: var(--danger);\n}\n.btn--danger:hover {\n  background-color: var(--danger-hover);\n  border-color: var(--danger-hover);\n}\n.btn--danger:active {\n  background-color: var(--danger-active);\n  border-color: var(--danger-active);\n}\n.btn--danger:focus {\n  border-color: #999;\n  box-shadow: 0 0 6px rgba(0,0,0,0.5);\n}\n";
 
-      if (!css || typeof document === 'undefined') { return; }
+    console.log(stylebutton);
 
-      var head = document.head || document.getElementsByTagName('head')[0];
-      var style = document.createElement('style');
-      style.type = 'text/css';
-
-      if (insertAt === 'top') {
-        if (head.firstChild) {
-          head.insertBefore(style, head.firstChild);
-        } else {
-          head.appendChild(style);
-        }
-      } else {
-        head.appendChild(style);
-      }
-
-      if (style.styleSheet) {
-        style.styleSheet.cssText = css;
-      } else {
-        style.appendChild(document.createTextNode(css));
-      }
-    }
-
-    var css_248z = "body{--main-color:#858ea1;--main-color-hover:#3c4859;--main-bg:#f1f3f4;--primary:#043169;--primary-hover:rgba(4,49,105,0.9);--primary-active:#043155;--success:#67c23a;--success-hover:rgba(103,194,58,0.9);--success-active:#67c226;--warning:#e6a23d;--warning-hover:rgba(230,162,61,0.9);--warning-active:#e6a229;--danger:#f56c6c;--danger-hover:rgba(245,108,108,0.9);--accent:#5f19dd;--accent-light:#6b20f1;--button-bg:#0ff}";
-    styleInject(css_248z);
-
-    var css_248z$1 = ":host{--hot:$hot-color}:host .btn--hot{--hot:gold}:host .btn--hot,:host .btn--hot:hover{background-color:var(--hot);border-color:var(--hot)}:host .btn--hot:active{background-color:var(--hot);border-color:var(---hot)}:host .btn--hot:focus{border:1px solid green}:host .btn--danger,:host .btn--primary,:host .btn--success,:host .btn--warning{color:#fff}:host .btn--primary,:host .btn--primary:active,:host .btn--primary:hover{background-color:#4169e1;border-color:#4169e1}:host .btn--warning,:host .btn--warning:hover{background-color:coral;border-color:coral}:host .btn--danger,:host .btn--danger:hover{background-color:#dc143c;border-color:#dc143c}:host(.parent-class){font-size:21px}:host([disabled]){pointer-events:none;opacity:.4}:host .is--circle{--borderRadius:2em}:host .btn--mini{--fontSize:12px}:host .btn--big{--fontSize:18px}:host .is--wire{background-color:transparent;color:#000}button{padding:.8em 1.4em;border-width:1px;border-style:solid;border-radius:.24em;cursor:pointer;font-size:14px;line-height:1;outline:none}button:focus{border:1px solid green}button:before{content:\"\";position:absolute;opacity:0;top:-50%;left:-50%;width:200%;height:200%}button:before,button slot{pointer-events:none}button.is--shadow{-webkit-box-shadow:0 3px 1px -2px rgba(0,0,0,.2),0 2px 2px 0 rgba(0,0,0,.14),0 1px 5px 0 rgba(0,0,0,.12);box-shadow:0 3px 1px -2px rgba(0,0,0,.2),0 2px 2px 0 rgba(0,0,0,.14),0 1px 5px 0 rgba(0,0,0,.12)}button.is--shadow:focus{-webkit-box-shadow:1px 2px 6px rgba(0,0,0,.35);box-shadow:1px 2px 6px rgba(0,0,0,.35)}";
-    styleInject(css_248z$1);
-
-    console.log(css_248z$1);
 
     class SenseButton extends LitElement {
       static get styles() {
-    		return [css`${unsafeCSS(css_248z)}`,css`${unsafeCSS(css_248z$1)}`]
+    		//return [css`${unsafeCSS(root)}`,css`${unsafeCSS(stylebutton)}`]
+    		return [css`${unsafeCSS(stylebutton)}`]
     	}
       static get properties(){
         return {
