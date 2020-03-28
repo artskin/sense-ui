@@ -2,11 +2,11 @@ import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import { terser } from 'rollup-plugin-terser';
 import postcss from 'rollup-plugin-postcss';
-import poststylus from 'poststylus';
+//import poststylus from 'poststylus';
 import stylus from 'rollup-plugin-stylus-to-css'
 
 
-import simplevars from 'postcss-simple-vars'; //可以使用Sass风格的变量
+//import simplevars from 'postcss-simple-vars'; //可以使用Sass风格的变量
 import nested from 'postcss-nested'; //允许使用嵌套规则
 import cssnext from 'postcss-cssnext'; //允许使用最新CSS语法(通过最新的CSS标准)
 import cssnano from 'cssnano'; //压缩，减小输出CSS文件大小

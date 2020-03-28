@@ -2,7 +2,7 @@ import { LitElement,css, html,unsafeCSS } from 'lit-element';
 
 // import root from '../style/root.css';
 import stylebutton from '../style/button.styl';
-console.log(stylebutton);
+//console.log(stylebutton);
 
 
 export class SenseButton extends LitElement {

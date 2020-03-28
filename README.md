@@ -29,6 +29,7 @@ es-dev-server
 - [ ] 通过css var 实现换肤
 - [ ] post-css
 - [ ] 添加了scss支持后，css var 变量的值会被编辑问题
+- [ ] 通过外部css变量的值控制，组件内的样式
 
 #### 参考资料
 > - https://open-wc.org/

@@ -5,9 +5,17 @@
 	<meta name='viewport' content='width=device-width'>
 	<link rel="icon" href="/favicon.png">
 	<title>Web Components:rollup-starter</title>
-	<link rel="stylesheet" href="./root.css">
+	<!-- <link rel="stylesheet" href="./root.css"> -->
+	<style>
+		.sense-ui{
+			--success:green;
+			--warning:orange;
+			--primary:blue;
+			--danger:red;
+		}
+	</style>
 </head>
-<body>
+<body class="sense-ui">
 	<h1>Web Components</h1>
 	<my-test-element>hello my-test-element</my-test-element>
 	<hr>
