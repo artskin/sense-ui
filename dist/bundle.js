@@ -2410,15 +2410,16 @@
     LitElement.render = render$1;
     //# sourceMappingURL=lit-element.js.map
 
-    var stylebutton = ":host {\n  --success: #67c23a;\n  --warning: #e6a23c;\n  --primary: #409eff;\n  --danger: #f56c6c;\n  --primary-text: #303133;\n}\n:host {\n  --primary-hover: #53a8ff;\n  --primary-active: #208eff;\n  --success-hover: #76ca4c;\n  --success-active: #5daf34;\n  --warning-hover: #e9ab4f;\n  --warning-active: #e39622;\n  --danger-hover: #f67b7b;\n  --danger-active: #f34b4b;\n}\nbody {\n  color: #303133;\n}\nbutton {\n  padding: 0.8em 1.4em;\n  border-width: 1px;\n  border-style: solid;\n  outline: none;\n  border-radius: 4px;\n}\n.btn--primary {\n  color: #fff;\n  background-color: var(--primary);\n  border-color: var(--primary);\n}\n.btn--primary:hover {\n  background-color: var(--primary-hover);\n  border-color: var(--primary-hover);\n}\n.btn--primary:active {\n  background-color: var(--primary-active);\n  border-color: var(--primary-active);\n}\n.btn--primary:focus {\n  border-color: #999;\n  box-shadow: 0 0 6px rgba(0,0,0,0.5);\n}\n.btn--success {\n  color: #fff;\n  background-color: var(--success);\n  border-color: var(--success);\n}\n.btn--success:hover {\n  background-color: var(--success-hover);\n  border-color: var(--success-hover);\n}\n.btn--success:active {\n  background-color: var(--success-active);\n  border-color: var(--success-active);\n}\n.btn--success:focus {\n  border-color: #999;\n  box-shadow: 0 0 6px rgba(0,0,0,0.5);\n}\n.btn--warning {\n  color: #fff;\n  background-color: var(--warning);\n  border-color: var(--warning);\n}\n.btn--warning:hover {\n  background-color: var(--warning-hover);\n  border-color: var(--warning-hover);\n}\n.btn--warning:active {\n  background-color: var(--warning-active);\n  border-color: var(--warning-active);\n}\n.btn--warning:focus {\n  border-color: #999;\n  box-shadow: 0 0 6px rgba(0,0,0,0.5);\n}\n.btn--danger {\n  color: #fff;\n  background-color: var(--danger);\n  border-color: var(--danger);\n}\n.btn--danger:hover {\n  background-color: var(--danger-hover);\n  border-color: var(--danger-hover);\n}\n.btn--danger:active {\n  background-color: var(--danger-active);\n  border-color: var(--danger-active);\n}\n.btn--danger:focus {\n  border-color: #999;\n  box-shadow: 0 0 6px rgba(0,0,0,0.5);\n}\n";
+    var stylebutton = "button {\n  padding: 0.8em 1.4em;\n  border-width: 1px;\n  border-style: solid;\n  outline: none;\n  border-radius: 4px;\n}\n.btn--primary {\n  color: #fff;\n  background-color: var(--primary);\n  border-color: var(--primary);\n}\n.btn--primary:hover {\n  background-color: var(--primary-hover);\n  border-color: var(--primary-hover);\n}\n.btn--primary:active {\n  background-color: var(--primary-active);\n  border-color: var(--primary-active);\n}\n.btn--primary:focus {\n  border-color: #999;\n  box-shadow: 0 0 6px rgba(0,0,0,0.5);\n}\n.btn--success {\n  color: #fff;\n  background-color: var(--success);\n  border-color: var(--success);\n}\n.btn--success:hover {\n  background-color: var(--success-hover);\n  border-color: var(--success-hover);\n}\n.btn--success:active {\n  background-color: var(--success-active);\n  border-color: var(--success-active);\n}\n.btn--success:focus {\n  border-color: #999;\n  box-shadow: 0 0 6px rgba(0,0,0,0.5);\n}\n.btn--warning {\n  color: #fff;\n  background-color: var(--warning);\n  border-color: var(--warning);\n}\n.btn--warning:hover {\n  background-color: var(--warning-hover);\n  border-color: var(--warning-hover);\n}\n.btn--warning:active {\n  background-color: var(--warning-active);\n  border-color: var(--warning-active);\n}\n.btn--warning:focus {\n  border-color: #999;\n  box-shadow: 0 0 6px rgba(0,0,0,0.5);\n}\n.btn--danger {\n  color: #fff;\n  background-color: var(--danger);\n  border-color: var(--danger);\n}\n.btn--danger:hover {\n  background-color: var(--danger-hover);\n  border-color: var(--danger-hover);\n}\n.btn--danger:active {\n  background-color: var(--danger-active);\n  border-color: var(--danger-active);\n}\n.btn--danger:focus {\n  border-color: #999;\n  box-shadow: 0 0 6px rgba(0,0,0,0.5);\n}\n";
 
-    //console.log(stylebutton);
+    console.log(stylebutton);
+    console.log(unsafeCSS(stylebutton));
 
 
     class SenseButton extends LitElement {
       static get styles() {
     		//return [css`${unsafeCSS(root)}`,css`${unsafeCSS(stylebutton)}`]
-    		return [css`${unsafeCSS(stylebutton)}`]
+    		//return [css`${unsafeCSS(stylebutton)}`]
     	}
       static get properties(){
         return {
@@ -2432,14 +2433,20 @@
 
       render(){
         return html`
-    <style>:host{contain: layout style;display: inline-block;}</style>
+    ${this.icons()}
+    <style>:host{contain: layout style;display: inline-block;}${stylebutton}</style>
     <button @click=${this._event} class="btn--${this.type}">
+      <i class="material-icons">account_circle</i>
+      <i class="material-icons">mail</i>
       <slot name="icon-left"></slot>
       <slot>default</slot>
       <slot name="text"></slot>
     </button>
     `;
       }
+      icons() {
+    		return html`<link href='https://fonts.googleapis.com/icon?family=Material+Icons' rel='stylesheet'>`
+    	}
     }
 
     //import styles from '../style/root.css';
