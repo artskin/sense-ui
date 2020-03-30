@@ -1,0 +1,69 @@
+//stylus 变量
+@import '../../style/var.styl';
+
+//stylue 方法
+buttonVariant(type){
+  color:#fff;
+  background-color:var(type);
+  border-color:var(type);
+  &:hover{
+    background-color:var(type+-hover);
+    border-color:var(type+-hover)
+  }
+  &:active{
+    background-color:var(type+-active);
+    border-color:var(type+-active)
+  }
+  &:focus{
+    border-color:#999;
+    box-shadow:0 0 6px rgba(0,0,0,.5)
+  }
+}
+
+//css调用
+:host{
+  --success:success;
+  --warning:warning;
+  --primary:primary
+  --danger:danger;
+  
+  //文字
+  --primary-text:#303133;
+}
+:host{
+  --primary-hover: lighten(primary, 10%)
+  --primary-active: darken(primary, 10%)
+  
+  --success-hover: lighten(success, 10%)
+  --success-active: darken(success, 10%)
+  
+  --warning-hover: lighten(warning, 10%)
+  --warning-active: darken(warning, 10%)
+    
+  --danger-hover: lighten(danger, 10%)
+  --danger-active: darken(danger, 10%)
+}
+body{
+  color:primary-text;
+}
+
+button{
+  padding:0.8em 1.4em;
+  border-width: 1px;
+  border-style: solid;
+  outline:none;
+  border-radius:4px;
+}
+
+.btn--primary{
+  buttonVariant(--primary)
+}
+.btn--success{
+  buttonVariant(--success)
+}
+.btn--warning{
+  buttonVariant(--warning)
+}
+.btn--danger{
+  buttonVariant(--danger)
+}
