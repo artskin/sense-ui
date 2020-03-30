@@ -30,7 +30,18 @@ es-dev-server
 - [ ] post-css
 - [ ] 添加了scss支持后，css var 变量的值会被编辑问题
 - [ ] 通过外部css变量的值控制，组件内的样式
-- [ ] 添加点击水波
+- [ ] 添加点击水波：
+
+https://codepen.io/zavoloklom/pen/Gubja |
+
+https://material-components.github.io/material-components-web-components/demos/button.html | 
+
+https://muse-ui.org/#/zh-CN/button |
+
+https://github.com/material-components/material-components-web-components/tree/4e6be3f4ebf73c786105e346c6c1de8dc3d1ca5a/packages/ripple
+
+
+https://lit-element.polymer-project.org/guide/properties
 
 #### 参考资料
 > - https://open-wc.org/
