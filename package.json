@@ -4,11 +4,11 @@
  "private": true,
  "scripts": {
   "polymerdev": "polymer serve",
-  "esstart": "es-dev-server --app-index src/index.html --node-resolve --watch --open",
+  "esstart": "es-dev-server --app-index dist/index.html --node-resolve --watch --open",
   "polymerbuild": "polymer build",
   "build": "rollup -c",
   "watch": "rollup -c -w",
-  "dev": "npm-run-all --parallel start watch",
+  "dev": "npm-run-all --parallel esstart watch",
   "start": "serve dist"
  },
  "dependencies": {
