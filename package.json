@@ -8,7 +8,7 @@
   "polymerbuild": "polymer build",
   "build": "rollup -c",
   "watch": "rollup -c -w",
-  "dev": "npm-run-all --parallel esstart watch",
+  "dev": "npm-run-all --parallel start watch",
   "start": "serve dist"
  },
  "dependencies": {

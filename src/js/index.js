@@ -1,4 +1,4 @@
-import { SenseButton } from './sense-button.js';
+import { SenseButton } from '../packages/sense-button/button.js';
 import { SenseCard } from './sense-card.js';
 
 

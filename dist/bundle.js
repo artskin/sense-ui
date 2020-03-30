@@ -2410,43 +2410,58 @@
     LitElement.render = render$1;
     //# sourceMappingURL=lit-element.js.map
 
-    var stylebutton = "button {\n  padding: 0.8em 1.4em;\n  border-width: 1px;\n  border-style: solid;\n  outline: none;\n  border-radius: 4px;\n}\n.btn--primary {\n  color: #fff;\n  background-color: var(--primary);\n  border-color: var(--primary);\n}\n.btn--primary:hover {\n  background-color: var(--primary-hover);\n  border-color: var(--primary-hover);\n}\n.btn--primary:active {\n  background-color: var(--primary-active);\n  border-color: var(--primary-active);\n}\n.btn--primary:focus {\n  border-color: #999;\n  box-shadow: 0 0 6px rgba(0,0,0,0.5);\n}\n.btn--success {\n  color: #fff;\n  background-color: var(--success);\n  border-color: var(--success);\n}\n.btn--success:hover {\n  background-color: var(--success-hover);\n  border-color: var(--success-hover);\n}\n.btn--success:active {\n  background-color: var(--success-active);\n  border-color: var(--success-active);\n}\n.btn--success:focus {\n  border-color: #999;\n  box-shadow: 0 0 6px rgba(0,0,0,0.5);\n}\n.btn--warning {\n  color: #fff;\n  background-color: var(--warning);\n  border-color: var(--warning);\n}\n.btn--warning:hover {\n  background-color: var(--warning-hover);\n  border-color: var(--warning-hover);\n}\n.btn--warning:active {\n  background-color: var(--warning-active);\n  border-color: var(--warning-active);\n}\n.btn--warning:focus {\n  border-color: #999;\n  box-shadow: 0 0 6px rgba(0,0,0,0.5);\n}\n.btn--danger {\n  color: #fff;\n  background-color: var(--danger);\n  border-color: var(--danger);\n}\n.btn--danger:hover {\n  background-color: var(--danger-hover);\n  border-color: var(--danger-hover);\n}\n.btn--danger:active {\n  background-color: var(--danger-active);\n  border-color: var(--danger-active);\n}\n.btn--danger:focus {\n  border-color: #999;\n  box-shadow: 0 0 6px rgba(0,0,0,0.5);\n}\n";
+    var stylebutton = ":host {\n  --success: #67c23a;\n  --warning: #e6a23c;\n  --primary: #409eff;\n  --danger: #f56c6c;\n  --primary-text: #303133;\n}\n:host {\n  --primary-hover: #53a8ff;\n  --primary-active: #208eff;\n  --warning-hover: #e9ab4f;\n  --warning-active: #e39622;\n  --danger-hover: #f67b7b;\n  --danger-active: #f34b4b;\n  overflow: hidden;\n}\n:host([open]) button {\n  color: #f00;\n}\n:host([ripple]) button::before {\n  content: '';\n  position: absolute;\n  pointer-events: none;\n  width: 200%;\n  height: 200%;\n  border-radius: 50%;\n  left: calc(var(--ripple-left) -50%);\n  top: calc(var(--ripple-top) -50%);\n}\n:host([ripple]) button::before {\n  z-index: 1;\n  background-color: #fff;\n  opacity: 0;\n}\n:host([ripple]) button:active::before {\n  opacity: 0.3;\n  transform: scale(1);\n}\n:host([ripple]) button .animate::before {\n  opacity: 1;\n  animation: ripple 0.5s linear;\n}\n@-moz-keyframes ripple {\n  100% {\n    opacity: 0;\n    transform: scale(2);\n  }\n}\n@-webkit-keyframes ripple {\n  100% {\n    opacity: 0;\n    transform: scale(2);\n  }\n}\n@-o-keyframes ripple {\n  100% {\n    opacity: 0;\n    transform: scale(2);\n  }\n}\n@keyframes ripple {\n  100% {\n    opacity: 0;\n    transform: scale(2);\n  }\n}\nbody {\n  color: #303133;\n}\nbutton {\n  padding: 0.8em 1.4em;\n  border-width: 1px;\n  border-style: solid;\n  outline: none;\n  border-radius: 4px;\n}\nbutton slot {\n  pointer-events: none;\n}\n.btn--default {\n  color: #fff;\n  background-color: var(--default, #f0f0f0);\n  border-color: var(--default);\n}\n.btn--default:hover {\n  background-color: var(--default-hover, #e6e6e6);\n  border-color: var(--default-hover);\n}\n.btn--default:active {\n  background-color: var(--default-active, #dcdcdc);\n  border-color: var(--default-active);\n}\n.btn--default:focus {\n  border-color: #999;\n  box-shadow: 0 0 6px rgba(0,0,0,0.5);\n}\n.btn--primary {\n  color: #fff;\n  background-color: var(--primary, #f0f0f0);\n  border-color: var(--primary);\n}\n.btn--primary:hover {\n  background-color: var(--primary-hover, #e6e6e6);\n  border-color: var(--primary-hover);\n}\n.btn--primary:active {\n  background-color: var(--primary-active, #dcdcdc);\n  border-color: var(--primary-active);\n}\n.btn--primary:focus {\n  border-color: #999;\n  box-shadow: 0 0 6px rgba(0,0,0,0.5);\n}\n.btn--success {\n  color: #fff;\n  background-color: var(--success, #f0f0f0);\n  border-color: var(--success);\n}\n.btn--success:hover {\n  background-color: var(--success-hover, #e6e6e6);\n  border-color: var(--success-hover);\n}\n.btn--success:active {\n  background-color: var(--success-active, #dcdcdc);\n  border-color: var(--success-active);\n}\n.btn--success:focus {\n  border-color: #999;\n  box-shadow: 0 0 6px rgba(0,0,0,0.5);\n}\n.btn--warning {\n  color: #fff;\n  background-color: var(--warning, #f0f0f0);\n  border-color: var(--warning);\n}\n.btn--warning:hover {\n  background-color: var(--warning-hover, #e6e6e6);\n  border-color: var(--warning-hover);\n}\n.btn--warning:active {\n  background-color: var(--warning-active, #dcdcdc);\n  border-color: var(--warning-active);\n}\n.btn--warning:focus {\n  border-color: #999;\n  box-shadow: 0 0 6px rgba(0,0,0,0.5);\n}\n.btn--danger {\n  color: #fff;\n  background-color: var(--danger, #f0f0f0);\n  border-color: var(--danger);\n}\n.btn--danger:hover {\n  background-color: var(--danger-hover, #e6e6e6);\n  border-color: var(--danger-hover);\n}\n.btn--danger:active {\n  background-color: var(--danger-active, #dcdcdc);\n  border-color: var(--danger-active);\n}\n.btn--danger:focus {\n  border-color: #999;\n  box-shadow: 0 0 6px rgba(0,0,0,0.5);\n}\n";
 
-    console.log(stylebutton);
-    console.log(unsafeCSS(stylebutton));
+    //console.log(stylebutton);
 
 
     class SenseButton extends LitElement {
+      //translateStart = '';
       static get styles() {
     		//return [css`${unsafeCSS(root)}`,css`${unsafeCSS(stylebutton)}`]
-    		//return [css`${unsafeCSS(stylebutton)}`]
+    		return [css`${unsafeCSS(stylebutton)}`]
     	}
       static get properties(){
         return {
-          title:{type:String},
-          type:{type:String,default:'default'}
+          title          :{type:String},
+          disabled       :{type:Boolean},
+          open           :{type:Boolean},
+          translateStartX:{type:String},
+          translateStartY:{type:String},
+          type           :{type:String},
         }
       }
+      constructor(){
+        super();
+        this.translateStartX = '0px';
+        this.translateStartY = '0px';
+        this.type = 'default';
+      }
       _event(e){
-        console.log(this);
+        //console.log(e.target,this)
+        let eStyle = window.getComputedStyle(e.target,':before');
+        console.log(eStyle.left,eStyle.top);
+        
+        e.target.style.top = e.offsetY;
+        this.translateStartX = e.offsetX+"px";
+        this.translateStartY = e.offsetY+"px";
+        e.target.classList.toggle('animate');
+        //console.log(e.target.style);
+      }
+      rectClick(e){
+
       }
 
       render(){
         return html`
-    ${this.icons()}
-    <style>:host{contain: layout style;display: inline-block;}${stylebutton}</style>
-    <button @click=${this._event} class="btn--${this.type}">
-      <i class="material-icons">account_circle</i>
-      <i class="material-icons">mail</i>
+    <style>:host{contain: layout style;display: inline-block;}</style>
+    <button @click=${this._event} class="btn--${this.type}" style="--ripple-left:${this.translateStartX};--ripple-top:${this.translateStartY}">
       <slot name="icon-left"></slot>
       <slot>default</slot>
       <slot name="text"></slot>
     </button>
     `;
       }
-      icons() {
-    		return html`<link href='https://fonts.googleapis.com/icon?family=Material+Icons' rel='stylesheet'>`
-    	}
     }
 
     //import styles from '../style/root.css';

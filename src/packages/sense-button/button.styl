@@ -4,14 +4,14 @@
 //stylue 方法
 buttonVariant(type){
   color:#fff;
-  background-color:var(type);
+  background-color:var(type,rgb(240,240,240));
   border-color:var(type);
   &:hover{
-    background-color:var(type+-hover);
+    background-color:var(type+-hover,rgb(230,230,230));
     border-color:var(type+-hover)
   }
   &:active{
-    background-color:var(type+-active);
+    background-color:var(type+-active,rgb(220,220,220));
     border-color:var(type+-active)
   }
   &:focus{
@@ -34,14 +34,59 @@ buttonVariant(type){
   --primary-hover: lighten(primary, 10%)
   --primary-active: darken(primary, 10%)
   
-  --success-hover: lighten(success, 10%)
-  --success-active: darken(success, 10%)
+  //--success-hover: lighten(success, 10%)
+  //--success-active: darken(success, 10%)
   
   --warning-hover: lighten(warning, 10%)
   --warning-active: darken(warning, 10%)
     
   --danger-hover: lighten(danger, 10%)
   --danger-active: darken(danger, 10%)
+  overflow hidden;
+}
+:host([open]) button{
+  color: red;
+}
+:host([ripple]) button{
+  &::before{
+    content:'';
+    position: absolute;
+    pointer-events: none;
+    width: 200%;
+    height 200%;
+    border-radius: 50%;
+    left : calc( var(--ripple-left) -50%);
+    top  : calc( var(--ripple-top) -50%);
+  }
+  &::before{
+    z-index:1;
+    background-color: #fff;
+    opacity :0;
+    //transition: opacity 15ms linear 0s, background-color 15ms linear 0s;
+    // transition-property: all;
+    // transition-timing-function: linear;
+    // transition-duration: 275ms;
+    // transform:scale(0.1);
+  }
+  &:active{
+    &::before{
+      opacity :0.3;
+      transform:scale(1);
+    }
+  }
+  .animate{
+    &::before{
+      opacity :1;
+      animation: ripple .5s linear;
+    }
+    
+  }
+  @keyframes ripple {
+    100%{
+      opacity :0;
+      transform: scale(2)  
+    }
+  }
 }
 body{
   color:primary-text;
@@ -53,8 +98,14 @@ button{
   border-style: solid;
   outline:none;
   border-radius:4px;
+  slot{
+    pointer-events: none;
+  }
 }
 
+.btn--default{
+  buttonVariant(--default)
+}
 .btn--primary{
   buttonVariant(--primary)
 }
