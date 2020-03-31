@@ -31,6 +31,7 @@ es-dev-server
 - [ ] 添加了scss支持后，css var 变量的值会被编辑问题
 - [ ] 通过外部css变量的值控制，组件内的样式
 - [ ] 添加点击水波：
+- [ ] 开发中代码变化热更新：
 
 https://codepen.io/zavoloklom/pen/Gubja |
 
@@ -46,3 +47,8 @@ https://lit-element.polymer-project.org/guide/properties
 #### 参考资料
 > - https://open-wc.org/
 - 基于rollup的web Components项目。支持styl https://github.com/danielbarion/instruct-contacts
+
+
+## 插件
+
+- vscode 支持postcss的插件postcss-sugarss-language

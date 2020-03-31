@@ -1,4 +1,4 @@
-import { LitElement,css, html,unsafeCSS,styleMap } from 'lit-element';
+import { LitElement,css, html,unsafeCSS } from 'lit-element';
 
 // import root from '../style/root.css';
 import stylebutton from './button.styl';

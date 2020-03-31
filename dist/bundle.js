@@ -1,3 +1,5 @@
+
+(function(l, r) { if (l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (window.location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.head.appendChild(r) })(window.document);
 (function () {
     'use strict';
 
@@ -18,7 +20,6 @@
     const isDirective = (o) => {
         return typeof o === 'function' && directives.has(o);
     };
-    //# sourceMappingURL=directive.js.map
 
     /**
      * @license
@@ -50,7 +51,6 @@
             start = n;
         }
     };
-    //# sourceMappingURL=dom.js.map
 
     /**
      * @license
@@ -74,7 +74,6 @@
      * A sentinel value that signals a NodePart to fully clear its content.
      */
     const nothing = {};
-    //# sourceMappingURL=part.js.map
 
     /**
      * @license
@@ -288,7 +287,6 @@
      *    * (') then any non-(')
      */
     const lastAttributeNameRegex = /([ \x09\x0a\x0c\x0d])([^\0-\x1F\x7F-\x9F "'>=/]+)([ \x09\x0a\x0c\x0d]*=[ \x09\x0a\x0c\x0d]*(?:[^ \x09\x0a\x0c\x0d"'`<>=]*|"[^"]*|'[^']*))$/;
-    //# sourceMappingURL=template.js.map
 
     /**
      * @license
@@ -421,7 +419,6 @@
             return fragment;
         }
     }
-    //# sourceMappingURL=template-instance.js.map
 
     /**
      * @license
@@ -510,7 +507,6 @@
             return template;
         }
     }
-    //# sourceMappingURL=template-result.js.map
 
     /**
      * @license
@@ -950,7 +946,6 @@
         (eventOptionsSupported ?
             { capture: o.capture, passive: o.passive, once: o.once } :
             o.capture);
-    //# sourceMappingURL=parts.js.map
 
     /**
      * @license
@@ -1002,7 +997,6 @@
         }
     }
     const defaultTemplateProcessor = new DefaultTemplateProcessor();
-    //# sourceMappingURL=default-template-processor.js.map
 
     /**
      * @license
@@ -1050,7 +1044,6 @@
         return template;
     }
     const templateCaches = new Map();
-    //# sourceMappingURL=template-factory.js.map
 
     /**
      * @license
@@ -1091,7 +1084,6 @@
         part.setValue(result);
         part.commit();
     };
-    //# sourceMappingURL=render.js.map
 
     /**
      * @license
@@ -1115,7 +1107,6 @@
      * render to and update a container.
      */
     const html = (strings, ...values) => new TemplateResult(strings, values, 'html', defaultTemplateProcessor);
-    //# sourceMappingURL=lit-html.js.map
 
     /**
      * @license
@@ -1240,7 +1231,6 @@
             }
         }
     }
-    //# sourceMappingURL=modify-template.js.map
 
     /**
      * @license
@@ -1510,7 +1500,6 @@
             window.ShadyCSS.styleElement(container.host);
         }
     };
-    //# sourceMappingURL=shady-render.js.map
 
     /**
      * @license
@@ -2136,7 +2125,6 @@
      * Marks class as having finished creating properties.
      */
     UpdatingElement[_a] = true;
-    //# sourceMappingURL=updating-element.js.map
 
     /**
     @license
@@ -2210,7 +2198,6 @@
         const cssText = values.reduce((acc, v, idx) => acc + textFromCSSResult(v) + strings[idx + 1], strings[0]);
         return new CSSResult(cssText, constructionToken);
     };
-    //# sourceMappingURL=css-tag.js.map
 
     /**
      * @license
@@ -2408,9 +2395,8 @@
      * @nocollapse
      */
     LitElement.render = render$1;
-    //# sourceMappingURL=lit-element.js.map
 
-    var stylebutton = ":host {\n  --success: #67c23a;\n  --warning: #e6a23c;\n  --primary: #409eff;\n  --danger: #f56c6c;\n  --primary-text: #303133;\n}\n:host {\n  --primary-hover: #53a8ff;\n  --primary-active: #208eff;\n  --warning-hover: #e9ab4f;\n  --warning-active: #e39622;\n  --danger-hover: #f67b7b;\n  --danger-active: #f34b4b;\n}\n:host([open]) button {\n  color: #f00;\n}\n:host([ripple]) button::before {\n  content: '';\n  position: absolute;\n  pointer-events: none;\n  width: 200%;\n  height: 200%;\n  border-radius: 50%;\n  left: calc(var(--ripple-left) -50%);\n  top: calc(var(--ripple-top) -50%);\n}\n:host([ripple]) button::before {\n  z-index: 1;\n  background-color: #fff;\n  opacity: 0;\n}\n:host([ripple]) button:active::before {\n  transform: scale(0);\n}\n:host([ripple]) button.animate::before {\n  animation: ripple 0.5s linear;\n}\n@-moz-keyframes ripple {\n  0% {\n    opacity: 1;\n  }\n  100% {\n    opacity: 0;\n    transform: scale(2);\n  }\n}\n@-webkit-keyframes ripple {\n  0% {\n    opacity: 1;\n  }\n  100% {\n    opacity: 0;\n    transform: scale(2);\n  }\n}\n@-o-keyframes ripple {\n  0% {\n    opacity: 1;\n  }\n  100% {\n    opacity: 0;\n    transform: scale(2);\n  }\n}\n@keyframes ripple {\n  0% {\n    opacity: 1;\n  }\n  100% {\n    opacity: 0;\n    transform: scale(2);\n  }\n}\nbody {\n  color: #303133;\n}\nbutton {\n  padding: 0.8em 1.4em;\n  border-width: 1px;\n  border-style: solid;\n  outline: none;\n  border-radius: 4px;\n  display: inline-block;\n  overflow: hidden;\n  position: relative;\n}\nbutton slot {\n  pointer-events: none;\n}\n.btn--default {\n  color: #fff;\n  background-color: var(--default, #f0f0f0);\n  border-color: var(--default);\n}\n.btn--default:hover {\n  background-color: var(--default-hover, #e6e6e6);\n  border-color: var(--default-hover);\n}\n.btn--default:active {\n  background-color: var(--default-active, #dcdcdc);\n  border-color: var(--default-active);\n}\n.btn--default:focus {\n  box-shadow: 0 0 6px rgba(0,0,0,0.5);\n}\n.btn--primary {\n  color: #fff;\n  background-color: var(--primary, #f0f0f0);\n  border-color: var(--primary);\n}\n.btn--primary:hover {\n  background-color: var(--primary-hover, #e6e6e6);\n  border-color: var(--primary-hover);\n}\n.btn--primary:active {\n  background-color: var(--primary-active, #dcdcdc);\n  border-color: var(--primary-active);\n}\n.btn--primary:focus {\n  box-shadow: 0 0 6px rgba(0,0,0,0.5);\n}\n.btn--success {\n  color: #fff;\n  background-color: var(--success, #f0f0f0);\n  border-color: var(--success);\n}\n.btn--success:hover {\n  background-color: var(--success-hover, #e6e6e6);\n  border-color: var(--success-hover);\n}\n.btn--success:active {\n  background-color: var(--success-active, #dcdcdc);\n  border-color: var(--success-active);\n}\n.btn--success:focus {\n  box-shadow: 0 0 6px rgba(0,0,0,0.5);\n}\n.btn--warning {\n  color: #fff;\n  background-color: var(--warning, #f0f0f0);\n  border-color: var(--warning);\n}\n.btn--warning:hover {\n  background-color: var(--warning-hover, #e6e6e6);\n  border-color: var(--warning-hover);\n}\n.btn--warning:active {\n  background-color: var(--warning-active, #dcdcdc);\n  border-color: var(--warning-active);\n}\n.btn--warning:focus {\n  box-shadow: 0 0 6px rgba(0,0,0,0.5);\n}\n.btn--danger {\n  color: #fff;\n  background-color: var(--danger, #f0f0f0);\n  border-color: var(--danger);\n}\n.btn--danger:hover {\n  background-color: var(--danger-hover, #e6e6e6);\n  border-color: var(--danger-hover);\n}\n.btn--danger:active {\n  background-color: var(--danger-active, #dcdcdc);\n  border-color: var(--danger-active);\n}\n.btn--danger:focus {\n  box-shadow: 0 0 6px rgba(0,0,0,0.5);\n}\n";
+    var stylebutton = ":host([open]) button {\n  color: #f00;\n}\n:host([ripple]) button::before {\n  content: '';\n  position: absolute;\n  pointer-events: none;\n  width: 200%;\n  height: 200%;\n  border-radius: 50%;\n  left: calc(var(--ripple-left) -50%);\n  top: calc(var(--ripple-top) -50%);\n}\n:host([ripple]) button::before {\n  z-index: 1;\n  background-color: #fff;\n  opacity: 0;\n}\n:host([ripple]) button:active::before {\n  transform: scale(0);\n}\n:host([ripple]) button.animate::before {\n  animation: ripple 0.5s linear;\n}\n@-moz-keyframes ripple {\n  0% {\n    opacity: 1;\n  }\n  100% {\n    opacity: 0;\n    transform: scale(2);\n  }\n}\n@-webkit-keyframes ripple {\n  0% {\n    opacity: 1;\n  }\n  100% {\n    opacity: 0;\n    transform: scale(2);\n  }\n}\n@-o-keyframes ripple {\n  0% {\n    opacity: 1;\n  }\n  100% {\n    opacity: 0;\n    transform: scale(2);\n  }\n}\n@keyframes ripple {\n  0% {\n    opacity: 1;\n  }\n  100% {\n    opacity: 0;\n    transform: scale(2);\n  }\n}\nbody {\n  color: primary-text;\n}\nbutton {\n  padding: 0.8em 1.4em;\n  border-width: 1px;\n  border-style: solid;\n  outline: none;\n  border-radius: 4px;\n  display: inline-block;\n  overflow: hidden;\n  position: relative;\n}\nbutton slot {\n  pointer-events: none;\n}\n.btn--default {\n  color: #fff;\n  background-color: var(--default, #f0f0f0);\n  border-color: var(--default);\n  color: #999;\n}\n.btn--default:hover {\n  background-color: var(--default-hover, #e6e6e6);\n  border-color: var(--default-hover);\n}\n.btn--default:active {\n  background-color: var(--default-active, #dcdcdc);\n  border-color: var(--default-active);\n}\n.btn--default:focus {\n  box-shadow: 0 0 10px rgba(0,0,0,0.3);\n}\n.btn--primary {\n  color: #fff;\n  background-color: var(--primary, #f0f0f0);\n  border-color: var(--primary);\n}\n.btn--primary:hover {\n  background-color: var(--primary-hover, #e6e6e6);\n  border-color: var(--primary-hover);\n}\n.btn--primary:active {\n  background-color: var(--primary-active, #dcdcdc);\n  border-color: var(--primary-active);\n}\n.btn--primary:focus {\n  box-shadow: 0 0 10px rgba(0,0,0,0.3);\n}\n.btn--success {\n  color: #fff;\n  background-color: var(--success, #f0f0f0);\n  border-color: var(--success);\n}\n.btn--success:hover {\n  background-color: var(--success-hover, #e6e6e6);\n  border-color: var(--success-hover);\n}\n.btn--success:active {\n  background-color: var(--success-active, #dcdcdc);\n  border-color: var(--success-active);\n}\n.btn--success:focus {\n  box-shadow: 0 0 10px rgba(0,0,0,0.3);\n}\n.btn--warning {\n  color: #fff;\n  background-color: var(--warning, #f0f0f0);\n  border-color: var(--warning);\n}\n.btn--warning:hover {\n  background-color: var(--warning-hover, #e6e6e6);\n  border-color: var(--warning-hover);\n}\n.btn--warning:active {\n  background-color: var(--warning-active, #dcdcdc);\n  border-color: var(--warning-active);\n}\n.btn--warning:focus {\n  box-shadow: 0 0 10px rgba(0,0,0,0.3);\n}\n.btn--danger {\n  color: #fff;\n  background-color: var(--danger, #f0f0f0);\n  border-color: var(--danger);\n}\n.btn--danger:hover {\n  background-color: var(--danger-hover, #e6e6e6);\n  border-color: var(--danger-hover);\n}\n.btn--danger:active {\n  background-color: var(--danger-active, #dcdcdc);\n  border-color: var(--danger-active);\n}\n.btn--danger:focus {\n  box-shadow: 0 0 10px rgba(0,0,0,0.3);\n}\n";
 
     //console.log(stylebutton);
 
