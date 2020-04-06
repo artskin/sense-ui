@@ -7,20 +7,19 @@
 
 
 ```shell
-npm install -g polymer-cli
-polymer serve
+npm install webpack webpack-cli --save-dev
+npm install lit-element --save-dev
+npx webpack-cli init
+npm install lit-element --save-dev
+npm i --save-dev stylus stylus-loader
+npm i --save-dev css-loader
+npm i --save-dev style-loader 
 ```
 
 ```shell
-sudo npm install -g serve
-#或
-yarn global add serve
-
-# 启动静态服务
-serve -s dist 
-
-es-dev-server
+ 
 ```
+
 
 ## todo-list
 
@@ -52,3 +51,4 @@ https://lit-element.polymer-project.org/guide/properties
 ## 插件
 
 - vscode 支持postcss的插件postcss-sugarss-language
+- language-stylus

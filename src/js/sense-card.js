@@ -9,13 +9,14 @@ export class SenseCard extends LitElement {
   static get styles() {
     return css`
     :host{
-      
+      contain: layout style;
+      display: inline-block;
     }
     :host div{
       display:inline-block;
-      border:1px solid #ccc;
+      border:1px solid var(--warning);
       border-radius:4px;
-      padding:1.4em;
+      padding:1em;
       box-shadow:0 3px 6px rgba(0,0,0,.2)
     }
     `
@@ -33,11 +34,10 @@ export class SenseCard extends LitElement {
   render(){
     return html`
     <style>
-      @import url('../style/root.css')
       button{
         /*font-size:16px;*/ 
       }
-      h3{border-bottom:1px solid #ccc;margin:0;}
+      h3{border-bottom:1px solid #ccc;margin:0;color:var(--primary)}
     </style>
     <div>
       <h3>${this.title}</h3>

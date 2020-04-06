@@ -2,14 +2,14 @@ import { LitElement,css, html,unsafeCSS } from 'lit-element';
 
 // import root from '../style/root.css';
 import stylebutton from './button.styl';
-//console.log(stylebutton);
+//console.log(unsafeCSS(stylebutton));
 
 
 export class SenseButton extends LitElement {
   //translateStart = '';
   static get styles() {
 		//return [css`${unsafeCSS(root)}`,css`${unsafeCSS(stylebutton)}`]
-		return [css`${unsafeCSS(stylebutton)}`]
+		//return [css`${unsafeCSS(stylebutton)}`]
 	}
   static get properties(){
     return {
@@ -44,10 +44,10 @@ export class SenseButton extends LitElement {
   rectClick(e){
 
   }
-
+  //<link rel="stylesheet" href="./style/button.css">
   render(){
     return html`
-    <style>:host{contain: layout style;display: inline-block;}</style>
+    <style>${unsafeCSS(stylebutton)}</style>
     <button @click=${this._event} class="btn--${this.type}" style="--ripple-left:${this.translateStartX};--ripple-top:${this.translateStartY}">
       <slot name="icon-left"></slot>
       <slot>default</slot>

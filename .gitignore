@@ -6,6 +6,7 @@
 # my-igrore
 .vscode/
 build/
+dist/
 
 # User-specific files
 *.rsuser
