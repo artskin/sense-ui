@@ -1,0 +1,70 @@
+
+
+i{ font-style: normal; }
+[class^=icon-],
+[class*=" icon-"]{
+  box-sizing: border-box;
+  position: relative;
+  display: inline-block;
+  transform: scale(var(--ggs,1));
+}
+
+.icon-align-top {
+  font-size: .7em;
+  height: 1em;
+  width: 1em;
+  border-top: 0.16em solid;
+  top: -0.14em;
+  &::before,
+  &:after{
+    content: "";
+    display: block;
+    box-sizing: border-box;
+    position: absolute;
+    width: 0.3em;
+    background: currentColor;
+    top: 0.16em
+  }
+  &::before{
+    left: .1em;
+    height: 1em;
+  }
+  &:after{
+    height: .5em;
+    right: .1em;
+    opacity: .5;
+  }
+}
+
+.icon-danger {
+  width: 1em;
+  height: 1em;
+  border: .1em solid;
+  vertical-align: middle;
+  border-radius: 2em;
+  &::after,
+  &::before {
+    content: "";
+    display: block;
+    box-sizing: border-box;
+    position: absolute;
+    border-radius: .15em;
+    width: .1em;
+    background: currentColor;
+    left: .35em;
+  }
+  &::after {
+    top: .1em;
+    height: .4em;
+  }
+  &::before {
+    height: .1em;
+    bottom: .1em;
+  }
+}
+
+.icon-heart{
+  &::before{
+    content: "❤";
+  }
+}

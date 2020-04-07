@@ -27,6 +27,9 @@ npm i --save-dev style-loader
  
 ```
 
+webpack 基本配置
+rules
+ alias设置
 
 ## todo-list
 
@@ -59,3 +62,9 @@ https://lit-element.polymer-project.org/guide/properties
 
 - vscode 支持postcss的插件postcss-sugarss-language
 - language-stylus
+
+## emoji icon
+css 图标 https://css.gg/
+
+https://gitmoji.carloscuesta.me/
+

@@ -77,6 +77,8 @@ button{
   outline:none;
   border-radius:4px;
   display: inline-block;
+  font-size: 14px;
+  line-height: 1.15;
   slot{
     pointer-events: none;
   }
@@ -84,19 +86,37 @@ button{
   position: relative;
 }
 
-.btn--default{
+.btn-default{
   buttonVariant(--default)
-  /*color: #999;*/
+  color: #999;
 }
-.btn--primary{
+.btn-primary{
   buttonVariant(--primary)
 }
-.btn--success{
+.btn-success{
   buttonVariant(--success)
 }
-.btn--warning{
+.btn-warning{
   buttonVariant(--warning)
 }
-.btn--danger{
+.btn-danger{
   buttonVariant(--danger)
+}
+
+.btn-mini{
+  padding:.4em .7em;
+}
+.btn-small{
+  padding:.6em 1em;
+}
+.btn-big{
+  padding:1em 2em;
+}
+
+.btn-wire{
+
+}
+
+.btn-circle{
+  border-radius:3em;
 }

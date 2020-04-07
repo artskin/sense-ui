@@ -1,14 +1,19 @@
 @import 'var.styl'
-//css调用
+//原始变量-css调用
 :root{
   --success:success;
   --warning:warning;
   --primary:primary;
   --danger:danger;
+
+  --default:#ddd;
   
   /*文字*/
   --primary-text:#303133;
+  --ggs:1;
 }
+
+//计算变量-stylus计算后调用
 html{
   --primary-hover: lighten(primary, 10%);
   --primary-active: darken(primary, 10%);
@@ -21,9 +26,11 @@ html{
     
   --danger-hover: lighten(danger, 10%);
   --danger-active: darken(danger, 10%);
-  
 }
-:host {
-  contain: layout style;
-  display: inline-block;
+
+hr{
+  border-bottom-color: var(--default);
+  border-top: none;
+  height 0;
 }
+

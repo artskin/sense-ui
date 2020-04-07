@@ -1,7 +1,7 @@
 import { LitElement,css, html,unsafeCSS } from 'lit-element';
 
-// import root from '../style/root.css';
-import stylebutton from './button.styl';
+import componentsBase from '../components-base.styl';
+import styleButton from './button.styl';
 //console.log(unsafeCSS(stylebutton));
 
 
@@ -9,7 +9,7 @@ export class SenseButton extends LitElement {
   //translateStart = '';
   static get styles() {
 		//return [css`${unsafeCSS(root)}`,css`${unsafeCSS(stylebutton)}`]
-		//return [css`${unsafeCSS(stylebutton)}`]
+		return [css`${unsafeCSS(componentsBase)}`]
 	}
   static get properties(){
     return {
@@ -19,15 +19,40 @@ export class SenseButton extends LitElement {
       translateStartX:{type:String},
       translateStartY:{type:String},
       type           :{type:String},
+      size           :{type:String},
+      wire           :{type:String},
+      circle         :{type:String},
     }
   }
   constructor(){
     super();
     this.translateStartX = '0px'
     this.translateStartY = '0px'
-    this.type = 'default'
+    this.type = 'default';
+    this.circle = '';
+    this.wire = '';
+    
+  }
+  attributeChangedCallback(name, oldval, newval) {
+    console.log('attribute change: ', name, newval);
+    super.attributeChangedCallback(name, oldval, newval);
+    switch(name){
+      case 'circle':
+        this.circle = 'is-'+name;
+      case 'wire':
+        this.wire = 'is-'+name;
+      default:
+        
+    }
+  }
+  updated(changedProperties) {
+    // console.log(changedProperties)
+    // changedProperties.forEach((oldValue, propName) => {
+    //   console.log(`${propName} changed. oldValue: ${oldValue}`);
+    // });
   }
   _event(e){
+    console.log(this.circle)
     //console.log(e.target,this)
     let eStyle = window.getComputedStyle(e.target,':before');
     //console.log(eStyle.left,eStyle.top);
@@ -47,8 +72,8 @@ export class SenseButton extends LitElement {
   //<link rel="stylesheet" href="./style/button.css">
   render(){
     return html`
-    <style>${unsafeCSS(stylebutton)}</style>
-    <button @click=${this._event} class="btn--${this.type}" style="--ripple-left:${this.translateStartX};--ripple-top:${this.translateStartY}">
+    <style>${unsafeCSS(styleButton)}</style>
+    <button @click=${this._event} class="btn-${this.type} btn-${this.size} ${this.wire} ${this.circle}" style="--ripple-left:${this.translateStartX};--ripple-top:${this.translateStartY}">
       <slot name="icon-left"></slot>
       <slot>default</slot>
       <slot name="text"></slot>

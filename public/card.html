@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="icon" href="/favicon.png">
+    <title>Web Components:webpack-starter</title>
+    <link rel="stylesheet" href="./style/base.css">
+  </head>
+  <body class="sense-ui">
+    <h1>Web Components</h1>
+		<s-card title='外部设置标题'>
+			<h3 slot="title">
+				<i slot="icon-left" class="icon-align-top"></i>
+				版标题
+			</h3>
+			卡片内容xxxxxxxxx
+		</s-card>
+		<hr>
+		<s-button type="hot" open>热按钮</s-button>
+		<hr>
+		<script src='./bundle.js'></script>
+    <!-- built files will be auto injected -->
+  </body>
+</html>

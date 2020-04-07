@@ -2,6 +2,7 @@ let path = require('path');
 let webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+
 module.exports = {
     entry: {
         index:'./src/index.js',
@@ -10,6 +11,13 @@ module.exports = {
     output: {
         path: path.join(__dirname, 'dist'), //输出目录的配置，模板、样式、脚本、图片等资源的路径配置都相对于它
         filename: "bundle.js"
+    },
+    resolve: {
+        // 设置别名
+        alias: {
+            '@': path.resolve('src'),// 这样配置后 @ 可以指向 src 目录
+            '~pkg': path.resolve('src/packages')// 这样配置后 @ 可以指向 src 目录
+        }
     },
     module: {
         rules: [
