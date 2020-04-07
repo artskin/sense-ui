@@ -45,6 +45,9 @@ export class SenseButton extends LitElement {
     if(name == 'wire'){
       this.wire = ' is-'+name;
     }
+    if(name == 'radius'){
+      this.radius = ' is-'+name;
+    }
     if(name == 'size'){
       this.size = ' btn-'+newval;
     }
