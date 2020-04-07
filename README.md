@@ -1,6 +1,10 @@
 # Sense-UI
 
-<img src="./public/link.svg" alt="logo" height="66" style="float:left">
+<img src="./public/link.svg" alt="logo" height="66" style="float:left;">
+
+<svg width="150" height="70" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 64">
+<path ref="svgPath" d="M103.8,59.8c-28,0-43-59-73-59-14,0-29,12-29,30,0,15,13,29,29,29,30,0,44-59,73-59,15,0,30,9.6,30,30C133.8,46.7,119.8,59.8,103.8,59.8Z" />
+</svg>
 
 <!-- ![logo](./public/link.svg) -->
 
