@@ -1,8 +1,8 @@
 # Sense-UI
 
-<img src="./favicon.png" alt="logo" height="66">
+<img src="./public/link.svg" alt="logo" height="66">
 
-![logo](./public/link.svg)
+<!-- ![logo](./public/link.svg) -->
 
 🖖SenseUI is a Web Components &amp; Custom Elements for Future Web Applications.
 > 基于web标准的组件，vue,react,angular都能使用
