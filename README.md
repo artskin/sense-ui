@@ -8,7 +8,8 @@
 
 <!-- ![logo](./public/link.svg) -->
 
-🖖SenseUI is a Web Components &amp; Custom Elements for Future Web Applications.
+🐳
+SenseUI is a Web Components &amp; Custom Elements for Future Web Applications.👽
 > 基于web标准的组件，vue,react,angular都能使用
 
 
