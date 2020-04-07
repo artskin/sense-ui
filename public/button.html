@@ -6,10 +6,11 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="/favicon.png">
     <title>Web Components:webpack-starter</title>
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1740253_ean2rdul2cr.css">
     <link rel="stylesheet" href="./style/base.css">
   </head>
   <body class="sense-ui">
-    <h1>Web Components</h1>
+    <h1>Web Components:Button</h1>
 
 		<hr>
 		<h2>Button 按钮：</h2>
@@ -18,14 +19,14 @@
 		<s-button type="warning">警告按钮：带图标
 			<i slot="icon-left" class="icon-heart"></i>
 		</s-button>
-		<s-button type="danger"><i class="icon-danger"></i> 危险按钮</s-button>
+		<s-button type="danger"><i class="icon-prompt"></i> 危险按钮</s-button>
 		<s-button type="success" ripple>成功按钮</s-button>
 
 		<hr>
 		<h2>Button 按钮：大小</h2>
 		<s-button size="mini">默认按钮</s-button>
 		<s-button type="primary" size="small">主要按钮</s-button>
-		<s-button type="danger"><i class="icon-danger"></i> 危险按钮</s-button>
+		<s-button type="danger"><i class="icon-prompt"></i> 危险按钮</s-button>
 		<s-button type="success" size="big">主要按钮</s-button>
 
 		<hr>
@@ -36,7 +37,18 @@
 		<hr>
 		<h2>Button 按钮：线框</h2>
 		<s-button wire>默认按钮</s-button>
-		<s-button type="primary" wire circle>主要按钮</s-button>
+		<s-button type="primary" size="mini" wire circle>主要按钮</s-button>
+		<s-button type="danger" wire><i class="icon-prompt"></i> 危险按钮</s-button>
+		<s-button type="success" circle wire>成功按钮</s-button>
+
+		<hr>
+		<h2>Button 按钮：图标</h2>
+		<s-button type="warning" circle>
+			<i slot="icon-left" class="icon-heart"></i>
+		</s-button>
+		<s-button type="danger" circle>
+			<i class="icon-prompt"></i>
+		</s-button>
 
 		<hr>
 		<s-button type="hot" open>热按钮</s-button>

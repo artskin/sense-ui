@@ -2,17 +2,17 @@
 /*@import '../../style/var.styl';*/
 
 //stylus 方法
-buttonVariant(type){
+buttonVariant(type,border){
   color:#fff;
   background-color:var(type,rgb(240,240,240));
-  border-color:var(type);
+  border-color:var(border);
   &:hover{
     background-color:var(type+-hover,rgb(230,230,230));
-    border-color:var(type+-hover)
+    border-color:var(border+-hover)
   }
   &:active{
     background-color:var(type+-active,rgb(220,220,220));
-    border-color:var(type+-active)
+    border-color:var(border+-active)
   }
   &:focus{
     box-shadow:0 0 10px rgba(0,0,0,.3)
@@ -78,7 +78,7 @@ button{
   border-radius:4px;
   display: inline-block;
   font-size: 14px;
-  line-height: 1.15;
+  line-height: 1;
   slot{
     pointer-events: none;
   }
@@ -87,20 +87,40 @@ button{
 }
 
 .btn-default{
-  buttonVariant(--default)
+  buttonVariant(--default,--default)
   color: #999;
+  &.is-wire{
+    buttonVariant(--default-opacity,--default);
+    color: #999;
+  }
 }
 .btn-primary{
-  buttonVariant(--primary)
+  buttonVariant(--primary,--primary)
+  &.is-wire{
+    buttonVariant(--primary-opacity,--primary);
+    color: var(--primary)
+  }
 }
 .btn-success{
-  buttonVariant(--success)
+  buttonVariant(--success,--success)
+  &.is-wire{
+    buttonVariant(--success-opacity,--success);
+    color: var(--success)
+  }
 }
 .btn-warning{
-  buttonVariant(--warning)
+  buttonVariant(--warning,--warning)
+  &.is-wire{
+    buttonVariant(--warning-opacity,--warning);
+    color: var(--warning)
+  }
 }
 .btn-danger{
-  buttonVariant(--danger)
+  buttonVariant(--danger,--danger)
+  &.is-wire{
+    buttonVariant(--danger-opacity,--danger);
+    color: var(--danger)
+  }
 }
 
 .btn-mini{
@@ -113,10 +133,7 @@ button{
   padding:1em 2em;
 }
 
-.btn-wire{
-
-}
-
-.btn-circle{
+.is-circle{
   border-radius:3em;
+  padding: 1em;
 }

@@ -7,12 +7,14 @@ i{ font-style: normal; }
   position: relative;
   display: inline-block;
   transform: scale(var(--ggs,1));
+  line-height: 1;
+  height: 1em;
+  width: 1em;
+  font-family: "iconfont" !important;
 }
 
 .icon-align-top {
   font-size: .7em;
-  height: 1em;
-  width: 1em;
   border-top: 0.16em solid;
   top: -0.14em;
   &::before,
@@ -37,11 +39,10 @@ i{ font-style: normal; }
 }
 
 .icon-danger {
-  width: 1em;
-  height: 1em;
   border: .1em solid;
-  vertical-align: middle;
+  vertical-align: baseline;
   border-radius: 2em;
+  overflow: hidden;
   &::after,
   &::before {
     content: "";

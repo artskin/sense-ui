@@ -31,18 +31,25 @@ export class SenseButton extends LitElement {
     this.type = 'default';
     this.circle = '';
     this.wire = '';
+    this.size = '';
+    
     
   }
   attributeChangedCallback(name, oldval, newval) {
     console.log('attribute change: ', name, newval);
     super.attributeChangedCallback(name, oldval, newval);
-    switch(name){
-      case 'circle':
-        this.circle = 'is-'+name;
-      case 'wire':
-        this.wire = 'is-'+name;
-      default:
-        
+
+    if(name == 'circle'){
+      this.circle = ' is-'+name;
+    }
+    if(name == 'wire'){
+      this.wire = ' is-'+name;
+    }
+    if(name == 'size'){
+      this.size = ' btn-'+newval;
+    }
+    if(name == 'type'){
+      this.type = ' btn-'+newval;
     }
   }
   updated(changedProperties) {
@@ -73,7 +80,7 @@ export class SenseButton extends LitElement {
   render(){
     return html`
     <style>${unsafeCSS(styleButton)}</style>
-    <button @click=${this._event} class="btn-${this.type} btn-${this.size} ${this.wire} ${this.circle}" style="--ripple-left:${this.translateStartX};--ripple-top:${this.translateStartY}">
+    <button @click=${this._event} class="${this.type}${this.size}${this.wire}${this.circle}" style="--ripple-left:${this.translateStartX};--ripple-top:${this.translateStartY}">
       <slot name="icon-left"></slot>
       <slot>default</slot>
       <slot name="text"></slot>
