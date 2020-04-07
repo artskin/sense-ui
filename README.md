@@ -1,6 +1,6 @@
 # Sense-UI
 
-<img src="./public/link.svg" alt="logo" height="66">
+<img src="./public/link.svg" alt="logo" height="66" style="float:left">
 
 <!-- ![logo](./public/link.svg) -->
 
