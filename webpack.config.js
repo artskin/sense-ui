@@ -70,5 +70,9 @@ module.exports = {
         contentBase: path.join(__dirname, "dist"),
         compress: true,
         port: 9000
+    },
+    stats: {
+        modules: false,// 关闭编译时node_modules文件提示信息
+        entrypoints: false //关闭编译时插件entrypoint相关提示信息
     }
 };

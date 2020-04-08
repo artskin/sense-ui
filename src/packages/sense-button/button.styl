@@ -15,55 +15,7 @@ buttonVariant(type,border){
     border-color:var(border+-active)
   }
   &:focus{
-    box-shadow:0 0 10px rgba(0,0,0,.3)
-  }
-}
-
-
-:host([open]) button{
-  color: red;
-}
-:host([ripple]) button{
-  &::before{
-    content:'';
-    position: absolute;
-    pointer-events: none;
-    width: 200%;
-    height 200%;
-    border-radius: 50%;
-    left : calc( var(--ripple-left) -50%);
-    top  : calc( var(--ripple-top) -50%);
-  }
-  &::before{
-    z-index:1;
-    background-color: #fff;
-    opacity :0;
-    //transition: opacity 15ms linear 0s, background-color 15ms linear 0s;
-    // transition-property: all;
-    // transition-timing-function: linear;
-    // transition-duration: 275ms;
-    // transform:scale(0.1);
-  }
-  &:active{
-    &::before{
-      //opacity :0.3;
-      transform:scale(0);
-    }
-  }
-  &.animate{
-    &::before{
-      animation: ripple .5s linear;
-    }
-    
-  }
-  @keyframes ripple {
-    0%{
-      opacity :1;
-    }
-    100%{
-      opacity :0;
-      transform: scale(2)  
-    }
+    box-shadow:0 0 10px rgba(0,0,0,.3);
   }
 }
 
@@ -122,6 +74,7 @@ button{
 
 .btn-mini{
   padding:.4em .7em;
+  font-size: 12px;
 }
 .btn-small{
   padding:.6em 1em;
@@ -130,17 +83,64 @@ button{
   padding:1em 2em;
 }
 
-
-//Boolean属性可直接通过样式实现
-:host([disabled]) { /* style when host has disabled attribute. */
-  /* background: grey; */
-  pointer-events: none;
-  opacity: 0.4;
-}
+//boolean属性通过css实现
 :host([circle]) button,
 :host([radius]) button{
   border-radius:3em;
 }
 :host([circle]) button{
-  padding: 1em;
+  padding: .8em;
+}
+:host([disabled]) button{/* style when host has disabled attribute. */
+  pointer-events: none;
+  opacity: 0.5;
+}
+:host([shadow]) button{
+  box-shadow:1px 3px 6px rgba(0,0,0,.3);
+}
+//TODO: 水波涟漪交互
+:host([ripple]) button{
+  &::before{
+    content:'';
+    position: absolute;
+    pointer-events: none;
+    width: 200%;
+    height 200%;
+    border-radius: 50%;
+    left : calc( var(--ripple-left) -50%);
+    top  : calc( var(--ripple-top) -50%);
+  }
+  &::before{
+    z-index:1;
+    background-color: #fff;
+    opacity :0;
+    //transition: opacity 15ms linear 0s, background-color 15ms linear 0s;
+    // transition-property: all;
+    // transition-timing-function: linear;
+    // transition-duration: 275ms;
+    // transform:scale(0.1);
+  }
+  &:hover{
+    &::before{
+      //opacity :0.3;
+      transform:scale(0);
+    }
+  }
+  &.animate{
+    &::before{
+      animation: ripple .5s linear;
+    } 
+  }
+}
+@keyframes ripple {
+  0%{
+    opacity :1;
+  }
+  100%{
+    opacity :0;
+    transform: scale(2)  
+  }
+}
+:host([open]) button{
+  color: red;
 }
