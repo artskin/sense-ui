@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <style>
+
+    div {
+      margin: 0;
+      padding: 0;
+      width: 200px;
+      height: 200px;
+      text-align: center;
+    }
+    svg {
+      width: 100%;
+      height: 100%;
+      -webkit-transform: translate3d(0, 0, 0);
+      -moz-transform: translate3d(0, 0, 0);
+      -o-transform: translate3d(0, 0, 0);
+      -ms-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+    path {
+      fill: none;
+      -webkit-transition: stroke-dashoffset 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25), stroke-dasharray 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25);
+      -moz-transition: stroke-dashoffset 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25), stroke-dasharray 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25);
+      -o-transition: stroke-dashoffset 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25), stroke-dasharray 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25);
+      -ms-transition: stroke-dashoffset 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25), stroke-dasharray 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25);
+      transition: stroke-dashoffset 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25), stroke-dasharray 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25);
+      stroke-width: 40px;
+      stroke-linecap: round;
+      stroke: #a06ba5;
+      stroke-dashoffset: 0px;
+    }
+    path#top,
+    path#bottom {
+      stroke-dasharray: 240px 950px;
+    }
+    path#middle {
+      stroke-dasharray: 240px 240px;
+    }
+    .cross path#top,
+    .cross path#bottom {
+      stroke-dashoffset: -650px;
+      stroke-dashoffset: -650px;
+    }
+    .cross path#middle {
+      stroke-dashoffset: -115px;
+      stroke-dasharray: 1px 220px;
+    }
+    .sense-logo-path {
+      fill: transparent;
+      fill: url(#senselinear);
+      stroke: none;
+      animation: senseLogo 4s ease-in-out forwards;
+      /*stroke-dasharray: 5px 20px;*/
+      /* box-shadow: 0 2px 1006px rgba(0,0,0,.6); */
+    }
+    .logo{
+      width: 150px;
+      height: 80px;
+    }
+    </style>
+</head>
+<body>
+  <div id="handle">
+    <svg viewBox="10 10 800 600">
+      <path d="M300,220 C300,220 520,220 540,220 C740,220 640,540 520,420 C440,340 300,200 300,200" id="top"></path>
+      <path d="M300,320 L540,320" id="middle"></path>
+      <path d="M300,210 C300,210 520,210 540,210 C740,210 640,530 520,410 C440,330 300,190 300,190" id="bottom" transform="translate(480, 320) scale(1, -1) translate(-480, -318) "></path>
+    </svg>
+  </div>
+
+  <div class="logo">
+    <svg viewBox="10 10 2205 1024" width="200" height="100">
+      <defs>
+        <filter id="f1" x="0" y="0" width="200%" height="200%">
+          <feOffset result="offOut" in="SourceAlpha" dx="0" dy="0" />
+          <feGaussianBlur result="blurOut" in="offOut" stdDeviation="30" />
+          <feBlend in="SourceGraphic" in2="blurOut" mode="screen" />
+        </filter>
+        <linearGradient id="senselinear" x1="40%" y1="0%" x2="80%" y2="100%">
+          <stop offset="0%" stop-color="#9b00ff"/>
+          <!-- <stop offset="70%" stop-color="#fc6d26"/> -->
+          <stop offset="100%" stop-color="#0077ff"/>
+        </linearGradient>
+      </defs>
+      <path filter="url(#f1)" class="sense-logo-path" stroke="url(#senselinear)" d="M1688.97643 1024a510.947448 510.947448 0 0 1-361.379195-149.568253L740.472167 280.803712a325.148376 325.148376 0 1 0 0 460.317201l107.763462-108.22796a92.899536 92.899536 0 0 1 131.917341 130.523848l-107.763462 108.692458a510.947448 510.947448 0 1 1 0-722.293893L1459.050079 745.301392a325.148376 325.148376 0 1 0 0-460.317201L1351.751114 391.35416a92.899536 92.899536 0 0 1-131.452843 0 92.899536 92.899536 0 0 1 0-130.988346l107.298964-108.692457A510.947448 510.947448 0 1 1 1688.97643 1024z"></path>
+    </svg> 
+  </div>
+  <script type="module">
+    let ele = document.querySelector('#handle');
+    setInterval(() => {
+      ele.classList.toggle('cross')
+    }, 2000);
+    // import { html, render } from 'lit-html';
+    // import '../sense-ui.js';
+
+    // const title = '11Hello owc World!';
+    // render(
+    //   html`
+    //     <sense-ui .title=${title}>
+    //       some more light-dom
+    //     </sense-ui>
+    //   `,
+    //   document.querySelector('#demo')
+    // );
+  </script>
+</body>
+</html>

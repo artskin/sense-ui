@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 128 128"
+	 style="enable-background:new 0 0 128 128;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#1296DB;stroke:url(#Shape_2_);stroke-width:10;stroke-miterlimit:8.127;}
+	.st1{fill:#1296DB;stroke:url(#Shape_3_);stroke-width:10;stroke-miterlimit:8.127;}
+	.st2{fill:none;stroke:#6633FF;stroke-width:10;stroke-miterlimit:8.127;}
+	.st3{fill:none;stroke:#0066FF;stroke-width:10;stroke-miterlimit:8.127;}
+	.st4{fill:none;stroke:#9900FF;stroke-width:10;stroke-miterlimit:8.127;}
+</style>
+<desc>Created with Sketch.</desc>
+<g id="Link" transform="translate(1.000000, 1.000000)" sketch:type="MSLayerGroup">
+	<linearGradient id="Shape_2_" gradientUnits="userSpaceOnUse" x1="66.333" y1="26.8879" x2="57.9326" y2="36.899">
+		<stop  offset="0.1872" style="stop-color:#9900FF"/>
+		<stop  offset="0.7397" style="stop-color:#6633FF"/>
+	</linearGradient>
+	<path id="Shape" sketch:type="MSShapeGroup" class="st0" d="M57.7,35.3l8.9-6.8"/>
+	<linearGradient id="Shape_3_" gradientUnits="userSpaceOnUse" x1="52.4849" y1="56.9354" x2="66.9119" y2="81.9237">
+		<stop  offset="0.3653" style="stop-color:#6633FF"/>
+		<stop  offset="1" style="stop-color:#0066FF"/>
+	</linearGradient>
+	<path id="Shape_1_" sketch:type="MSShapeGroup" class="st1" d="M52.1,57.4l15.3,24"/>
+	<circle id="Oval" sketch:type="MSShapeGroup" class="st2" cx="43.9" cy="45.6" r="14.8">
+	</circle>
+	<circle id="Oval_1_" sketch:type="MSShapeGroup" class="st3" cx="77.8" cy="96.9" r="19.1">
+	</circle>
+	<circle id="Oval_2_" sketch:type="MSShapeGroup" class="st4" cx="78.3" cy="18.2" r="12.2">
+	</circle>
+</g>
+</svg>

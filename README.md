@@ -68,3 +68,16 @@ css 图标 https://css.gg/
 
 https://gitmoji.carloscuesta.me/
 
+vscode 在线编辑分享代码 https://stackblitz.com/
+
+## Browser Support
+
+The polyfills are intended to work in the latest versions of evergreen browsers. See below
+for our complete browser support matrix:
+
+| Polyfill   | IE11+ | Chrome* | Firefox* | Safari 9+* | Chrome Android* | Mobile Safari* |
+| ---------- |:-----:|:-------:|:--------:|:----------:|:---------------:|:--------------:|
+| Custom Elements | ✓ | ✓ | ✓ | ✓ | ✓| ✓ |
+| HTML Imports | ✓ | ✓ | ✓ | ✓| ✓| ✓ |
+| Shadow DOM | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
+| Templates | ✓ | ✓ | ✓| ✓ | ✓ | ✓ |

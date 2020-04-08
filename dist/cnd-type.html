@@ -7,7 +7,7 @@
     <link rel="icon" href="/favicon.png">
     <title>Web Components:webpack-starter</title>
     <link rel="stylesheet" href="//at.alicdn.com/t/font_1740253_ean2rdul2cr.css">
-    <link rel="stylesheet" href="./style/base.css">
+    <!-- <link rel="stylesheet" href="./style/base.css"> -->
   </head>
   <body class="sense-ui">
     <h1>Web Components:Button</h1>
@@ -65,13 +65,19 @@
 		<s-button type="danger" circle shadow ripple>
 			<i class="icon-prompt"></i>
 		</s-button>
-		<s-button type="danger" size="big" ripple><i class="icon-prompt"></i> 危险按钮</s-button>
-		<s-button type="success" size="big" ripple>主要按钮</s-button>
 
 		<hr>
 		<s-button type="hot" open>热按钮</s-button>
 		<hr>
-		<script src='./bundle.js'></script>
+		
+		
+		<!-- load webcomponents bundle, which includes all the necessary polyfills -->
+		<script src='https://unpkg.com/@webcomponents/webcomponentsjs@2.4.3/webcomponents-bundle.js'></script>
+		
+		<!-- load the element -->
+		<script type="module" src='../src/js/my-element.js'></script>
+		<my-element></my-element>
+		<!-- <script src='./bundle.js'></script> -->
     <!-- built files will be auto injected -->
   </body>
 </html>
