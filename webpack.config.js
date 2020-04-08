@@ -73,8 +73,6 @@ module.exports = {
     },
     stats: {
         modules: false,// 关闭编译时node_modules文件提示信息
-        chunkModules: false,
-        reasons: false,
-        logging: 'error'
+        entrypoints: false //关闭编译时插件entrypoint相关提示信息
     }
 };
