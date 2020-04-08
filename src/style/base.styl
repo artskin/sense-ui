@@ -1,11 +1,11 @@
-@import 'var.styl'
+@import 'var.styl';
+  
 //原始变量-css调用
 :root{
   --success:success;
   --warning:warning;
   --primary:primary;
   --danger:danger;
-
   --default:#ddd;
   
   /*文字*/
@@ -23,7 +23,7 @@ colorGroup(key,value){
 
 //计算变量-stylus计算后调用
 html{
-  //FIXME:编译后属性名变量不能传入问题
+  //FIX:编译后属性名变量不能传入问题
   colorGroup(--primary,primary);
   colorGroup(--success,success);
   colorGroup(--warning,warning);

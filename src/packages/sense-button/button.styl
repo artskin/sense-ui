@@ -15,7 +15,7 @@ buttonVariant(type,border){
     border-color:var(border+-active)
   }
   &:focus{
-    box-shadow:0 0 10px rgba(0,0,0,.3)
+    box-shadow:0 0 10px rgba(0,0,0,.3);
   }
 }
 
@@ -83,6 +83,7 @@ button{
   padding:1em 2em;
 }
 
+//boolean属性通过css实现
 :host([circle]) button,
 :host([radius]) button{
   border-radius:3em;
@@ -92,11 +93,12 @@ button{
 }
 :host([disabled]) button{/* style when host has disabled attribute. */
   pointer-events: none;
-  opacity: 0.4;
+  opacity: 0.5;
 }
-:host([open]) button{
-  color: red;
+:host([shadow]) button{
+  box-shadow:1px 3px 6px rgba(0,0,0,.3);
 }
+//TODO: 水波涟漪交互
 :host([ripple]) button{
   &::before{
     content:'';
@@ -118,7 +120,7 @@ button{
     // transition-duration: 275ms;
     // transform:scale(0.1);
   }
-  &:active{
+  &:hover{
     &::before{
       //opacity :0.3;
       transform:scale(0);
@@ -127,16 +129,18 @@ button{
   &.animate{
     &::before{
       animation: ripple .5s linear;
-    }
-    
+    } 
   }
-  @keyframes ripple {
-    0%{
-      opacity :1;
-    }
-    100%{
-      opacity :0;
-      transform: scale(2)  
-    }
+}
+@keyframes ripple {
+  0%{
+    opacity :1;
   }
+  100%{
+    opacity :0;
+    transform: scale(2)  
+  }
+}
+:host([open]) button{
+  color: red;
 }

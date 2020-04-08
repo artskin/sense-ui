@@ -4,7 +4,6 @@ import componentsBase from '../components-base.styl';
 import styleButton from './button.styl';
 //console.log(unsafeCSS(stylebutton));
 
-
 export class SenseButton extends LitElement {
   //translateStart = '';
   static get styles() {
@@ -39,15 +38,18 @@ export class SenseButton extends LitElement {
     //console.log('attribute change: ', name, newval);
     super.attributeChangedCallback(name, oldval, newval);
 
+    //boolean属性改为通过css实现
     // if(name == 'circle'){
     //   this.circle = ' is-'+name;
     // }
-    if(name == 'wire'){
-      this.wire = ' is-'+name;
-    }
     // if(name == 'radius'){
     //   this.radius = ' is-'+name;
     // }
+
+    if(name == 'wire'){
+      this.wire = ' is-'+name;
+    }
+
     if(name == 'size'){
       this.size = ' btn-'+newval;
     }
@@ -62,7 +64,6 @@ export class SenseButton extends LitElement {
     // });
   }
   _event(e){
-    console.log(this.circle)
     //console.log(e.target,this)
     let eStyle = window.getComputedStyle(e.target,':before');
     //console.log(eStyle.left,eStyle.top);
