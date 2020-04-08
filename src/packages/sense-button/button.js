@@ -36,18 +36,18 @@ export class SenseButton extends LitElement {
     
   }
   attributeChangedCallback(name, oldval, newval) {
-    console.log('attribute change: ', name, newval);
+    //console.log('attribute change: ', name, newval);
     super.attributeChangedCallback(name, oldval, newval);
 
-    if(name == 'circle'){
-      this.circle = ' is-'+name;
-    }
+    // if(name == 'circle'){
+    //   this.circle = ' is-'+name;
+    // }
     if(name == 'wire'){
       this.wire = ' is-'+name;
     }
-    if(name == 'radius'){
-      this.radius = ' is-'+name;
-    }
+    // if(name == 'radius'){
+    //   this.radius = ' is-'+name;
+    // }
     if(name == 'size'){
       this.size = ' btn-'+newval;
     }

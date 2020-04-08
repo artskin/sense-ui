@@ -19,57 +19,6 @@ buttonVariant(type,border){
   }
 }
 
-
-:host([open]) button{
-  color: red;
-}
-:host([ripple]) button{
-  &::before{
-    content:'';
-    position: absolute;
-    pointer-events: none;
-    width: 200%;
-    height 200%;
-    border-radius: 50%;
-    left : calc( var(--ripple-left) -50%);
-    top  : calc( var(--ripple-top) -50%);
-  }
-  &::before{
-    z-index:1;
-    background-color: #fff;
-    opacity :0;
-    //transition: opacity 15ms linear 0s, background-color 15ms linear 0s;
-    // transition-property: all;
-    // transition-timing-function: linear;
-    // transition-duration: 275ms;
-    // transform:scale(0.1);
-  }
-  &:active{
-    &::before{
-      //opacity :0.3;
-      transform:scale(0);
-    }
-  }
-  &.animate{
-    &::before{
-      animation: ripple .5s linear;
-    }
-    
-  }
-  @keyframes ripple {
-    0%{
-      opacity :1;
-    }
-    100%{
-      opacity :0;
-      transform: scale(2)  
-    }
-  }
-}
-body{
-  color:primary-text;
-}
-
 button{
   padding:0.8em 1.4em;
   border-width: 1px;
@@ -125,6 +74,7 @@ button{
 
 .btn-mini{
   padding:.4em .7em;
+  font-size: 12px;
 }
 .btn-small{
   padding:.6em 1em;
@@ -132,10 +82,61 @@ button{
 .btn-big{
   padding:1em 2em;
 }
-.is-radius{
+
+:host([circle]) button,
+:host([radius]) button{
   border-radius:3em;
 }
-.is-circle{
-  
-  padding: 1em;
+:host([circle]) button{
+  padding: .8em;
+}
+:host([disabled]) button{/* style when host has disabled attribute. */
+  pointer-events: none;
+  opacity: 0.4;
+}
+:host([open]) button{
+  color: red;
+}
+:host([ripple]) button{
+  &::before{
+    content:'';
+    position: absolute;
+    pointer-events: none;
+    width: 200%;
+    height 200%;
+    border-radius: 50%;
+    left : calc( var(--ripple-left) -50%);
+    top  : calc( var(--ripple-top) -50%);
+  }
+  &::before{
+    z-index:1;
+    background-color: #fff;
+    opacity :0;
+    //transition: opacity 15ms linear 0s, background-color 15ms linear 0s;
+    // transition-property: all;
+    // transition-timing-function: linear;
+    // transition-duration: 275ms;
+    // transform:scale(0.1);
+  }
+  &:active{
+    &::before{
+      //opacity :0.3;
+      transform:scale(0);
+    }
+  }
+  &.animate{
+    &::before{
+      animation: ripple .5s linear;
+    }
+    
+  }
+  @keyframes ripple {
+    0%{
+      opacity :1;
+    }
+    100%{
+      opacity :0;
+      transform: scale(2)  
+    }
+  }
 }

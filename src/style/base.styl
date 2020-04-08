@@ -13,6 +13,22 @@
   --ggs:1;
 }
 
+//stylus 生成一组颜色值方法
+bluecolor = #3366ff;
+colorGroup(key,value){
+  --key:value;
+  --key-hover  : lighten(value, 10%);
+  --key-active : darken(value, 10%);
+  --key-opacity: rgba(value, 0.1);
+}
+:root{
+  //TODO:编译后属性名变量不能传入问题
+  colorGroup(primary,bluecolor);
+  // --primary-hover: lighten(primary, 10%);
+  // --primary-active: darken(primary, 10%);
+  // --primary-opacity:rgba(primary, 0.1);
+}
+
 //计算变量-stylus计算后调用
 html{
   --primary-hover: lighten(primary, 10%);
