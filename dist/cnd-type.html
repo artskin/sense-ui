@@ -10,74 +10,17 @@
     <!-- <link rel="stylesheet" href="./style/base.css"> -->
   </head>
   <body class="sense-ui">
-    <h1>Web Components:Button</h1>
+	<h1>Web Components:CDN调用</h1>
+	
+	<!-- Polyfills only needed for Firefox and Edge. -->
+	<!-- <script src="https://unpkg.com/@webcomponents/webcomponentsjs@latest/webcomponents-loader.js"></script> -->
 
-		<hr>
-		<h2>Button 按钮：</h2>
-		<s-button>默认按钮</s-button>
-		<s-button type="primary">主要按钮</s-button>
-		<s-button type="warning">警告按钮：带图标
-			<i slot="icon-left" class="icon-heart"></i>
-		</s-button>
-		<s-button type="danger"><i class="icon-prompt"></i> 危险按钮</s-button>
-		<s-button type="success">成功按钮</s-button>
-
-		<hr>
-		<h2>Button 按钮：大小</h2>
-		<s-button size="mini">默认按钮</s-button>
-		<s-button type="primary" size="small" radius>主要按钮</s-button>
-		<s-button type="danger"><i class="icon-prompt"></i> 危险按钮</s-button>
-		<s-button type="success" size="big">主要按钮</s-button>
-
-		<hr>
-		<h2>Button 按钮：圆角</h2>
-		<s-button circle>默认按钮</s-button>
-		<s-button type="primary" circle>主要按钮</s-button>
-
-		<hr>
-		<h2>Button 按钮：禁用</h2>
-		<s-button circle disabled>默认按钮</s-button>
-		<s-button type="primary" circle disabled>主要按钮</s-button>
-		<s-button type="danger" disabled><i class="icon-prompt"></i> 危险按钮</s-button>
-		<s-button type="success" size="big" disabled>主要按钮</s-button>
-
-		<hr>
-		<h2>Button 按钮：线框</h2>
-		<s-button wire>默认按钮</s-button>
-		<s-button type="primary" wire radius size="mini">主要按钮</s-button>
-		<s-button type="danger" wire><i class="icon-prompt"></i> 危险按钮</s-button>
-		<s-button type="success" circle wire>成功按钮</s-button>
-
-		<hr>
-		<h2>Button 按钮：图标及投影</h2>
-		<s-button type="warning" circle shadow>
-			<i slot="icon-left" class="icon-heart"></i>
-		</s-button>
-		<s-button type="danger" circle shadow>
-			<i class="icon-prompt"></i>
-		</s-button>
-
-		<hr>
-		<h2>Button 按钮：水波交互</h2>
-		<s-button type="warning" circle shadow ripple>
-			<i slot="icon-left" class="icon-heart"></i>
-		</s-button>
-		<s-button type="danger" circle shadow ripple>
-			<i class="icon-prompt"></i>
-		</s-button>
-
-		<hr>
-		<s-button type="hot" open>热按钮</s-button>
-		<hr>
-		
-		
 		<!-- load webcomponents bundle, which includes all the necessary polyfills -->
 		<script src='https://unpkg.com/@webcomponents/webcomponentsjs@2.4.3/webcomponents-bundle.js'></script>
 		
 		<!-- load the element -->
 		<script type="module" src='../src/js/my-element.js'></script>
-		<my-element></my-element>
-		<!-- <script src='./bundle.js'></script> -->
-    <!-- built files will be auto injected -->
+		<my-element mood="great"></my-element>
+   
   </body>
 </html>
