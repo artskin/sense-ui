@@ -66,9 +66,6 @@ buttonVariant(type,border){
     }
   }
 }
-body{
-  color:primary-text;
-}
 
 button{
   padding:0.8em 1.4em;
@@ -132,10 +129,18 @@ button{
 .btn-big{
   padding:1em 2em;
 }
-.is-radius{
+
+
+//Boolean属性可直接通过样式实现
+:host([disabled]) { /* style when host has disabled attribute. */
+  /* background: grey; */
+  pointer-events: none;
+  opacity: 0.4;
+}
+:host([circle]) button,
+:host([radius]) button{
   border-radius:3em;
 }
-.is-circle{
-  
+:host([circle]) button{
   padding: 1em;
 }
