@@ -57,11 +57,15 @@ https://lit-element.polymer-project.org/guide/properties
 > - https://open-wc.org/
 - 基于rollup的web Components项目。支持styl https://github.com/danielbarion/instruct-contacts
 
+stylus功能示例：
+http://stylus.github.io/nib/
 
 ## 插件
 
 - vscode 支持postcss的插件postcss-sugarss-language
 - language-stylus
+
+
 
 ## emoji icon
 css 图标 https://css.gg/
