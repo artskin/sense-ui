@@ -49,4 +49,4 @@ npm run build //打包
 
 - vscode 支持postcss的插件postcss-sugarss-language
 - language-stylus
-- [开发备忘文档](./doc.md)
+- [开发备忘文档](./public/doc.md)
