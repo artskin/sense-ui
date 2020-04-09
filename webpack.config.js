@@ -2,14 +2,14 @@ let path = require('path');
 let webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-
+let outputDir = 'docs';
 module.exports = {
     entry: {
         index:'./src/index.js',
         //base:'./src/style/root.styl'
     },
     output: {
-        path: path.join(__dirname, 'dist'), //输出目录的配置，模板、样式、脚本、图片等资源的路径配置都相对于它
+        path: path.join(__dirname, outputDir), //输出目录的配置，模板、样式、脚本、图片等资源的路径配置都相对于它
         filename: "bundle.js"
     },
     resolve: {
@@ -59,7 +59,7 @@ module.exports = {
         new CopyWebpackPlugin([
             {
               from:__dirname+'/public',
-              to:__dirname+'/dist'
+              to:__dirname+'/'+outputDir
             }
         ])
     ],
@@ -67,7 +67,7 @@ module.exports = {
         headers: {
             "X-Custom-Foo": "bar"
         },
-        contentBase: path.join(__dirname, "dist"),
+        contentBase: path.join(__dirname, outputDir),
         compress: true,
         port: 9000
     },
