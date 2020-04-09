@@ -6,7 +6,7 @@
 # my-igrore
 .vscode/
 build/
-dist/
+
 .DS_Store
 
 # User-specific files

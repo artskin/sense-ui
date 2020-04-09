@@ -45,16 +45,14 @@ export class SenseButton extends LitElement {
     // if(name == 'radius'){
     //   this.radius = ' is-'+name;
     // }
-
-    if(name == 'wire'){
-      this.wire = ' is-'+name;
-    }
-
     if(name == 'size'){
       this.size = ' btn-'+newval;
     }
     if(name == 'type'){
       this.type = ' btn-'+newval;
+    }
+    if(name == 'wire'){
+      this.wire = ' is-'+name;
     }
   }
   updated(changedProperties) {
@@ -84,7 +82,7 @@ export class SenseButton extends LitElement {
   render(){
     return html`
     <style>${unsafeCSS(styleButton)}</style>
-    <button @click=${this._event} class="${this.type}${this.size}${this.wire}${this.circle}" style="--ripple-left:${this.translateStartX};--ripple-top:${this.translateStartY}">
+    <button @click=${this._event} class="${this.type}${this.size}${this.wire}" style="--ripple-left:${this.translateStartX};--ripple-top:${this.translateStartY}">
       <slot name="icon-left"></slot>
       <slot>default</slot>
       <slot name="text"></slot>

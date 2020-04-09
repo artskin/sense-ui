@@ -1,0 +1,116 @@
+:root {
+  --success: #67c23a;
+  --warning: #e6a23c;
+  --primary: #409eff;
+  --danger: #f56c6c;
+  --default: #ddd;
+/*文字*/
+  --primary-text: #303133;
+  --ggs: 1;
+}
+html {
+  --primary: #409eff;
+  --primary-hover: #53a8ff;
+  --primary-active: #208eff;
+  --primary-opacity: rgba(64,158,255,0.1);
+  --success: #67c23a;
+  --success-hover: #76ca4c;
+  --success-active: #5daf34;
+  --success-opacity: rgba(64,158,255,0.1);
+  --warning: #e6a23c;
+  --warning-hover: #e9ab4f;
+  --warning-active: #e39622;
+  --warning-opacity: rgba(64,158,255,0.1);
+  --danger: #f56c6c;
+  --danger-hover: #f67b7b;
+  --danger-active: #f34b4b;
+  --danger-opacity: rgba(64,158,255,0.1);
+}
+hr {
+  border-bottom-color: var(--default);
+  border-top: none;
+  height: 0;
+}
+.sense-ui {
+  padding: 0;
+}
+s-button {
+  line-height: 1;
+}
+
+i {
+  font-style: normal;
+}
+[class^=icon-],
+[class*=" icon-"] {
+  box-sizing: border-box;
+  position: relative;
+  display: inline-block;
+  transform: scale(var(--ggs, 1));
+  line-height: 1;
+  height: 1em;
+  width: 1em;
+  font-family: "iconfont" !important;
+}
+.icon-align-top {
+  font-size: 0.7em;
+  border-top: 0.16em solid;
+  top: -0.14em;
+}
+.icon-align-top::before,
+.icon-align-top:after {
+  content: "";
+  display: block;
+  box-sizing: border-box;
+  position: absolute;
+  width: 0.3em;
+  background: currentColor;
+  top: 0.16em;
+}
+.icon-align-top::before {
+  left: 0.1em;
+  height: 1em;
+}
+.icon-align-top:after {
+  height: 0.5em;
+  right: 0.1em;
+  opacity: 0.5;
+}
+.icon-danger {
+  border: 0.1em solid;
+  vertical-align: baseline;
+  border-radius: 2em;
+  overflow: hidden;
+}
+.icon-danger::after,
+.icon-danger::before {
+  content: "";
+  display: block;
+  box-sizing: border-box;
+  position: absolute;
+  border-radius: 0.15em;
+  width: 0.1em;
+  background: currentColor;
+  left: 0.35em;
+}
+.icon-danger::after {
+  top: 0.1em;
+  height: 0.4em;
+}
+.icon-danger::before {
+  height: 0.1em;
+  bottom: 0.1em;
+}
+.icon-heart::before {
+  content: "❤";
+}
+body {
+  color: var(--primary-text);
+}
+s-card h3 {
+  position: relative;
+  font-size: 24px;
+  line-height: 1.2;
+  vertical-align: middle;
+}
+

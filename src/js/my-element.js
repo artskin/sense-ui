@@ -1,9 +1,17 @@
 // Import the LitElement base class and html helper function
-import { LitElement, html } from 'lit-element';
+//import { LitElement, html } from 'lit-element';
+import { LitElement, html,css } from 'https://unpkg.com/lit-element/lit-element.js?module';
 
 // Extend the LitElement base class
 class MyElement extends LitElement {
-
+  static get styles() {
+    return css`.mood { color: green; }`;
+  }
+  static get properties() {
+    return {
+      mood: {type: String}
+    }
+  }
   /**
    * Implement `render` to define a template for your element.
    *
@@ -18,10 +26,11 @@ class MyElement extends LitElement {
      * with the `html` helper function:
      */
     return html`
-      <!-- template content -->
+      Web Components are 
+      <span class="mood">${this.mood}</span>!
       <slot>A paragraph</slot>
     `;
   }
 }
 // Register the new element with the browser.
-customElements.define('my-test-element', MyElement);
+customElements.define('my-element', MyElement);
