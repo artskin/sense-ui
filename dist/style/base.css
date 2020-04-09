@@ -4,6 +4,7 @@
   --primary: #409eff;
   --danger: #f56c6c;
   --default: #ddd;
+  --higligt: #63f;
 /*文字*/
   --primary-text: #303133;
   --ggs: 1;
@@ -32,10 +33,25 @@ hr {
   height: 0;
 }
 .sense-ui {
-  padding: 0;
+  padding: 16px;
+  margin: 0;
 }
 s-button {
   line-height: 1;
+}
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+  background-color: transparent;
+/* or add it to the track */
+}
+::-webkit-scrollbar-thumb {
+  background: var(--higligt);
+  border-radius: 5px 0 0 5px;
+}
+::-webkit-scrollbar-corner {
+  background-color: transparent;
+/* or add it to the track */
 }
 
 i {
