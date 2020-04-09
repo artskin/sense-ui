@@ -4,7 +4,7 @@
   --primary: #409eff;
   --danger: #f56c6c;
   --default: #ddd;
-  --higligt: #63f;
+  --higligt: rgba(102,51,240,0.8);
 /*文字*/
   --primary-text: #303133;
   --ggs: 1;
@@ -40,14 +40,14 @@ s-button {
   line-height: 1;
 }
 ::-webkit-scrollbar {
-  width: 4px;
-  height: 4px;
+  width: 5px;
+  height: 5px;
   background-color: transparent;
 /* or add it to the track */
 }
 ::-webkit-scrollbar-thumb {
   background: var(--higligt);
-  border-radius: 5px 0 0 5px;
+  border-radius: 8px 0 0 8px;
 }
 ::-webkit-scrollbar-corner {
   background-color: transparent;
