@@ -102,43 +102,49 @@ button{
 :host([ripple]) button{
   &::before{
     content:'';
-    position: absolute;
-    pointer-events: none;
     width: 200%;
     height 200%;
     border-radius: 50%;
-    left : calc( var(--ripple-left) -50%);
-    top  : calc( var(--ripple-top) -50%);
+    pointer-events: none;
+    position: absolute;
+    left : calc(-50%);
+    top  : calc(-50%);
+    margin-left: var(--ripple-left);
+    margin-top : var(--ripple-left);
   }
   &::before{
     z-index:1;
     background-color: #fff;
     opacity :0;
-    //transition: opacity 15ms linear 0s, background-color 15ms linear 0s;
+    //transform: translate(var(--ripple-left),var(--ripple-top));
+
+    //transition: opacity .6s ease-out, transform .3s ease-in;
     // transition-property: all;
     // transition-timing-function: linear;
     // transition-duration: 275ms;
-    // transform:scale(0.1);
+    //transform:scale(0);
   }
-  &:hover{
+  &:active{
     &::before{
-      //opacity :0.3;
-      transform:scale(0);
+      opacity :.5;
+      animation: ripple 1s ease-out;
     }
   }
-  &.animate{
-    &::before{
-      animation: ripple .5s linear;
-    } 
-  }
+  // &.animate{
+  //   &::before{
+  //     animation: ripple .5s linear;
+  //   } 
+  // }
 }
 @keyframes ripple {
   0%{
-    opacity :1;
+    transform: scale(0)
+  }
+  70%{
+    transform: scale(2)
   }
   100%{
-    opacity :0;
-    transform: scale(2)  
+    transform: scale(2)
   }
 }
 :host([open]) button{

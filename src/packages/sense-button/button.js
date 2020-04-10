@@ -65,15 +65,20 @@ export class SenseButton extends LitElement {
     //console.log(e.target,this)
     let eStyle = window.getComputedStyle(e.target,':before');
     //console.log(eStyle.left,eStyle.top);
+    let ev = e;
+    ev.target.style.top = ev.offsetY;
+    this.translateStartX = '-'+ev.offsetX/2+"px";
+    this.translateStartY = '-'+ev.offsetY/2+"px";
     
-    e.target.style.top = e.offsetY;
-    this.translateStartX = e.offsetX+"px";
-    this.translateStartY = e.offsetY+"px";
-    if(e.target.classList.contains('animate')){
-      e.target.classList.remove('animate')
-    }
-    e.target.classList.add('animate');
-    //console.log(e.target.style);
+    // ev.target.classList.add('animate');
+    // setTimeout(()=>{
+    //   this.bind(ev);
+    //   ev.target.classList.remove('animate');
+    //   console.log(ev.target.classList);
+      
+    // },600,e,ev)
+    
+    
   }
   rectClick(e){
 
