@@ -62,13 +62,27 @@ export class SenseButton extends LitElement {
     // });
   }
   _event(e){
-    //console.log(e.target,this)
+    console.log(e,this)
     let eStyle = window.getComputedStyle(e.target,':before');
+    let el = e.target;
+
+    let elWidth  = el.offsetWidth,
+        elHeight = el.offsetHeight,
+        elCenter={
+          x:elWidth/2,
+          y:elHeight/2
+        }
+        console.log(elWidth,elHeight,elCenter)
+        let perX = (((e.offsetX-elCenter.x)/elWidth)*50).toFixed(2);
+        let perY = (((e.offsetY-elCenter.y)/elHeight)*50).toFixed(2);
+        console.log(perX,perY)
     //console.log(eStyle.left,eStyle.top);
-    let ev = e;
-    ev.target.style.top = ev.offsetY;
-    this.translateStartX = '-'+ev.offsetX/2+"px";
-    this.translateStartY = '-'+ev.offsetY/2+"px";
+    //e.target.style.top = e.offsetY;
+    // this.translateStartX = '-'+e.offsetX/2+"px";
+    // this.translateStartY = '-'+e.offsetY/2+"px";
+
+    this.translateStartX = `${perX}%`;
+    this.translateStartY = `${perY}%`;
     
     // ev.target.classList.add('animate');
     // setTimeout(()=>{
