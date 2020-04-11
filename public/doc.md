@@ -39,6 +39,8 @@ https://lit-element.polymer-project.org/guide/properties
 > - https://open-wc.org/
 - 基于rollup的web Components项目。支持styl https://github.com/danielbarion/instruct-contacts
 
+https://developers.google.cn/web/fundamentals/web-components/
+
 stylus功能示例：
 http://stylus.github.io/nib/
 

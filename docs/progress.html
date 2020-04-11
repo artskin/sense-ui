@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="icon" href="/favicon.png">
+    <title>Web Components:webpack-starter</title>
+    <link rel="stylesheet" href="./style/base.css">
+  </head>
+  <body class="sense-ui">
+    <h1>Web Components:progress</h1>
+
+    <h2>html5 &lt;progress&gt;  原生展示</h2>
+    <progress value="20" max="100"></progress><br>
+    <progress></progress>
+    <h2>html5 &lt;meter&gt;  原生展示</h2>
+    <meter value="20" max="100"></meter><br>
+    <meter></meter>
+     
+
+    <h2>s-progress</h2>
+    <s-progress type="line" value="20" max="100"></s-progress><br>
+    <s-progress status="active" value="100" max="100"></s-progress>
+		
+		<hr>
+		<script src='./bundle.js'></script>
+    <!-- built files will be auto injected -->
+  </body>
+</html>

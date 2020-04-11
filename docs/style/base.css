@@ -129,4 +129,12 @@ s-card h3 {
   line-height: 1.2;
   vertical-align: middle;
 }
+.sense-ui h1 {
+  font-weight: normal;
+  font-size: 28px;
+}
+.sense-ui h2 {
+  font-size: 16px;
+  opacity: 0.6;
+}
 

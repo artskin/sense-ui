@@ -12,6 +12,12 @@
 SenseUI is a Web Components &amp; Custom Elements for Future Web Applications.👽
 > 面向未来应用的组件开发，基于web标准的组件，vue,react,angular 都可使用。
 
+## 轻量极速
+
+- 组件基于html5原生标签及属性，减少js模拟；
+- 充分利用css3的交互效果，较少js操作dom带来的性能损耗；
+- 动态换肤，无需编译打包。
+
 ## Browser Support
 
 The polyfills are intended to work in the latest versions of evergreen browsers. See below

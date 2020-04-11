@@ -80,19 +80,20 @@ export class SenseButton extends LitElement {
     //   console.log('删除后',...el.classList)
     // })
     el.classList.add('rippleFade');
+    
+  }
+  removeClass(e){
+    let el = e.target;
     setTimeout(function(){
       el.classList.remove('rippleFade');
-    },400)
+    },500)
   }
-  // rectClick(e){
-  //   console.log(e)
-  // }
   
   //<link rel="stylesheet" href="./style/button.css">
   render(){
     return html`
     <style>${unsafeCSS(styleButton)}</style>
-    <button @mousedown=${this._event} class="${this.type}${this.size}${this.wire}" style="--ripple-left:${this.translateStartX};--ripple-top:${this.translateStartY}">
+    <button @mousedown=${this._event} @click=${this.removeClass} class="${this.type}${this.size}${this.wire}" style="--ripple-left:${this.translateStartX};--ripple-top:${this.translateStartY}">
       <slot name="icon-left"></slot>
       <slot>default</slot>
       <slot name="text"></slot>
