@@ -1,15 +1,28 @@
 :host{
-  progress{
+  meter{
     width: 10em;
     height :1em;
+    position: relative;
     border-radius: 2.2em;
-    
-    span.show{
-      display: block;
-      width: 3em;
-      height :1em;
-      color: #c00;
-      z-index :1;
+    color:orange; /*兼容IE10的已完成进度背景*/
+    border:none;
+    overflow: hidden;
+    background:#eee;/*这个属性也可当作Chrome的已完成进度背景，只不过被下面的::progress-bar覆盖了*/
+    &::-webkit-meter-bar {
+      background:#eee;//背景
     }
+    &::-webkit-meter-optimum-value{
+      background:orange;//当前进度
+    }
+    &::after{
+      content: var(--meter-value);
+      display:block;
+      position: absolute;
+      right :0;
+      top:0;
+      font-size: .6em;
+      
+    }
+
   }
 }
