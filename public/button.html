@@ -10,7 +10,17 @@
     <link rel="stylesheet" href="./style/base.css">
   </head>
   <body class="sense-ui">
-    <h1>Web Components:Button</h1>
+	<h1>Web Components:Button</h1>
+		<hr>
+		<h2>Button 按钮：水波交互</h2>
+		<s-button type="danger" size="big" ripple><i class="icon-prompt"></i> 危险按钮</s-button>
+		<s-button type="success" size="big" radius ripple>主要按钮</s-button>
+		<s-button type="warning" circle shadow ripple>
+			<i slot="icon-left" class="icon-heart"></i>
+		</s-button>
+		<s-button type="danger" circle shadow ripple>
+			<i class="icon-prompt"></i>
+		</s-button>
 
 		<hr>
 		<h2>Button 按钮：</h2>
@@ -59,16 +69,7 @@
 			<i class="icon-prompt"></i>
 		</s-button>
 
-		<hr>
-		<h2>Button 按钮：水波交互</h2>
-		<s-button type="danger" size="big" ripple><i class="icon-prompt"></i> 危险按钮</s-button>
-		<s-button type="success" size="big" radius ripple>主要按钮</s-button>
-		<s-button type="warning" circle shadow ripple>
-			<i slot="icon-left" class="icon-heart"></i>
-		</s-button>
-		<s-button type="danger" circle shadow ripple>
-			<i class="icon-prompt"></i>
-		</s-button>
+		
 		
 
 		<hr>

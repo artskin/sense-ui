@@ -62,46 +62,37 @@ export class SenseButton extends LitElement {
     // });
   }
   _event(e){
-    console.log(e,this)
-    let eStyle = window.getComputedStyle(e.target,':before');
     let el = e.target;
+    //let eStyle = window.getComputedStyle(e.target,':before');
 
     let elWidth  = el.offsetWidth,
         elHeight = el.offsetHeight,
-        elCenter={
-          x:elWidth/2,
-          y:elHeight/2
-        }
-        console.log(elWidth,elHeight,elCenter)
-        let perX = (((e.offsetX-elCenter.x)/elWidth)*50).toFixed(2);
-        let perY = (((e.offsetY-elCenter.y)/elHeight)*50).toFixed(2);
-        console.log(perX,perY)
-    //console.log(eStyle.left,eStyle.top);
-    //e.target.style.top = e.offsetY;
-    // this.translateStartX = '-'+e.offsetX/2+"px";
-    // this.translateStartY = '-'+e.offsetY/2+"px";
+        elCenter={ x:elWidth/2, y:elHeight/2 },
+        perX = ((e.offsetX-elCenter.x)/elWidth).toFixed(4),
+        perY = ((e.offsetY-elCenter.y)/elHeight).toFixed(4);
 
-    this.translateStartX = `${perX}%`;
-    this.translateStartY = `${perY}%`;
-    
-    // ev.target.classList.add('animate');
-    // setTimeout(()=>{
-    //   this.bind(ev);
-    //   ev.target.classList.remove('animate');
-    //   console.log(ev.target.classList);
-      
-    // },600,e,ev)
-    
-    
+    this.translateStartX = `${perX*50}%`;
+    this.translateStartY = `${perY*50}%`;
+       
+    // el.addEventListener("webkitAnimationStart", function() {
+    //   console.log("动画开始",...el.classList);
+    //   el.classList.remove('animate');
+    //   console.log('删除后',...el.classList)
+    // })
+    el.classList.add('rippleFade');
+    setTimeout(function(){
+      el.classList.remove('rippleFade');
+    },400)
   }
-  rectClick(e){
-
-  }
+  // rectClick(e){
+  //   console.log(e)
+  // }
+  
   //<link rel="stylesheet" href="./style/button.css">
   render(){
     return html`
     <style>${unsafeCSS(styleButton)}</style>
-    <button @click=${this._event} class="${this.type}${this.size}${this.wire}" style="--ripple-left:${this.translateStartX};--ripple-top:${this.translateStartY}">
+    <button @mousedown=${this._event} class="${this.type}${this.size}${this.wire}" style="--ripple-left:${this.translateStartX};--ripple-top:${this.translateStartY}">
       <slot name="icon-left"></slot>
       <slot>default</slot>
       <slot name="text"></slot>

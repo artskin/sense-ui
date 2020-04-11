@@ -104,47 +104,57 @@ button{
     content:'';
     width: 200%;
     height 200%;
-    border-radius: 50%;
+    border-radius: 30%;
     pointer-events: none;
     position: absolute;
     left : calc(-50%);
     top  : calc(-50%);
-    margin-left: var(--ripple-left);
-    margin-top : var(--ripple-left);
+    z-index:1;
   }
   &::before{
-    z-index:1;
     background-color: #fff;
     opacity :0;
-    //transform: translate(var(--ripple-left),var(--ripple-top));
-
     //transition: opacity .6s ease-out, transform .3s ease-in;
     // transition-property: all;
     // transition-timing-function: linear;
     // transition-duration: 275ms;
     //transform:scale(0);
+    margin-left: var(--ripple-left);
+    margin-top : var(--ripple-top);
+    //transform: translate(var(--ripple-left),var(--ripple-top));
   }
-  &:active{
-    &::before{
-      opacity :.5;
-      animation: ripple 1s ease-out;
-    }
-  }
-  // &.animate{
-  //   &::before{
-  //     animation: ripple .5s linear;
-  //   } 
+  // &:active{
+  //   &::before{//不借助js添加class可以这样简单实现
+  //     animation: ripple 1s ease-out;
+  //   }
   // }
+  // &:focus{
+  //   &::before{
+  //     animation: ripple 1s ease-out;
+  //   }
+  // }
+  &.rippleFade{
+    &::before{
+      animation: ripple .5s linear;
+    } 
+  }
 }
 @keyframes ripple {
   0%{
+    opacity :.3;
     transform: scale(0)
   }
   70%{
+    opacity :.3;
+    transform: scale(1.5)
+  }
+  85%{
+    opacity :0;
     transform: scale(2)
   }
   100%{
-    transform: scale(2)
+    opacity :0;
+    transform: scale(0)
   }
 }
 :host([open]) button{
