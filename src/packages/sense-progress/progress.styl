@@ -1,28 +1,117 @@
 :host{
-  meter{
+  
+  progress{
     width: 10em;
-    height :1em;
+    height :.6em;
     position: relative;
-    border-radius: 2.2em;
     color:orange; /*兼容IE10的已完成进度背景*/
     border:none;
+    //background:transiton;/*这个属性也可当作Chrome的已完成进度背景，只不过被下面的::progress-bar覆盖了*/
+    border-radius: 2.2em;
     overflow: hidden;
-    background:#eee;/*这个属性也可当作Chrome的已完成进度背景，只不过被下面的::progress-bar覆盖了*/
-    &::-webkit-meter-bar {
-      background:#eee;//背景
-    }
-    &::-webkit-meter-optimum-value{
-      background:orange;//当前进度
-    }
-    &::after{
-      content: var(--meter-value);
-      display:block;
-      position: absolute;
-      right :0;
-      top:0;
-      font-size: .6em;
+    background:transparent;
+    &::-webkit-progress-inner-element{
       
     }
+    &::-webkit-progress-bar {
+      background:var(--default);//背景
+    }
+    &::-webkit-progress-value{
+      background:var(--primary);//当前进度
+      border-radius: 2.2em;
+    }
+    // &::after{
+    //   content: var(--progress-value);
+    //   display:block;
+    //   width: 3.5em;
+    //   position: absolute;
+    //   right :-3.5em;
+    //   text-align: left ;
+    //   top:0;
+    //   font-size: .5em;
+    // }
+  }
+  .text-value{
+    font-size: .7em;
+    padding-left:.5em;
+    line-height: 1;
+  }
+  .progress{
+    display: flex;
+    position: relative;
+    .active::after{
+      content: '';
+      background: #fff;
+      position: absolute;
+      left :0;
+      top:0;
+      height :100%;
+      z-index :1;
+      animation:s-progress-active 2.4s cubic-bezier(.23,1,.32,1) infinite;
+    }
+  }
+}
 
+:host([status='error']) .progress{
+  progress{
+    &::-webkit-progress-value{
+      background:var(--danger);
+    }
+  }
+  .text-value{
+    
+  }
+}
+:host([status='success']) .progress{
+  progress{
+    &::-webkit-progress-value{
+      background:var(--success);
+    }
+  }
+}
+
+@keyframes s-progress-active{
+  0%{width:0;opacity:.1}
+  20%{width:0;opacity:.5}
+  100%{width:100%;opacity:0}
+}
+
+
+.progress-circle{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  svg{
+    width: 100px;
+    height :100px;
+    position: relative;
+    color: #ccc;
+    circle{
+      fill:transparent;
+      stroke-width:6%;
+    }
+    .progress-bg{
+      //stroke:url(#borderlinear);
+      stroke:var(--default);
+    }
+    .current-value{
+      //animation:1s cicleRun ease-in-out forwards;
+      stroke:var(--danger);
+      //stroke-dasharray: 377px 0;
+    }
+  }
+  
+  .text-value{
+    position: absolute;
+    width: 90%;
+    // height: 80%;
+    left: 0%;
+    // top 10%;
+    text-align: center;
+  }
+}
+:host([status='success']) .progress-circle{
+  .current-value{
+    stroke:var(--success);
   }
 }

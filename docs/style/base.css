@@ -3,7 +3,7 @@
   --warning: #e6a23c;
   --primary: #409eff;
   --danger: #f56c6c;
-  --default: #ddd;
+  --default: #f7f4f9;
   --higligt: rgba(102,51,240,0.8);
 /*文字*/
   --primary-text: #303133;
@@ -38,6 +38,10 @@ hr {
 }
 s-button {
   line-height: 1;
+}
+s-progress {
+  display: flex;
+  align-items: center;
 }
 ::-webkit-scrollbar {
   width: 5px;

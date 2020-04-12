@@ -49,6 +49,8 @@ npm run build //打包
 - [ ] post-css
 - [ ] 添加点击水波：
 - [ ] 开发中代码变化热更新：
+- [ ] 编辑器支持插件（类似Vetur）
+
 
 
 ## 开发常用插件
@@ -56,3 +58,5 @@ npm run build //打包
 - vscode 支持postcss的插件postcss-sugarss-language
 - language-stylus
 - [开发备忘文档](./public/doc.md)
+
+## 

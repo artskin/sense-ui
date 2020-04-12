@@ -26,22 +26,48 @@ export class SenseProgress extends LitElement {
   }
 
   attributeChangedCallback(name, oldval, newval) {
-    console.log('attribute change: ', name, newval);
+    //console.log('attribute change: ', name, newval);
     super.attributeChangedCallback(name, oldval, newval);
     if(name == 'status'){
       this.size = ' status-'+newval;
     }
   }
   _event(e){
-    console.log(e)
+    let el = e.target;
+    console.log(el.getTotalLength(),e)
+    
   }
   render(){
-    return html`
-    <style>${unsafeCSS(styleProgress)}</style>
-    <meter class=${this.status} value=${this.value} max=${this.max}>
-      <span>${(this.value/this.max)*100}%</span>
-    </meter>
-    `;
+    if(this.type =='line'){
+      return html`
+      <style>${unsafeCSS(styleProgress)}</style>
+      <div class="progress">
+        <progress class=${this.status} value=${this.value} max=${this.max}></progress>
+        <span class="text-value">${(this.value/this.max)*100}%</span>
+        ${this.status=='active'? html`<div class="active"></div>`:null}
+      </div>
+      `;
+    }
+    if(this.type == 'circle'){
+      return html`
+      <style>${unsafeCSS(styleProgress)}</style>
+      <div class="progress progress-circle">
+        <svg viewBox="0 0 100 100">
+          <defs>
+            <linearGradient id="borderlinear">
+              <stop offset="0%" stop-color="#0F4C81"/>
+              <stop offset="80%" stop-color="#4C8EC9"/>
+            </linearGradient>
+          </defs>
+          <circle @click=${this._event} class="progress-bg" cx="50%" cy="50%" r="47%" />
+          <circle class="current-value" stroke-linecap="round" cx="50%" cy="50%" r="47%"
+          stroke-dasharray=${this.value*3 + '% 249%'} />
+        </svg>
+        <span class="text-value">${(this.value/this.max)*100}%</span>
+      </div>
+      `;
+    }
+    
   }
 }
 
