@@ -1,23 +1,5 @@
-/*stylus 变量*/
-/*@import '../../style/var.styl';*/
 
-//stylus 方法
-buttonVariant(type,border){
-  color:#fff;
-  background-color:var(type,rgb(240,240,240));
-  border-color:var(border);
-  &:hover{
-    background-color:var(type+-hover,rgb(230,230,230));
-    border-color:var(border+-hover)
-  }
-  &:active{
-    background-color:var(type+-active,rgb(220,220,220));
-    border-color:var(border+-active)
-  }
-  &:focus{
-    box-shadow:0 0 10px rgba(0,0,0,.3);
-  }
-}
+@import '../../style/mixin.styl';
 
 button{
   padding:0.8em 1.4em;

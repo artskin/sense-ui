@@ -1,4 +1,5 @@
 @import 'var.styl';
+@import 'mixin.styl';
   
 //原始变量-css调用
 :root{
@@ -13,15 +14,6 @@
   --primary-text:#303133;
   --ggs:1;
 }
-
-//stylus:插值法 生成一组颜色值方法 
-colorGroup(key,value){
-  {key}: value;
-  {key}-hover: lighten(value, 10%);
-  {key}-active: darken(value, 10%);
-  {key}-opacity:rgba(primary, 0.1);
-}
-
 //计算变量-stylus计算后调用
 html{
   //FIX:编译后属性名变量不能传入问题

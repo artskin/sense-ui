@@ -2,16 +2,15 @@ import { LitElement,css, html,unsafeCSS } from 'lit-element';
 import componentsBase from '../components-base.styl';
 import styleProgress from './progress.styl';
 
-
 export class SenseProgress extends LitElement {
   static get styles() {
     return [css`${unsafeCSS(componentsBase)}`]
   }
   static get properties(){
     return {
-      type:{type:String},
-      value:{type:String},
-      max:{type:String},
+      type  :{type:String},
+      value :{type:String},
+      max   :{type:String},
       status:{type:String}
     }
   }
@@ -43,7 +42,8 @@ export class SenseProgress extends LitElement {
       <style>${unsafeCSS(styleProgress)}</style>
       <div class="progress">
         <progress class=${this.status} value=${this.value} max=${this.max}></progress>
-        <span class="text-value">${(this.value/this.max)*100}%</span>
+        
+        ${this.status=='success'? html`<span class="icon-cancelwhite"></span>`: html`<span class="text-value">${(this.value/this.max)*100}%</span>`}
         ${this.status=='active'? html`<div class="active"></div>`:null}
       </div>
       `;

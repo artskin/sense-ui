@@ -15,8 +15,8 @@ export class SenseButton extends LitElement {
       title          :{type:String},
       disabled       :{type:Boolean},
       open           :{type:Boolean},
-      translateStartX:{type:String},
-      translateStartY:{type:String},
+      translateX:{type:String},
+      translateY:{type:String},
       type           :{type:String},
       size           :{type:String},
       wire           :{type:String},
@@ -25,8 +25,8 @@ export class SenseButton extends LitElement {
   }
   constructor(){
     super();
-    this.translateStartX = '0px'
-    this.translateStartY = '0px'
+    this.translateX = '0px'
+    this.translateY = '0px'
     this.type = 'default';
     this.circle = '';
     this.wire = '';
@@ -68,11 +68,11 @@ export class SenseButton extends LitElement {
     let elWidth  = el.offsetWidth,
         elHeight = el.offsetHeight,
         elCenter={ x:elWidth/2, y:elHeight/2 },
-        perX = ((e.offsetX-elCenter.x)/elWidth).toFixed(4),
-        perY = ((e.offsetY-elCenter.y)/elHeight).toFixed(4);
+        perX = (e.offsetX-elCenter.x)/elWidth,
+        perY = (e.offsetY-elCenter.y)/elHeight;
 
-    this.translateStartX = `${perX*50}%`;
-    this.translateStartY = `${perY*50}%`;
+    this.translateStartX = `${(perX*50).toFixed(2)}%`;
+    this.translateStartY = `${(perY*50).toFixed(2)}%`;
        
     // el.addEventListener("webkitAnimationStart", function() {
     //   console.log("动画开始",...el.classList);
@@ -93,7 +93,7 @@ export class SenseButton extends LitElement {
   render(){
     return html`
     <style>${unsafeCSS(styleButton)}</style>
-    <button @mousedown=${this._event} @click=${this.removeClass} class="${this.type}${this.size}${this.wire}" style="--ripple-left:${this.translateStartX};--ripple-top:${this.translateStartY}">
+    <button @mousedown=${this._event} @click=${this.removeClass} class="${this.type}${this.size}${this.wire}" style="--ripple-left:${this.translateX};--ripple-top:${this.translateY}">
       <slot name="icon-left"></slot>
       <slot>default</slot>
       <slot name="text"></slot>

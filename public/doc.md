@@ -53,6 +53,8 @@ http://stylus.github.io/nib/
 ## emoji icon
 css 图标 https://css.gg/
 
+https://www.cnblogs.com/daisygogogo/p/11044353.html
+
 https://gitmoji.carloscuesta.me/
 
 vscode 在线编辑分享代码 https://stackblitz.com/
