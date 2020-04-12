@@ -1,0 +1,26 @@
+
+//stylus:插值法 生成一组颜色值方法 
+colorGroup(key,value){
+  //{key}: value;
+  {key}-hover: lighten(value, 10%);
+  {key}-active: darken(value, 10%);
+  {key}-opacity:rgba(primary, 0.1);
+}
+
+//生成按钮各种状态
+buttonVariant(type,border){
+  color:#fff;
+  background-color:var(type,rgb(240,240,240));
+  border-color:var(border);
+  &:hover{
+    background-color:var(type+-hover,rgb(230,230,230));
+    border-color:var(border+-hover)
+  }
+  &:active{
+    background-color:var(type+-active,rgb(220,220,220));
+    border-color:var(border+-active)
+  }
+  &:focus{
+    box-shadow:0 0 10px rgba(0,0,0,.3);
+  }
+}
