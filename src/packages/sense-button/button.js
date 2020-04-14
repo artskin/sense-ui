@@ -62,27 +62,36 @@ export class SenseButton extends LitElement {
     // });
   }
   _event(e){
-    //console.log(e.target,this)
-    let eStyle = window.getComputedStyle(e.target,':before');
-    //console.log(eStyle.left,eStyle.top);
-    
-    e.target.style.top = e.offsetY;
-    this.translateStartX = e.offsetX+"px";
-    this.translateStartY = e.offsetY+"px";
-    if(e.target.classList.contains('animate')){
-      e.target.classList.remove('animate')
-    }
-    e.target.classList.add('animate');
-    //console.log(e.target.style);
-  }
-  rectClick(e){
+    let el = e.target;
+    //let eStyle = window.getComputedStyle(e.target,':before');
 
+    let elWidth  = el.offsetWidth,
+        elHeight = el.offsetHeight,
+        elCenter={ x:elWidth/2, y:elHeight/2 },
+        perX = (e.offsetX-elCenter.x)/elWidth,
+        perY = (e.offsetY-elCenter.y)/elHeight;
+
+    this.translateStartX = `${(perX*50).toFixed(2)}%`;
+    this.translateStartY = `${(perY*50).toFixed(2)}%`;
+       
+    // el.addEventListener("webkitAnimationStart", function() {
+    //   console.log("动画开始",...el.classList);
+    //   el.classList.remove('animate');
+    //   console.log('删除后',...el.classList)
+    // })
+    el.classList.add('rippleFade');
+  }
+  removeClass(e){
+    let el = e.target;
+    setTimeout(function(){
+      el.classList.remove('rippleFade');
+    },500)
   }
   //<link rel="stylesheet" href="./style/button.css">
   render(){
     return html`
     <style>${unsafeCSS(styleButton)}</style>
-    <button @click=${this._event} class="${this.type}${this.size}${this.wire}" style="--ripple-left:${this.translateStartX};--ripple-top:${this.translateStartY}">
+    <button @mousedown=${this._event} @click=${this.removeClass} class="${this.type}${this.size}${this.wire}" style="--ripple-left:${this.translateX};--ripple-top:${this.translateY}">
       <slot name="icon-left"></slot>
       <slot>default</slot>
       <slot name="text"></slot>
