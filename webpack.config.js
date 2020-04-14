@@ -5,7 +5,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 let outputDir = 'docs';
 module.exports = {
     entry: {
-        index:'./src/my-ts.ts',
+        index:'./src/ts-button.ts',
         //base:'./src/style/root.styl'
     },
     output: {
