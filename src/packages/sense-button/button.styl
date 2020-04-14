@@ -16,44 +16,6 @@ button{
   overflow: hidden;
   position: relative;
 }
-
-.btn-default{
-  buttonVariant(--default,--default)
-  color: #999;
-  &.is-wire{
-    buttonVariant(--default-opacity,--default);
-    color: #999;
-  }
-}
-.btn-primary{
-  buttonVariant(--primary,--primary)
-  &.is-wire{
-    buttonVariant(--primary-opacity,--primary);
-    color: var(--primary)
-  }
-}
-.btn-success{
-  buttonVariant(--success,--success)
-  &.is-wire{
-    buttonVariant(--success-opacity,--success);
-    color: var(--success)
-  }
-}
-.btn-warning{
-  buttonVariant(--warning,--warning)
-  &.is-wire{
-    buttonVariant(--warning-opacity,--warning);
-    color: var(--warning)
-  }
-}
-.btn-danger{
-  buttonVariant(--danger,--danger)
-  &.is-wire{
-    buttonVariant(--danger-opacity,--danger);
-    color: var(--danger)
-  }
-}
-
 .btn-mini{
   padding:.4em .7em;
   font-size: 12px;
@@ -64,7 +26,45 @@ button{
 .btn-big{
   padding:1em 2em;
 }
+.btn-default{
+  buttonVariant(--default,--default)
+  color: #999;
+}
+.btn-primary{
+  buttonVariant(--primary,--primary)
+}
+.btn-success{
+  buttonVariant(--success,--success)
+}
+.btn-warning{
+  buttonVariant(--warning,--warning)
+}
+.btn-danger{
+  buttonVariant(--danger,--danger)
+}
 
+:host([wire]){
+  .btn-default{
+    buttonVariant(--danger-default,--default);
+    color: var(--default)
+  }
+  .btn-primary{
+    buttonVariant(--danger-primary,--primary);
+    color: var(--primary)
+  }
+  .btn-warning{
+    buttonVariant(--danger-warning,--warning);
+    color: var(--warning)
+  }
+  .btn-danger{
+    buttonVariant(--danger-opacity,--danger);
+    color: var(--danger)
+  }
+  .btn-success{
+    buttonVariant(--success-opacity,--success);
+    color: var(--success)
+  }
+} 
 //boolean属性通过css实现
 :host([circle]) button,
 :host([radius]) button{
@@ -134,15 +134,4 @@ button{
   100%{
     transform: scale(2)
   }
-  // 85%{
-  //   opacity :0;
-  //   transform: scale(2)
-  // }
-  // 100%{
-  //   opacity :0;
-  //   transform: scale(0)
-  // }
-}
-:host([open]) button{
-  color: red;
 }
