@@ -9,14 +9,23 @@ export class SenseCard extends LitElement {
   }
   static get properties(){
     return {
-      title:{type:String}
+      title:{type:String},
+      width:{type:String}
     }
   }
   constructor(){
     super();
     //this.shadowRoot.adoptedStyleSheets = [styles];
-    this.title = "卡片标题";
+    this.title = "";
+    this.width = "200px";
     this.getSlots()
+  }
+  attributeChangedCallback(name, oldval, newval) {
+    console.log('Attr change:', name, newval);
+    super.attributeChangedCallback(name, oldval, newval);
+    if(name =='width'){
+      this.width = newval+'px';
+    }
   }
   _event(e){
     console.log(e)
@@ -34,8 +43,9 @@ export class SenseCard extends LitElement {
   render(){
     return html`
     <style>${unsafeCSS(styleCard)}</style>
-    <div @click=${this._event}>
-      ${this.hasTitle? html`<slot name="title"></slot>`: html`<h3>${this.title}</h3>`}
+    <div @click=${this._event} style="width:${this.width}">
+      ${this.hasTitle? html`<slot name="title"></slot>`:null}
+      ${this.title? html`<h3>${this.title}</h3>`: null}
       <slot>卡片内容...</slot>
     </div>
     `;

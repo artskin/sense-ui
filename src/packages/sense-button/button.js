@@ -15,8 +15,8 @@ export class SenseButton extends LitElement {
       title          :{type:String},
       disabled       :{type:Boolean},
       open           :{type:Boolean},
-      translateStartX:{type:String},
-      translateStartY:{type:String},
+      translateX:{type:String},
+      translateY:{type:String},
       type           :{type:String},
       size           :{type:String},
       wire           :{type:String},
@@ -25,8 +25,8 @@ export class SenseButton extends LitElement {
   }
   constructor(){
     super();
-    this.translateStartX = '0px'
-    this.translateStartY = '0px'
+    this.translateX = '0px'
+    this.translateY = '0px'
     this.type = 'default';
     this.circle = '';
     this.wire = '';
@@ -80,6 +80,7 @@ export class SenseButton extends LitElement {
     //   console.log('删除后',...el.classList)
     // })
     el.classList.add('rippleFade');
+    
   }
   removeClass(e){
     let el = e.target;
@@ -87,6 +88,7 @@ export class SenseButton extends LitElement {
       el.classList.remove('rippleFade');
     },500)
   }
+  
   //<link rel="stylesheet" href="./style/button.css">
   render(){
     return html`

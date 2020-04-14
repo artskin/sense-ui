@@ -6,75 +6,74 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="/favicon.png">
     <title>Web Components:webpack-starter</title>
-    <link rel="stylesheet" href="//at.alicdn.com/t/font_1740253_ean2rdul2cr.css">
-    <link rel="stylesheet" href="./style/base.css">
-  </head>
-  <body class="sense-ui">
-    <h1>Web Components:Button</h1>
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1740253_wjc1qmt0mz.css">
+	<link rel="stylesheet" href="./style/base.css">
+</head>
+<body class="sense-ui">
+  <h1>Web Components:Button</h1>
+  
+  <hr>
+  <h2>不同功能</h2>
+  <s-button>默认按钮</s-button>
+  <s-button type="primary">主要按钮</s-button>
+  <s-button type="warning">警告按钮：带图标
+    <i slot="icon-left" class="icon-heart"></i>
+  </s-button>
+  <s-button type="danger"><i class="icon-prompt"></i> 危险按钮</s-button>
+  <s-button type="success">成功按钮</s-button>
 
-		<hr>
-		<h2>Button 按钮：</h2>
-		<s-button>默认按钮</s-button>
-		<s-button type="primary">主要按钮</s-button>
-		<s-button type="warning">警告按钮：带图标
-			<i slot="icon-left" class="icon-heart"></i>
-		</s-button>
-		<s-button type="danger"><i class="icon-prompt"></i> 危险按钮</s-button>
-		<s-button type="success">成功按钮</s-button>
+  <hr>
+  <h2>大小</h2>
+  <s-button size="mini">默认按钮</s-button>
+  <s-button type="primary" size="small" radius>主要按钮</s-button>
+  <s-button type="danger"><i class="icon-prompt"></i> 危险按钮</s-button>
+  <s-button type="success" size="big">主要按钮</s-button>
 
-		<hr>
-		<h2>Button 按钮：大小</h2>
-		<s-button size="mini">默认按钮</s-button>
-		<s-button type="primary" size="small" radius>主要按钮</s-button>
-		<s-button type="danger"><i class="icon-prompt"></i> 危险按钮</s-button>
-		<s-button type="success" size="big">主要按钮</s-button>
+  <hr>
+  <h2>圆角</h2>
+  <s-button circle>默认按钮</s-button>
+  <s-button type="primary" circle>主要按钮</s-button>
 
-		<hr>
-		<h2>Button 按钮：圆角</h2>
-		<s-button circle>默认按钮</s-button>
-		<s-button type="primary" circle>主要按钮</s-button>
+  <hr>
+  <h2>大小/圆角/阴影/水波涟漪交互（充分利用css3，减少js操作）</h2>
+  <s-button type="danger" size="small" ripple shadow><i class="icon-prompt"></i> 危险按钮</s-button>
+  <s-button type="success" size="big" radius ripple shadow>主要按钮</s-button>
+  <s-button type="warning" circle shadow ripple>
+    <i slot="icon-left" class="icon-heart"></i>
+  </s-button>
+  <s-button type="danger" circle shadow ripple>
+    <i class="icon-prompt"></i>
+  </s-button>
 
-		<hr>
-		<h2>Button 按钮：禁用</h2>
-		<s-button circle disabled>默认按钮</s-button>
-		<s-button type="primary" circle disabled>主要按钮</s-button>
-		<s-button type="danger" disabled><i class="icon-prompt"></i> 危险按钮</s-button>
-		<s-button type="success" size="big" disabled>主要按钮</s-button>
+  <hr>
+  <h2>禁用</h2>
+  <s-button circle disabled>默认按钮</s-button>
+  <s-button type="primary" circle disabled>主要按钮</s-button>
+  <s-button type="danger" disabled><i class="icon-prompt"></i> 危险按钮</s-button>
+  <s-button type="success" size="big" disabled>主要按钮</s-button>
 
-		<hr>
-		<h2>Button 按钮：线框</h2>
-		<s-button wire>默认按钮</s-button>
-		<s-button type="primary" wire radius size="mini">主要按钮</s-button>
-		<s-button type="danger" wire><i class="icon-prompt"></i> 危险按钮</s-button>
-		<s-button type="success" circle wire>成功按钮</s-button>
+  <hr>
+  <h2>线框</h2>
+  <s-button wire>默认按钮</s-button>
+  <s-button type="primary" wire radius size="mini">主要按钮</s-button>
+  <s-button type="danger" wire><i class="icon-prompt"></i> 危险按钮</s-button>
+  <s-button type="success" circle wire>成功按钮</s-button>
 
-		<hr>
-		<h2>Button 按钮：图标及投影</h2>
-		<s-button type="danger" size="big" shadow><i class="icon-prompt"></i> 危险按钮</s-button>
-		<s-button type="success" size="big" radius shadow>主要按钮</s-button>
-		<s-button type="warning" circle shadow>
-			<i slot="icon-left" class="icon-heart"></i>
-		</s-button>
-		<s-button type="danger" circle shadow>
-			<i class="icon-prompt"></i>
-		</s-button>
+  <hr>
+  <h2>图标及投影</h2>
+  <s-button type="danger" size="big" shadow><i class="icon-prompt"></i> 危险按钮</s-button>
+  <s-button type="success" size="big" radius shadow>主要按钮</s-button>
+  <s-button type="warning" circle shadow>
+    <i slot="icon-left" class="icon-heart"></i>
+  </s-button>
+  <s-button type="danger" circle shadow>
+    <i class="icon-prompt"></i>
+  </s-button>
 
-		<hr>
-		<h2>Button 按钮：水波交互</h2>
-		<s-button type="danger" size="big" ripple><i class="icon-prompt"></i> 危险按钮</s-button>
-		<s-button type="success" size="big" radius ripple>主要按钮</s-button>
-		<s-button type="warning" circle shadow ripple>
-			<i slot="icon-left" class="icon-heart"></i>
-		</s-button>
-		<s-button type="danger" circle shadow ripple>
-			<i class="icon-prompt"></i>
-		</s-button>
-		
-
-		<hr>
-		<s-button type="hot" open>热按钮</s-button>
-		<hr>
-		<script src='./bundle.js'></script>
-    <!-- built files will be auto injected -->
-  </body>
+  <hr>
+  <s-button type="hot" open>热按钮</s-button>
+  <hr>
+  <script src='./bundle.js'></script>
+  <!-- built files will be auto injected -->
+</body>
 </html>

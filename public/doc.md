@@ -42,6 +42,8 @@ https://lit-element.polymer-project.org/guide/properties
 > - https://open-wc.org/
 - 基于rollup的web Components项目。支持styl https://github.com/danielbarion/instruct-contacts
 
+https://developers.google.cn/web/fundamentals/web-components/
+
 stylus功能示例：
 http://stylus.github.io/nib/
 
@@ -52,6 +54,8 @@ http://stylus.github.io/nib/
 
 ## emoji icon
 css 图标 https://css.gg/
+
+https://www.cnblogs.com/daisygogogo/p/11044353.html
 
 https://gitmoji.carloscuesta.me/
 

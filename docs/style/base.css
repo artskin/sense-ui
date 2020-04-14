@@ -3,7 +3,7 @@
   --warning: #e6a23c;
   --primary: #409eff;
   --danger: #f56c6c;
-  --default: #ddd;
+  --default: #f7f4f9;
   --higligt: rgba(102,51,240,0.8);
 /*文字*/
   --primary-text: #303133;
@@ -38,6 +38,10 @@ hr {
 }
 s-button {
   line-height: 1;
+}
+s-progress {
+  display: flex;
+  align-items: center;
 }
 ::-webkit-scrollbar {
   width: 5px;
@@ -128,5 +132,13 @@ s-card h3 {
   font-size: 24px;
   line-height: 1.2;
   vertical-align: middle;
+}
+.sense-ui h1 {
+  font-weight: normal;
+  font-size: 28px;
+}
+.sense-ui h2 {
+  font-size: 16px;
+  opacity: 0.6;
 }
 

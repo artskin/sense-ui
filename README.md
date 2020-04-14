@@ -12,6 +12,12 @@
 SenseUI is a Web Components &amp; Custom Elements for Future Web Applications.👽
 > 面向未来应用的组件开发，基于web标准的组件，vue,react,angular 都可使用。
 
+## 轻量极速
+
+- 组件基于html5原生标签及属性，减少js模拟；
+- 充分利用css3的交互效果，较少js操作dom带来的性能损耗；
+- 动态换肤，无需编译打包。
+
 ## Browser Support
 
 The polyfills are intended to work in the latest versions of evergreen browsers. See below
@@ -43,6 +49,8 @@ npm run build //打包
 - [ ] post-css
 - [ ] 添加点击水波：
 - [ ] 开发中代码变化热更新：
+- [ ] 编辑器支持插件（类似Vetur）
+
 
 
 ## 开发常用插件
@@ -50,3 +58,5 @@ npm run build //打包
 - vscode 支持postcss的插件postcss-sugarss-language
 - language-stylus
 - [开发备忘文档](./public/doc.md)
+
+## 

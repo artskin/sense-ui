@@ -4,11 +4,11 @@ import './style/demo.styl';
 
 
 //组件引入
-
-
 import { SenseButton } from '~pkg/sense-button/button.js';
 import { SenseCard }   from '~pkg/sense-card/card.js';
+import { SenseProgress}from '~pkg/sense-progress/progress.js';
 
 //组件注册
 window.customElements.define('s-button',SenseButton);
 window.customElements.define('s-card',SenseCard);
+window.customElements.define('s-progress',SenseProgress);

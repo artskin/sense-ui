@@ -1,23 +1,5 @@
-/*stylus 变量*/
-/*@import '../../style/var.styl';*/
 
-//stylus 方法
-buttonVariant(type,border){
-  color:#fff;
-  background-color:var(type,rgb(240,240,240));
-  border-color:var(border);
-  &:hover{
-    background-color:var(type+-hover,rgb(230,230,230));
-    border-color:var(border+-hover)
-  }
-  &:active{
-    background-color:var(type+-active,rgb(220,220,220));
-    border-color:var(border+-active)
-  }
-  &:focus{
-    box-shadow:0 0 10px rgba(0,0,0,.3);
-  }
-}
+@import '../../style/mixin.styl';
 
 button{
   padding:0.8em 1.4em;
@@ -102,44 +84,64 @@ button{
 :host([ripple]) button{
   &::before{
     content:'';
-    position: absolute;
-    pointer-events: none;
     width: 200%;
     height 200%;
-    border-radius: 50%;
-    left : calc( var(--ripple-left) -50%);
-    top  : calc( var(--ripple-top) -50%);
+    border-radius: 30%;
+    pointer-events: none;
+    position: absolute;
+    left : calc(-50%);
+    top  : calc(-50%);
+    z-index:1;
   }
   &::before{
-    z-index:1;
     background-color: #fff;
     opacity :0;
-    //transition: opacity 15ms linear 0s, background-color 15ms linear 0s;
+    //transition: opacity .6s ease-out, transform .3s ease-in;
     // transition-property: all;
     // transition-timing-function: linear;
     // transition-duration: 275ms;
-    // transform:scale(0.1);
+    //transform:scale(0);
+    margin-left: var(--ripple-left);
+    margin-top : var(--ripple-top);
+    //transform: translate(var(--ripple-left),var(--ripple-top));
   }
-  &:hover{
+  // &:active{
+  //   &::before{//不借助js添加class可以这样简单实现
+  //     animation: ripple 1s ease-out;
+  //   }
+  // }
+  // &:focus{
+  //   &::before{
+  //     animation: ripple 1s ease-out;
+  //   }
+  // }
+  &:active{
     &::before{
-      //opacity :0.3;
-      transform:scale(0);
+      //opacity :.2;
     }
   }
-  &.animate{
+  &.rippleFade{
     &::before{
-      animation: ripple .5s linear;
+      opacity :.2;
+      animation: ripple .8s ease-out;
     } 
   }
 }
 @keyframes ripple {
   0%{
-    opacity :1;
+    transform: scale(0)
   }
   100%{
-    opacity :0;
-    transform: scale(2)  
+    transform: scale(2)
   }
+  // 85%{
+  //   opacity :0;
+  //   transform: scale(2)
+  // }
+  // 100%{
+  //   opacity :0;
+  //   transform: scale(0)
+  // }
 }
 :host([open]) button{
   color: red;
