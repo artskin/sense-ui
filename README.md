@@ -1,22 +1,21 @@
 # Sense-UI
 
-<img src="./public/link.svg" alt="logo" height="66" style="float:left;">
+<img src="./public/link.svg" alt="logo" height="66">
 
-<svg width="150" height="70" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 64">
-<path ref="svgPath" d="M103.8,59.8c-28,0-43-59-73-59-14,0-29,12-29,30,0,15,13,29,29,29,30,0,44-59,73-59,15,0,30,9.6,30,30C133.8,46.7,119.8,59.8,103.8,59.8Z" />
-</svg>
 
 <!-- ![logo](./public/link.svg) -->
 
-🐳
+🌱 
 SenseUI is a Web Components &amp; Custom Elements for Future Web Applications.👽
-> 面向未来应用的组件开发，基于web标准的组件，vue,react,angular 都可使用。
+> 基于web标准的组件，面向未来web应用的组件，原生开发，Vue,React,Angular 都可使用。
 
 ## 轻量极速
 
 - 组件基于html5原生标签及属性，减少js模拟；
 - 充分利用css3的交互效果，较少js操作dom带来的性能损耗；
-- 动态换肤，无需编译打包。
+- 在线动态换肤，无需打包编译；
+- 基础样式采用stylus；
+- 支持typescript开发。
 
 ## Browser Support
 
