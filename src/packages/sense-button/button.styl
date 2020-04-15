@@ -16,16 +16,7 @@ button{
   overflow: hidden;
   position: relative;
 }
-.btn-mini{
-  padding:.4em .7em;
-  font-size: 12px;
-}
-.btn-small{
-  padding:.6em 1em;
-}
-.btn-big{
-  padding:1em 2em;
-}
+
 .btn-default{
   buttonVariant(--default,--default)
   color: #999;
@@ -80,7 +71,7 @@ button{
 :host([shadow]) button{
   box-shadow:1px 3px 6px rgba(0,0,0,.3);
 }
-//TODO: 水波涟漪交互
+//FIXME: 水波涟漪交互
 :host([ripple]) button{
   &::before{
     content:'';
@@ -122,8 +113,8 @@ button{
   }
   &.rippleFade{
     &::before{
-      opacity :.2;
-      animation: ripple .8s ease-out;
+      opacity :.15;
+      animation: ripple .5s ease-out;
     } 
   }
 }
@@ -132,6 +123,19 @@ button{
     transform: scale(0)
   }
   100%{
-    transform: scale(2)
+    transform: scale(1)
+  }
+}
+
+:host{
+  button.btn-mini{
+    padding:.4em .7em;
+    font-size: 12px;
+  }
+  .btn-small{
+    padding:.6em 1em;
+  }
+  .btn-big{
+    padding:1em 2em;
   }
 }
