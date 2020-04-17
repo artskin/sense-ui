@@ -10,22 +10,18 @@
   --ggs: 1;
 }
 html {
-  --primary: #409eff;
   --primary-hover: #53a8ff;
   --primary-active: #208eff;
   --primary-opacity: rgba(64,158,255,0.1);
-  --success: #67c23a;
   --success-hover: #76ca4c;
   --success-active: #5daf34;
-  --success-opacity: rgba(64,158,255,0.1);
-  --warning: #e6a23c;
+  --success-opacity: rgba(103,194,58,0.1);
   --warning-hover: #e9ab4f;
   --warning-active: #e39622;
-  --warning-opacity: rgba(64,158,255,0.1);
-  --danger: #f56c6c;
+  --warning-opacity: rgba(230,162,60,0.1);
   --danger-hover: #f67b7b;
   --danger-active: #f34b4b;
-  --danger-opacity: rgba(64,158,255,0.1);
+  --danger-opacity: rgba(245,108,108,0.1);
 }
 hr {
   border-bottom-color: var(--default);

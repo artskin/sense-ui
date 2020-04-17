@@ -75,8 +75,12 @@
 			bottom: -10px;
 			border-bottom:1px solid #eee;
 		}
-		ul{list-style: none;padding-left: 20px;}
-		ul li a{display:block;padding: 10px;}
+		ul{list-style: none;padding-left: 0px;}
+		ul li a{display:block;text-decoration: none;color: rgba(0,0,0,.85);padding:10px 10px 13px 20px;}
+		ul li a:hover{color: blueviolet;}
+		ul li a:focus,
+		ul li a:active{color: blueviolet;background:#fff;background-color: rgba(138,43,226,.1);box-shadow: 0 0 4px rgba(200,200,240,.4);border-right: 3px solid blueviolet;}
+		ul li em{color: #999;font-style: normal;font-size: .8em;}
 		
 		iframe{
 			flex:1;
@@ -88,6 +92,7 @@
 			color: #999;
 		}
 		.repo-link a{color: currentColor;text-decoration: none;}
+		.hide{display: none;}
 	</style>
   </head>
 <body>
@@ -105,19 +110,91 @@
 	</header>
 	
 	<main>
-		<aside>
+		<aside class="hide">
 			<h3>组件</h3>
 			<nav>
 				<ul>
-					<li><a target="main" href="button.html">按钮</a></li>
-					<li><a target="main" href="card.html">卡片</a></li>
-					<li><a target="main" href="progress.html">进度条</a></li>
-					<li><a target="main" href="pagination.html">分页</a></li>
+					<li><a target="main" href="button.html">Button 按钮</a></li>
+					<li><a target="main" href="card.html">Card 卡片</a></li>
+					<li><a target="main" href="progress.html">Progress 进度条</a></li>
+					<li><a target="main" href="pagination.html">Pagination 分页</a></li>
+				</ul>
+			</nav>
+
+			<h3>Typescript</h3>
+			<nav>
+				<ul>
+					<li><a target="main" href="ts-button.html">ts-Button 按钮</a></li>
+				</ul>
+			</nav>
+
+			<h3>其他</h3>
+			<nav>
+				<ul>
+					<li><a target="main" href="doc.html">doc 文档</a></li>
+					<li><a target="main" href="cnd.html">cdn方式</a></li>
 				</ul>
 			</nav>
 		</aside>
+		<aside class="side-nemu"></aside>
+		<template id="v-menu">
+			<nav s-for="item in menuData">
+				<h3>{{item.title}}</h3>
+				<ul>
+					<li s-for="nt in item.list"><a target={{targetName}} href={{nt.url}}>{{nt.name}}</a></li>
+				</ul>
+    	</nav>
+		</template>
 		<iframe name="main" src="button.html" frameborder="0" style="overflow-y:auto"></iframe>
 	</main>
-    <!-- built files will be auto injected -->
+	<script>
+		let targetName ='main';
+		let menuData = [
+			{
+				title:'组件',
+				list:[
+					{url:'button',name:'按钮'},
+					{url:'card',name:'卡片'},
+					{url:'progress',name:'进度条'},
+					{url:'pagination',name:'分页'}
+				]
+			},
+			{
+				title:'typescript',
+				list:[
+					{url:'ts-button',name:'按钮'},
+				]
+			},
+			{
+				title:'Other',
+				list:[
+					{url:'doc',name:'文档'},
+					{url:'cdn',name:'cdn调用方式'},
+				]
+			}
+		]
+		function $_(el){
+			return document.querySelector(el);
+		}
+		function creatTagDom(){
+			const menuVdom = `
+				${menuData.map(item =>`
+				<h3>
+					${item.title}
+				</h3>
+				<ul>
+				${item.list.map(vt =>
+					`<li><a target=${targetName} href=${vt.url+'.html'}>${(vt.url).charAt(0).toUpperCase()+(vt.url).slice(1)} <em>${vt.name}</em></a></li>`
+				).join('')}
+				</ul>
+				`
+				).join('')}
+      `;
+			$_('.side-nemu').innerHTML = menuVdom;
+		};
+		creatTagDom()
+		
+	</script>
+  <!-- built files will be auto injected -->
 </body>
 </html>

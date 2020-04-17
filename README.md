@@ -9,6 +9,10 @@
 SenseUI is a Web Components &amp; Custom Elements for Future Web Applications.👽
 > 基于web标准的组件，面向未来web应用的组件，原生开发，Vue,React,Angular 都可使用。
 
+> 采用用css-variables scale, 控制主题变量
+> dom构建 采用tagged-template literals
+> js交互AnimationEvent()
+
 ## 轻量极速
 
 - 组件基于html5原生标签及属性，减少js模拟；
