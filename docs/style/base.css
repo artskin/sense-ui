@@ -23,6 +23,9 @@ html {
   --danger-active: #f34b4b;
   --danger-opacity: rgba(245,108,108,0.1);
 }
+body {
+  font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+}
 hr {
   border-bottom-color: var(--default);
   border-top: none;
@@ -184,12 +187,17 @@ header {
   align-items: center;
 /* box-shadow: 0 2px 8px #f0f1f2; */
   justify-content: space-between;
-  padding: 12px;
+  padding: 15px;
   background: #fff;
 }
 header .logo {
   display: flex;
+  align-items: center;
   padding-left: 12px;
+}
+header .logo a {
+  line-height: 0.7;
+  text-decoration: none;
 }
 header p {
   color: #ccc;
@@ -216,6 +224,7 @@ header .repo-link {
 header .repo-link a {
   color: currentColor;
   text-decoration: none;
+  line-height: 0.7;
 }
 header .repo-link input[type="color"]::-webkit-color-swatch-wrapper {
   padding: 0;
@@ -259,22 +268,6 @@ iframe {
 .switch-menu {
   display: none;
 }
-@media screen and (max-width: 720px) {
-  header p {
-    display: none;
-  }
-  .side-menu {
-    position: absolute;
-    width: 160px;
-    display: none;
-  }
-  .show {
-    display: block;
-  }
-  .switch-menu {
-    display: inline-block;
-  }
-}
 s-card h3 {
   position: relative;
   font-size: 24px;
@@ -303,9 +296,10 @@ section {
   text-align: center;
   width: 100%;
   padding: 50px;
+  box-sizing: border-box;
 }
 .slogan h2 {
-  font-size: 72px;
+  font-size: 80px;
   font-weight: normal;
   background-image: -webkit-linear-gradient(40deg, #06f, #63f, #90f);
   -webkit-background-clip: text;
@@ -389,5 +383,31 @@ aside ul li em {
 footer {
   text-align: center;
   padding: 16px;
+  opacity: 0.4;
+}
+@media screen and (max-width: 720px) {
+  header p {
+    display: none;
+  }
+  .side-menu {
+    position: absolute;
+    width: 160px;
+    display: none;
+  }
+  .show {
+    display: block;
+  }
+  .switch-menu {
+    display: inline-block;
+  }
+  .items {
+    flex-direction: column;
+  }
+  .items dl {
+    padding: 0 36px;
+  }
+  .slogan h2 {
+    font-size: 4em;
+  }
 }
 

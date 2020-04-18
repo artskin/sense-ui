@@ -56,8 +56,10 @@ let colorPicker = $_('input');
 colorPicker.addEventListener("change", watchColorPicker, false);
 
 function watchColorPicker(event) {
-  $_("html").style.setProperty('--primary',event.target.value);
+  document.styleSheets[0].addRule(':root','--primary:'+event.target.value);
+  //$_("html").style.setProperty('--primary',event.target.value);
   if(window.frames['main']){
-    window.frames['main'].document.querySelector('html').style.setProperty('--primary',event.target.value)
+    //window.frames['main'].document.querySelector('html').style.setProperty('--primary',event.target.value);
+    window.frames['main'].document.styleSheets[1].addRule(':root','--primary:'+event.target.value);
   }
 }
