@@ -45,14 +45,10 @@ export class MyElement extends LitElement {
     if(el){
       el.addEventListener('mousedown',(ev)=>{
         let elinner = ev.target.$btn;
-        //console.log(elinner)
         let elInfo = {
           width : elinner.offsetWidth,
           height: elinner.offsetHeight,
         }
-        //console.log(ev)
-        //console.log(elInfo)
-        //console.log(ev.offsetX,elInfo.width/2,elInfo.width)
         this.translateX = `${((ev.offsetX-elInfo.width/2)/elInfo.width*25).toFixed(2)}%`;
         this.translateY = `${((ev.offsetY-elInfo.height/2)/elInfo.height*25).toFixed(2)}%`;
 
@@ -94,8 +90,6 @@ export class MyElement extends LitElement {
       //   this.translateY = `${(perY*50).toFixed(2)}%`;
       // })
 
-
-      
           
       // el.addEventListener("webkitAnimationStart", function() {
       //   console.log("动画开始",...el.classList);
@@ -104,9 +98,6 @@ export class MyElement extends LitElement {
       // })
       //el.classList.add('rippleFade');
     }
-
-    
-    
   }
   removeClass(e){
     let el = e.target;

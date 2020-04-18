@@ -5,12 +5,12 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 let outputDir = 'docs';
 module.exports = {
     entry: {
-        index:'./src/ts-button.ts',
+        index:'./src/index.js',
         //base:'./src/style/root.styl'
     },
     output: {
         path: path.join(__dirname, outputDir), //输出目录的配置，模板、样式、脚本、图片等资源的路径配置都相对于它
-        filename: "bundle.ts.js"
+        filename: "bundle.js"
     },
     resolve: {
         // 设置别名

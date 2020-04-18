@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="icon" href="/favicon.png">
+    <title>Web Components:webpack-starter</title>
+    <link rel="stylesheet" href="./style/base.css">
+  </head>
+  <body class="sense-ui">
+    <h1>Web Components:ts</h1>
+    <simple-greeting name="Everyone"></simple-greeting>
+    <my-element mood="awesome"></my-element>
+    <hr>
+    <h2>Button 按钮：</h2>
+		<s-button>默认按钮</s-button>
+		<s-button type="primary" size="mini">主要按钮</s-button>
+		<s-button type="success" shadow ripple radius size="big">警告按钮：带图标
+			<i slot="icon-left" class="icon-heart"></i>
+		</s-button>
+		<s-button type="dangers" disabled><i class="icon-prompt"></i> 危险按钮</s-button>
+    <s-button type="success" wire>成功按钮</s-button>
+    <s-button type="warning" wire>成功按钮</s-button>
+    <s-button type="primary" wire>成功按钮</s-button>
+		<script src='./bundle.ts.js'></script>
+    <!-- built files will be auto injected -->
+  </body>
+</html>

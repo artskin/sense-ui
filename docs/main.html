@@ -8,14 +8,8 @@
     <link rel="icon" href="/favicon.png">
     <title>Sense UI - Web Components 面向未来的组件库</title>
     <link rel="stylesheet" href="./style/base.css">
-    <style>
-      
-    </style>
   </head>
-<body class="index">
-  <div class="box-bg">
-    <div class="box-border"></div>
-  </div>
+<body>
 	<header>
     <div class="logo">
       <button class="switch-menu" onclick="menuToggle()">三</button>
@@ -54,51 +48,46 @@
       <input type="color" value="#409eff" id="onchange">
 		</div>
 	</header>
+	
+	<main>
+		<aside class="hide">
+			<h3>组件</h3>
+			<nav>
+				<ul>
+					<li><a target="main" href="button.html">Button 按钮</a></li>
+					<li><a target="main" href="card.html">Card 卡片</a></li>
+					<li><a target="main" href="progress.html">Progress 进度条</a></li>
+					<li><a target="main" href="pagination.html">Pagination 分页</a></li>
+				</ul>
+			</nav>
 
-  <section class="slogan">
-    <h2>Sense UI </h2>
-    <p>面向未来Web应用的组件库</p>
-    <p>Web Components & Custom Elements for Future Web Applications</p>
-    <br><br>
-    <a href="main.html">
-      <s-button type="primary" ripple size="big" shadow radius>
-        Start →
-      </s-button>
-    </a>
-  </section>
-  <section>
-    <hr>
-    <h3 class="hide">特性：</h3>
-    <div class="items">
-      <dl>
-        <dt>Web 标准</dt>
-        <dd>基于W3C 标准规范：Custom Elements，Shadow DOM，HTML templates，无需为了使用组件而引用额外的js框架</dd>
-      </dl>
-      <dl>
-        <dt>样式管理</dt>
-        <dd>Shadow DOM样式与外界天然隔离，避免了样式相互覆盖</dd>
-        <dd>css var 应用换肤so Easy</dd>
-      </dl>
-      <dl>
-        <dt>性能</dt>
-        <dd>基于浏览器的原生支持，充分利用css3的特性，减少交互dom操作带来的性能损耗</dd>
-      </dl>
-    </div>
-    
-  </section>
-  <section>
-    <h3 class="hide">Browser Support：</h3>
-    <hr>
-  </section>
-  <footer>
-    MIT Licensed | Copyright © 2020 sense-ui
-  </footer>
-	<script>
-    
-		
-  </script>
-  <script src='./js/index.js'></script>
-  <script src='./bundle.js'></script>
+			<h3>Typescript</h3>
+			<nav>
+				<ul>
+					<li><a target="main" href="ts-button.html">ts-Button 按钮</a></li>
+				</ul>
+			</nav>
+
+			<h3>其他</h3>
+			<nav>
+				<ul>
+					<li><a target="main" href="doc.html">doc 文档</a></li>
+					<li><a target="main" href="cnd.html">cdn方式</a></li>
+				</ul>
+			</nav>
+		</aside>
+		<aside class="side-menu"></aside>
+		<template id="v-menu">
+			<nav s-for="item in menuData">
+				<h3>{{item.title}}</h3>
+				<ul>
+					<li s-for="nt in item.list"><a target={{targetName}} href={{nt.url}}>{{nt.name}}</a></li>
+				</ul>
+    	</nav>
+		</template>
+		<iframe name="main" src="button.html" frameborder="0" style="overflow-y:auto"></iframe>
+	</main>
+	<script src='./js/index.js'></script>
   <!-- built files will be auto injected -->
 </body>
 </html>

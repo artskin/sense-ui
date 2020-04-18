@@ -3,214 +3,102 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width,initial-scale=1.0">
-	<meta name="keywords" content="Web Components,Custom Elements,Shadow DOM,template"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="keywords" content="Web Components,Custom Elements,Shadow DOM,template"/>
     <link rel="icon" href="/favicon.png">
     <title>Sense UI - Web Components 面向未来的组件库</title>
-	<link rel="stylesheet" href="./style/base.css">
-	<style>
-		html,body{
-			width: 100%;
-			height: 100%;
-			padding: 0;
-			margin: 0;
-		}
-		header{
-			display: flex;
-			align-items: center; 
-			/* box-shadow: 0 2px 8px #f0f1f2; */
-			padding: 10px;
-			padding-left: 30px;
-		}
-		header p{
-			color: #ccc;
-			flex: 1;
-			font-size: 14px;
-			text-align: right;
-		}
-		h1{
-			margin: 0;
-			color: #6633FF;
-			font-size: 1.4em;
-			padding-left: 8px;
-			font-weight: normal;
-		}
-		main{
-			display: flex;
-			height: calc(100% - 68px);
-			position: relative;
-			
-		}
-		main::before{
-			content: '';
-			width: 100%;
-			height: 10px;
-			position: absolute;
-			left: 0;
-			top: -10px;
-			z-index: 1;
-			box-shadow: 0 4px 4px rgba(200,200,240,.3);
-		}
-		aside{
-			width: 260px;
-			height: 100%;
-			position: relative;
-			background: #f8fbfd;
-			padding-top: 10px;
-		}
-		aside::after{
-			content: '';
-			width: 0;
-			height: 100%;
-			position: absolute;
-			border-right: 1px solid #f7f4f7;
-			right: 0;
-			top: 0;
-		}
-		aside h3{padding-left: 30px;position: relative;font-size: 1em;}
-		aside h3::before{
-			content: '';
-			width: 80%;
-			position: absolute;
-			left: 10%;
-			bottom: -10px;
-			border-bottom:1px solid #eee;
-		}
-		ul{list-style: none;padding-left: 0px;}
-		ul li a{display:block;text-decoration: none;color: rgba(0,0,0,.85);padding:10px 10px 13px 30px;font-size: 14px;}
-		ul li a:hover{color: blueviolet;}
-		ul li a:focus,
-		ul li a:active{color: blueviolet;background:#fff;box-shadow: 0 0 4px rgba(200,200,240,.4);border-right: 3px solid blueviolet;}
-		ul li em{color: #999;font-style: normal;font-size: .8em;}
-		
-		iframe{
-			flex:1;
-			box-sizing: border-box;
-			height: 100%;
-		}
-		.repo-link{
-			padding: 0 20px;
-			color: #999;
-		}
-		.repo-link a{color: currentColor;text-decoration: none;}
-		.hide{display: none;}
-		.switch-menu{
-			display: none;
-		}
-		@media screen and (max-width: 720px) {
-			header p{display: none;}
-			.side-menu{position: absolute;width: 160px;display: none;}
-			.show{display: block;}
-			.switch-menu{display: inline-block;}
-		}
-	</style>
+    <link rel="stylesheet" href="./style/base.css">
+    <style>
+      
+    </style>
   </head>
-<body>
+<body class="index">
+  <div class="box-bg">
+    <div class="box-border"></div>
+  </div>
 	<header>
-		<button class="switch-menu" onclick="menuToggle()">三</button>
-		<img src="./link.svg" height="30" alt="Sense-UI">
-		<h1>Sense UI</h1>
-		<p> —— Web Components & Custom Elements for Future Web Applications </p>
+    <div class="logo">
+      <button class="switch-menu" onclick="menuToggle()">三</button>
+      <a href="/">
+        <svg title="sense-logo" width="30" height="30" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" class="logo-svg">
+          <style type="text/css">
+            .st0{fill:#1296DB;stroke:url(#Shape_2_);stroke-width:10;stroke-miterlimit:8.127;}
+            .st1{fill:#1296DB;stroke:url(#Shape_3_);stroke-width:10;stroke-miterlimit:8.127;}
+            .st2{fill:none;stroke:#6633FF;stroke-width:10;stroke-miterlimit:8.127;}
+            .st3{fill:none;stroke:#0066FF;stroke-width:10;stroke-miterlimit:8.127;}
+            .st4{fill:none;stroke:#9900FF;stroke-width:10;stroke-miterlimit:8.127;}
+          </style>
+          <linearGradient id="Shape_2_" gradientUnits="userSpaceOnUse" x1="66.333" y1="26.8879" x2="57.9326" y2="36.899">
+            <stop  offset="0.1872" style="stop-color:#9900FF"/>
+            <stop  offset="0.7397" style="stop-color:#6633FF"/>
+          </linearGradient>
+          <path id="Shape" sketch:type="MSShapeGroup" class="st0" d="M57.7,35.3l8.9-6.8"/>
+          <linearGradient id="Shape_3_" gradientUnits="userSpaceOnUse" x1="52.4849" y1="56.9354" x2="66.9119" y2="81.9237">
+            <stop  offset="0.3653" style="stop-color:#6633FF"/>
+            <stop  offset="1" style="stop-color:#0066FF"/>
+          </linearGradient>
+          <path id="Shape_1_" sketch:type="MSShapeGroup" class="st1" d="M52.1,57.4l15.3,24"/>
+          <circle id="Oval" sketch:type="MSShapeGroup" class="st2" cx="43.9" cy="45.6" r="14.8"></circle>
+          <circle id="Oval_1_" sketch:type="MSShapeGroup" class="st3" cx="77.8" cy="96.9" r="19.1"></circle>
+          <circle id="Oval_2_" sketch:type="MSShapeGroup" class="st4" cx="78.3" cy="18.2" r="12.2"></circle>
+        </svg>
+      </a>
+      <h1>Sense UI</h1>
+    </div>
 		<div class="repo-link">
 			<a href="https://github.com/artskin/sense-ui" target="_blank" rel="noopener noreferrer">
 				<svg viewBox="0 0 16 16" class="octicon octicon-mark-github" style="width: 16px; height: 16px;" aria-hidden="true">
 					<path fill="currentColor" fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
 				</svg>
-			</a>
+      </a>
+      <input type="color" value="#409eff" id="onchange">
 		</div>
 	</header>
-	
-	<main>
-		<aside class="hide">
-			<h3>组件</h3>
-			<nav>
-				<ul>
-					<li><a target="main" href="button.html">Button 按钮</a></li>
-					<li><a target="main" href="card.html">Card 卡片</a></li>
-					<li><a target="main" href="progress.html">Progress 进度条</a></li>
-					<li><a target="main" href="pagination.html">Pagination 分页</a></li>
-				</ul>
-			</nav>
 
-			<h3>Typescript</h3>
-			<nav>
-				<ul>
-					<li><a target="main" href="ts-button.html">ts-Button 按钮</a></li>
-				</ul>
-			</nav>
-
-			<h3>其他</h3>
-			<nav>
-				<ul>
-					<li><a target="main" href="doc.html">doc 文档</a></li>
-					<li><a target="main" href="cnd.html">cdn方式</a></li>
-				</ul>
-			</nav>
-		</aside>
-		<aside class="side-menu"></aside>
-		<template id="v-menu">
-			<nav s-for="item in menuData">
-				<h3>{{item.title}}</h3>
-				<ul>
-					<li s-for="nt in item.list"><a target={{targetName}} href={{nt.url}}>{{nt.name}}</a></li>
-				</ul>
-    	</nav>
-		</template>
-		<iframe name="main" src="button.html" frameborder="0" style="overflow-y:auto"></iframe>
-	</main>
+  <section class="slogan">
+    <h2>Sense UI </h2>
+    <p>面向未来Web应用的组件库</p>
+    <p>Web Components & Custom Elements for Future Web Applications</p>
+    <br><br>
+    <a href="main.html">
+      <s-button type="primary" ripple size="big" shadow radius>
+        Start →
+      </s-button>
+    </a>
+  </section>
+  <section>
+    <hr>
+    <h3 class="hide">特性：</h3>
+    <div class="items">
+      <dl>
+        <dt>Web 标准</dt>
+        <dd>基于W3C 标准规范：Custom Elements，Shadow DOM，HTML templates，无需为了使用组件而引用额外的js框架</dd>
+      </dl>
+      <dl>
+        <dt>样式管理</dt>
+        <dd>Shadow DOM样式与外界天然隔离，避免了样式相互覆盖</dd>
+        <dd>css var 应用换肤so Easy</dd>
+      </dl>
+      <dl>
+        <dt>性能</dt>
+        <dd>基于浏览器的原生支持，充分利用css3的特性，减少交互dom操作带来的性能损耗</dd>
+      </dl>
+    </div>
+    
+  </section>
+  <section>
+    <h3 class="hide">Browser Support：</h3>
+    <hr>
+  </section>
+  <footer>
+    MIT Licensed | Copyright © 2020 sense-ui
+  </footer>
 	<script>
-		let targetName ='main';
-		let menuData = [
-			{
-				title:'组件',
-				list:[
-					{url:'button',name:'按钮'},
-					{url:'card',name:'卡片'},
-					{url:'progress',name:'进度条'},
-					{url:'pagination',name:'分页'}
-				]
-			},
-			{
-				title:'typescript',
-				list:[
-					{url:'ts-button',name:'按钮'},
-				]
-			},
-			{
-				title:'Other',
-				list:[
-					{url:'doc',name:'文档'},
-					{url:'cdn',name:'cdn调用方式'},
-				]
-			}
-		]
-		function $_(el){
-			return document.querySelector(el);
-		}
-		function creatTagDom(){
-			const menuVdom = `
-				${menuData.map(item =>`
-				<h3>
-					${item.title}
-				</h3>
-				<ul>
-				${item.list.map(vt =>
-					`<li><a target=${targetName} href=${vt.url+'.html'}>${(vt.url).charAt(0).toUpperCase()+(vt.url).slice(1)} <em>${vt.name}</em></a></li>`
-				).join('')}
-				</ul>
-				`
-				).join('')}
-      `;
-			$_('.side-menu').innerHTML = menuVdom;
-		};
-		creatTagDom();
-
-		function menuToggle(){
-			console.log($_('.side-menu'))
-			$_('.side-menu').classList.toggle('show');
-		}
+    
 		
-	</script>
+  </script>
+  <script src='./js/index.js'></script>
+  <script src='./bundle.js'></script>
   <!-- built files will be auto injected -->
 </body>
 </html>
