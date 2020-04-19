@@ -14,16 +14,26 @@
     <my-element mood="awesome"></my-element>
     <hr>
     <h2>Button 按钮：</h2>
-		<s-button>默认按钮</s-button>
-		<s-button type="primary" size="mini">主要按钮</s-button>
-		<s-button type="success" shadow ripple radius size="big">警告按钮：带图标
-			<i slot="icon-left" class="icon-heart"></i>
-		</s-button>
-		<s-button type="dangers" disabled><i class="icon-prompt"></i> 危险按钮</s-button>
-    <s-button type="success" wire>成功按钮</s-button>
-    <s-button type="warning" wire>成功按钮</s-button>
-    <s-button type="primary" wire>成功按钮</s-button>
-		<script src='./bundle.ts.js'></script>
+		<ts-button>默认按钮</ts-button>
+		<ts-button type="primary" size="mini">主要按钮</ts-button>
+		<ts-button type="success" shadow ripple radius size="big">警告按钮：带图标<i slot="icon-left" class="icon-heart"></i></ts-button>
+		<ts-button type="dangers" disabled><i class="icon-prompt"></i> 危险按钮</ts-button>
+    <ts-button type="success" wire>成功按钮</ts-button>
+    <ts-button type="warning" wire>成功按钮</ts-button>
+    <ts-button type="primary" wire>成功按钮</ts-button>
+
+    <hr>
+    <h2>js.native.Button 按钮：</h2>
+		<s-native-button>默认按钮</s-native-button>
+		<s-native-button type="primary" size="mini">主要按钮</s-native-button>
+		<s-native-button type="success" shadow ripple radius size="big">警告按钮：带图标<i slot="icon-left" class="icon-heart"></i></s-native-button>
+		<s-native-button type="dangers" disabled><i class="icon-prompt"></i> 危险按钮</s-native-button>
+    <s-native-button type="success" wire>成功按钮</s-native-button>
+    <s-native-button type="warning" wire>成功按钮</s-native-button>
+    <s-native-button type="primary" wire>成功按钮</s-native-button>
+
+
+		<script src='./bundle.js'></script>
     <!-- built files will be auto injected -->
   </body>
 </html>

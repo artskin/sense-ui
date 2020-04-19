@@ -71,3 +71,4 @@ export class SenseProgress extends LitElement {
   }
 }
 
+window.customElements.define('s-progress',SenseProgress);
