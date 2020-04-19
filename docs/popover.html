@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="icon" href="/favicon.png">
+    <title>Web Components:webpack-starter</title>
+    <link rel="stylesheet" href="./style/base.css">
+  </head>
+  <body class="sense-ui">
+    <h1>Web Components:Popover</h1>
+    <hr>
+    <h2>Button 按钮：</h2>
+    <ts-button type="primary" onClick="show()">主要按钮</ts-button>
+    <s-popover id="popover">
+      <ul>
+        <li>skin-ant</li>
+        <li>skin-vant</li>
+        <li>skin-cube</li>
+      </ul>
+    </s-popover>
+		
+
+    <script src='./bundle.js'></script>
+    <script>
+      function show(){
+        let pop = document.querySelector('#popover');
+        //pop.attributes('open',true)
+        pop.setAttribute('open',true)
+        //pop.classList.add('open')
+        console.log('换肤',pop)
+      }
+    </script>
+    <!-- built files will be auto injected -->
+  </body>
+</html>
