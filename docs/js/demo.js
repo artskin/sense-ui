@@ -80,3 +80,6 @@ function showThemes(){
     $_('#theme-layer').classList.remove('show');
   })
 }
+
+$_('.bg-cover').style.height = document.body.scrollHeight+'px';
+console.log(document.body.scrollHeight,$_('.bg-cover').style)
