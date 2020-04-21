@@ -46,4 +46,6 @@ export class SensePopover extends LitElement {
   }
 }
 
-window.customElements.define('s-popover',SensePopover);
+if(!customElements.get('s-popover')){
+  customElements.define('s-popover',SensePopover);
+}

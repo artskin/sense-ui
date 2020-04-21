@@ -52,4 +52,6 @@ export class SenseCard extends LitElement {
   }
 }
 
-window.customElements.define('s-card',SenseCard);
+if(!customElements.get('s-card')){
+  customElements.define('s-card',SenseCard);
+}

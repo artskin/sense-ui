@@ -105,4 +105,6 @@ export class SenseButton extends LitElement {
   }
 }
 
-window.customElements.define('s-button',SenseButton);
+if(!customElements.get('s-button')){
+  customElements.define('s-button',SenseButton);
+}

@@ -46,7 +46,6 @@ if($_('.side-menu')){
   creatTagDom();
 }
 
-
 function menuToggle(){
   console.log($_('.side-menu'))
   $_('.side-menu').classList.toggle('show');
@@ -82,4 +81,3 @@ function showThemes(){
 }
 
 $_('.bg-cover').style.height = document.body.scrollHeight+'px';
-console.log(document.body.scrollHeight,$_('.bg-cover').style)
