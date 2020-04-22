@@ -10,6 +10,7 @@ import '~pkg/sense-progress/progress.js';
 import '~pkg/sense-popover/popover.js';
 
 //typescript:
+import '~pkg/sense-input/input.ts';
 import '~pkg/sense-button/button.ts.ts';
 
 //js原始方式

@@ -1,26 +1,28 @@
 
-
 import {LitElement, html, css, customElement, property,query,unsafeCSS} from 'lit-element';
 
-// import './style/base.styl';
-// import './style/demo.styl';
-//import './packages/sense-button/button.styl';
 const componentsBase = require('../components-base.styl');
-const btnStyle = require('./button.styl');
+const btnStyle = require('./input.styl');
 
-@customElement('ts-button')
-export class TsButton extends LitElement {
+@customElement('s-input')
+export class SenseInput extends LitElement {
   static styles = css`${unsafeCSS(componentsBase)}`;
   // This decorator creates a property accessor that triggers rendering and
   // an observed attribute.
   @property({ type: String, reflect: true })
-  public type:'default'|'primary'|'warning'|'danger'|'success' = 'default';
+  public type:'text'|'number'|'password'|'search'|'datetime' = 'text';
 
   @property({type:String})
   public size:'medium'|'big'|'small'|'mini' = 'medium'
 
-  @property({type:Boolean,reflect:true})
-  public wire = ''
+  @property({type:String,reflect:true})
+  public placeholder = ''
+
+  @property({type:String,reflect:true})
+  public value = ''
+
+  @property({type:String,reflect:true})
+  public label = ''
 
   @property({type:Boolean,reflect:true})
   public ripple = ''
@@ -58,15 +60,6 @@ export class TsButton extends LitElement {
           elinner.classList.remove('rippleFade');
         })
       })
-      // el.addEventListener('mouseup',(ev)=>{
-      //   let elinner = ev.target.$btn;
-      //   setTimeout(function(){
-      //     elinner.classList.remove('rippleFade');
-      //   },300)
-      // })
-      // el.addEventListener("webkitAnimationEnd", function() {
-      //   console.log('动画结束')
-      // })
     }
 
   }
@@ -76,27 +69,8 @@ export class TsButton extends LitElement {
   _event(e:MouseEvent){
     let el = e.target;
     //let eStyle = window.getComputedStyle(e.target,':before');
-
-    
     if(el){
-      // el.addEventListener('mousedown',()=>{
-      //   let elWidth  = el.offsetWidth,
-      //     elHeight = el.offsetHeight,
-      //     elCenter={ x:elWidth/2, y:elHeight/2 },
-      //     perX = (e.offsetX-elCenter.x)/elWidth,
-      //     perY = (e.offsetY-elCenter.y)/elHeight;
 
-      //   this.translateX = `${(perX*50).toFixed(2)}%`;
-      //   this.translateY = `${(perY*50).toFixed(2)}%`;
-      // })
-
-          
-      // el.addEventListener("webkitAnimationStart", function() {
-      //   console.log("动画开始",...el.classList);
-      //   el.classList.remove('animate');
-      //   console.log('删除后',...el.classList)
-      // })
-      //el.classList.add('rippleFade');
     }
   }
   removeClass(e){
@@ -110,11 +84,12 @@ export class TsButton extends LitElement {
   render() {
     return html`
     <style>${unsafeCSS(btnStyle)}</style>
-    <button id="btn" class="btn-${this.type} btn-${this.size}" style="--ripple-left:${this.translateX};--ripple-top:${this.translateY}">
+    <div class="input btn-${this.size}">
       <slot name="icon-left"></slot>
-      <slot>default</slot>
-      <slot name="text"></slot>
-    </button>
+      <input type=${this.type} value=${this.value} placeholder=${this.placeholder} />
+      <slot name="icon-right"></slot>
+      <label>${this.label}</label>
+    </div>
     `;
   }
 }
