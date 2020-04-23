@@ -16,7 +16,7 @@ SenseUI is a Web Components &amp; Custom Elements for Future Web Applications.�
 ## 轻量极速
 
 - 组件基于html5原生标签及属性，减少js模拟；
-- 充分利用css3伪类（::before,::after,:root,:host,:not,:target,:valid,:invalid,:placeholder-shown,）及动画的交互，较少js操作dom带来的性能损耗；
+- 充分利用css3伪类（::before,::after,:root,:host,:not,:target,:valid,:invalid,:placeholder-shown,:required）及动画的交互，较少js操作dom带来的性能损耗；
 - 在线动态换肤，无需打包编译；
 - 基础样式采用stylus；
 - 支持typescript开发。

@@ -2,49 +2,29 @@
 import {LitElement, html, css, customElement, property,query,unsafeCSS} from 'lit-element';
 
 const componentsBase = require('../components-base.styl');
-const btnStyle = require('./input.styl');
+const btnStyle = require('./switch.styl');
 
-@customElement('s-input')
-export class SenseInput extends LitElement {
+@customElement('s-switch')
+export class SenseSwitch extends LitElement {
   static styles = css`${unsafeCSS(componentsBase)}`;
   // This decorator creates a property accessor that triggers rendering and
   // an observed attribute.
+  @property({ type: Boolean, reflect: true })
+  public disabled = null;
+
+  @property({ type: Boolean, reflect: true })
+  public checked = null;
+
   @property({ type: String, reflect: true })
-  public type:'text'|'number'|'password'|'search'|'datetime' = 'text';
+  public name = null;
 
-  @property({type:String})
-  public size:'medium'|'big'|'small'|'mini' = 'medium'
-
-  @property({type:String,reflect:true})
-  public placeholder = ''
-
-  @property({type:String,reflect:true})
-  public value = ''
-
-  @property({type:String,reflect:true})
-  public label = ''
-
-  @property({type:String,reflect:true})
-  public required = ''
-
-  @property({type:Boolean,reflect:true})
-  public ripple = ''
-
-  @property({type:String})
-  public translateX  = '0'
-
-  @property({type:String})
-  public translateY  = '0'
 
   @query("#btn") 
   public $btn!: HTMLElement;
 
   connectedCallback(){
     super.connectedCallback();
-    if(this.ripple){
-      //console.log(this.target.$btn)
-      this.addListeners(this);
-    }
+
   }
   protected addListeners(el?){
     if(el){
@@ -54,9 +34,6 @@ export class SenseInput extends LitElement {
           width : elinner.offsetWidth,
           height: elinner.offsetHeight,
         }
-        this.translateX = `${((ev.offsetX-elInfo.width/2)/elInfo.width*25).toFixed(2)}%`;
-        this.translateY = `${((ev.offsetY-elInfo.height/2)/elInfo.height*25).toFixed(2)}%`;
-
         elinner.classList.add('rippleFade');
         elinner.addEventListener("animationend", function() {
           console.log('动画结束')
@@ -89,12 +66,7 @@ export class SenseInput extends LitElement {
   render() {
     return html`
     <style>${unsafeCSS(btnStyle)}</style>
-    <div class="input btn-${this.size}">
-      <slot name="icon-left"></slot>
-      <input type=${this.type} value=${this.value} placeholder=${this.placeholder} required=${this.required} />
-      <slot name="icon-right"></slot>
-      <label>${this.label}</label>
-    </div>
+    <input type="checkbox" id="switch"><label for="switch"></label>
     `;
   }
 }

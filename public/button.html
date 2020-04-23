@@ -71,7 +71,55 @@
     <i class="icon-prompt"></i>
   </s-button>
 
+  
+  <div class="options">
+    <h6>控制台</h6>
+    <ul class="panel">
+      <li>
+        <label for="size">大小</label>
+        <select name="size">
+          <option label="超大" value="large"></option>
+          <option label="大" value="big"></option>
+          <option label="普通" value="medium"></option>
+          <option label="小" value="small"></option>
+          <option label="mini" value="mini"></option>
+        </select>
+      </li>
+      <li>
+        <label for="ripple">水波</label>
+        <label><input name="ripple" value="true" type="radio" />开</label>
+        <label><input name="ripple" value="false" type="radio" />关</label>
+      </li>
+      <li>
+        <label for="radius">圆角</label>
+        <label><input name="ripple" value="true" type="radio" />开</label>
+        <label><input name="ripple" value="false" type="radio" />关</label>
+      </li>
+    </ul>
+  </div>
   <script src='./bundle.js'></script>
+  <script>
+    //设置策略树(状态机)
+    let status = {
+      'primary':()=>{
+        console.log('主要按钮')
+      },
+      'danger':()=>{
+        console.log('危险 do something')
+      },
+      'success':()=>{
+        console.log('成功 do something')
+      },
+      'warning':()=>{
+        console.log('警告 do something')
+      }
+    }
+
+    function handleType(type){
+      status[type]()
+    }
+    handleType('warning')
+  </script>
   <!-- built files will be auto injected -->
 </body>
 </html>

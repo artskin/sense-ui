@@ -79,6 +79,8 @@ https://developers.google.cn/web/fundamentals/web-components/
 stylus功能示例：
 http://stylus.github.io/nib/
 
+https://www.html.cn/book/css/selectors/element/invalid.htm
+
 ## 插件
 
 - vscode 支持postcss的插件postcss-sugarss-language
@@ -97,3 +99,22 @@ vscode 在线编辑分享代码 https://stackblitz.com/
 
 ## leancloud
 领先的Serverless 云服务 https://leancloud.cn/docs/sdk_setup-js.html
+
+## admin tmpl
+
+http://skote-v-light.react.themesbrand.com/login
+
+http://flatfull.com/themes/scale/portlet.html
+
+https://coderthemes.com/greeva/landing/index.html
+https://coderthemes.com/greeva/layouts/vertical-dark/index.html
+
+https://pixinvent.com/demo/apex-react-redux-bootstrap-admin-dashboard-template/demo-1/
+
+https://www.bootstrapdash.com/demo/basecampui/template/index.html
+
+http://themedesigner.in/demo/admin-press/landingpage/index.html
+
+http://aba.zarko-m.com/preview/index.html
+
+https://www.bootstrapdash.com/demo/bogy/template/

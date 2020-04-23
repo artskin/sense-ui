@@ -103,3 +103,50 @@ s-progress{display: flex;
   background-color: transparent;
   /* or add it to the track */
 }
+
+.bg1{
+  background: linear-gradient(15deg, #02a8b5 0, #31ce77 100%);
+}
+.bg2{
+  background-image: -webkit-linear-gradient(45deg,#9b3cb7,#ff396f);
+  background-image: linear-gradient(45deg,#9b3cb7,#ff396f);
+  background-repeat: repeat-x;
+}
+.bg3{
+  background-image: -webkit-linear-gradient(45deg,#ee0979,#ff6a00);
+  background-image: linear-gradient(45deg,#ee0979,#ff6a00);
+  background-repeat: repeat-x;
+}
+.bg4{
+  background-image: -webkit-linear-gradient(45deg,#843cf7,#38b8f2);
+  background-image: linear-gradient(45deg,#843cf7,#38b8f2);
+  background-repeat: repeat-x;
+}
+.heartbit{
+  border: 5px solid #ef5350;
+  -webkit-animation: heartbit 1s ease-out;
+  animation-iteration-count: infinite;
+  border-radius: 70px;
+}
+@keyframes heartbit {
+  0% {
+    -webkit-transform: scale(0);
+    opacity: 0.0;
+  }
+  25% {
+    -webkit-transform: scale(0.1);
+    opacity: 0.1;
+  }
+  50% {
+    -webkit-transform: scale(0.5);
+    opacity: 0.3;
+  }
+  75% {
+    -webkit-transform: scale(0.8);
+    opacity: 0.5;
+  }
+  100% {
+    -webkit-transform: scale(1);
+    opacity: 0.0;
+  } 
+}
