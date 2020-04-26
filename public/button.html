@@ -73,29 +73,35 @@
 
   
   <div class="options">
-    <h6>控制台</h6>
-    <ul class="panel">
-      <li>
-        <label for="size">大小</label>
-        <select name="size">
-          <option label="超大" value="large"></option>
-          <option label="大" value="big"></option>
-          <option label="普通" value="medium"></option>
-          <option label="小" value="small"></option>
-          <option label="mini" value="mini"></option>
-        </select>
-      </li>
-      <li>
-        <label for="ripple">水波</label>
-        <label><input name="ripple" value="true" type="radio" />开</label>
-        <label><input name="ripple" value="false" type="radio" />关</label>
-      </li>
-      <li>
-        <label for="radius">圆角</label>
-        <label><input name="ripple" value="true" type="radio" />开</label>
-        <label><input name="ripple" value="false" type="radio" />关</label>
-      </li>
-    </ul>
+    <div class="option-content">
+      <h6>控制台</h6>
+      <ul class="panel">
+        <li>
+          <label for="size">大小</label>
+          <select name="size">
+            <option label="超大" value="large"></option>
+            <option label="大" value="big"></option>
+            <option label="普通" value="medium"></option>
+            <option label="小" value="small"></option>
+            <option label="mini" value="mini"></option>
+          </select>
+        </li>
+        <li>
+          <label for="ripple">水波</label>
+          <label><input name="ripple" value="true" type="radio" />开</label>
+          <label><input name="ripple" value="false" type="radio" />关</label>
+        </li>
+        <li>
+          <label for="radius">圆角</label>
+          <label><input name="ripple" value="true" type="radio" />开</label>
+          <label><input name="ripple" value="false" type="radio" />关</label>
+        </li>
+        <li>
+          <input type="range" min="3" max="30" step="5" value="0">
+          <input type="checkbox" value="0" checked>
+        </li>
+      </ul>
+    </div>
   </div>
   <script src='./bundle.js'></script>
   <script>

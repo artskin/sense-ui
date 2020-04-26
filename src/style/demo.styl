@@ -345,15 +345,42 @@ footer{
     font-size: 8px;
   }
 }
-
+body{
+  // background: url('/images/user.jpg');
+  // background-position: center top;
+  // background-size: cover;
+}
 .options{
   position: absolute;
   right :0;
   top :0;
   width :200px;
-  background: rgba(255,255,255,.8);
-  box-shadow: 0 0 10px rgba(0,0,0,.3);
   padding:15px;
+  box-shadow: 0 0 15px rgba(0,0,0,.3);
+  border: 1px solid rgba(0,0,0,.1);
+  overflow: hidden;
+  border-radius:0 0  0 10px;
+  &:before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    filter: blur(30px);
+    //background: rgba(255,255,255,.9);
+    background-image: url('/images/bg.jpg')
+    background-attachment: fixed;
+    background-position: center top;
+    background-size: cover;
+    z-index: 0;
+    opacity: .7;
+  }
+  .option-content{
+    position: relative;
+    z-index :1;
+  }
+  
   ul{
     list-style :none;
     main:0;
