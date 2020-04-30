@@ -118,3 +118,17 @@ http://themedesigner.in/demo/admin-press/landingpage/index.html
 http://aba.zarko-m.com/preview/index.html
 
 https://www.bootstrapdash.com/demo/bogy/template/
+
+http://raiseapp-html.themeapollo.com/
+
+https://pixinvent.com/demo/vuexy-vuejs-admin-dashboard-template/landing/#home
+
+https://pixinvent.com/demo/modern-admin-angular-admin-template/landing/#home
+
+http://thevectorlab.net/
+
+https://uxcandy.co/demo/ripple/preview/demo_1/index.html
+
+http://flatfull.com/themes/angulr/html/
+
+https://uxcandy.co/demo/label_pro/preview/demo_2/pages/ui-components/buttons.html
