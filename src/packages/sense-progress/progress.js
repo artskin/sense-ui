@@ -59,15 +59,14 @@ export class SenseProgress extends LitElement {
               <stop offset="80%" stop-color="#4C8EC9"/>
             </linearGradient>
           </defs>
-          <circle @click=${this._event} class="progress-bg" cx="50%" cy="50%" r="47%" />
-          <circle class="current-value" stroke-linecap="round" cx="50%" cy="50%" r="47%"
-          stroke-dasharray=${this.value*3 + '% 249%'} />
+          <circle @click=${this._event} class="progress-bg" cx="50%" cy="50%" r="46%" />
+          <circle class="current-value" stroke-linecap="butt" cx="50%" cy="50%" r="46%"
+          stroke-dasharray=${this.value*2.9 + '% 300%'} />
         </svg>
         <span class="text-value">${(this.value/this.max)*100}%</span>
       </div>
       `;
     }
-    
   }
 }
 
