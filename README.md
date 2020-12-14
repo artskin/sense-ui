@@ -1,9 +1,7 @@
 # Sense-UI
-
-<img src="./public/link.svg" alt="logo" height="66">
-
-
 <!-- ![logo](./public/link.svg) -->
+<!-- <img src="./public/link.svg" alt="logo" height="66"> -->
+<img src="./static/logo.svg" alt="logo" >
 
 🌱 
 SenseUI is a Web Components &amp; Custom Elements for Future Web Applications.👽
