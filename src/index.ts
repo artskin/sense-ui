@@ -11,7 +11,7 @@ import '~pkg/sense-popover/popover.js';
 
 //typescript:
 import '~pkg/sense-input/input.ts';
-import '~pkg/sense-button/button.ts.ts';
+import '~pkg/sense-button/button-ts.ts';
 
 //js原始方式
 import '~pkg/sense-button/button.native.js';

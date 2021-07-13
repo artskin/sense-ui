@@ -11,7 +11,8 @@ export class SenseProgress extends LitElement {
       type  :{type:String},
       value :{type:String},
       max   :{type:String},
-      status:{type:String}
+      status:{type:String},
+      growing:{type:Boolean}
     }
   }
   constructor(){
@@ -22,6 +23,7 @@ export class SenseProgress extends LitElement {
     this.value  = "";
     this.max    = "";
     this.status = "";
+    this.growing = false;
   }
 
   attributeChangedCallback(name, oldval, newval) {
@@ -40,7 +42,7 @@ export class SenseProgress extends LitElement {
     if(this.type =='line'){
       return html`
       <style>${unsafeCSS(styleProgress)}</style>
-      <div class="progress">
+      <div class="progress${this.growing?' progress-run':''}">
         <progress class=${this.status} value=${this.value} max=${this.max}></progress>
         
         ${this.status=='success'? html`<span class="icon-cancelwhite"></span>`: html`<span class="text-value">${(this.value/this.max)*100}%</span>`}

@@ -19,6 +19,7 @@
     &::-webkit-progress-value{
       background:var(--primary);//当前进度
       border-radius: 2.2em;
+      transition:var(--transition-set,all 1s linear);
     }
     // &::after{
     //   content: var(--progress-value);
@@ -35,10 +36,12 @@
     font-size: .7em;
     padding-left:.5em;
     line-height: 1;
+    display: none;
   }
   .progress{
     display: flex;
     position: relative;
+    
     .active::after{
       content: '';
       background: #fff;
@@ -48,6 +51,23 @@
       height :100%;
       z-index :1;
       animation:s-progress-active 2.4s cubic-bezier(.23,1,.32,1) infinite;
+    }
+    
+  }
+  .progress-run{
+    --counterSpeed:var(--growSpeed,10s);
+    &::after{
+      position: absolute;
+      font-size: 12px;
+      display: inline-block;
+      line-height: 1;
+      right :-3.5em;
+      width :3em;
+      text-align: left;
+      content: counter(variable) "%";
+      animation: counterIncrease linear var(--counterSpeed);
+      counter-reset:variable var(--counter);
+      --counter: 100;
     }
   }
 }
@@ -138,3 +158,8 @@
     stroke:var(--danger);
   }
 }
+
+@keyframes counterIncrease
+  for i in 0..100
+    {1% * i*2}
+      --counter i*2

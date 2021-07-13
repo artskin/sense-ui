@@ -1,5 +1,6 @@
 
-import {LitElement, html, css, customElement, property,query,unsafeCSS} from 'lit-element';
+import {LitElement, html, css, unsafeCSS} from 'lit';
+import {customElement,property,query} from 'lit/decorators.js'
 
 const componentsBase = require('../components-base.styl');
 const btnStyle = require('./input.styl');
@@ -98,3 +99,6 @@ export class SenseInput extends LitElement {
     `;
   }
 }
+// if(!customElements.get('s-input')){
+//   customElements.define('s-input',SenseInput);
+// }

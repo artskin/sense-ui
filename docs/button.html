@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="icon" href="/favicon.png">
-    <title>Web Components:webpack-starter</title>
-    <link rel="stylesheet" href="//at.alicdn.com/t/font_1740253_6k2gywha9yj.css">
-	<link rel="stylesheet" href="./style/base.css">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="icon" href="/favicon.png">
+  <title>Web Components:webpack-starter</title>
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1740253_6k2gywha9yj.css">
+  <link rel="stylesheet" href="./style/base.css">
 </head>
 <body class="sense-ui">
   <h1>Web Components:Button</h1>
@@ -71,7 +71,61 @@
     <i class="icon-prompt"></i>
   </s-button>
 
+  
+  <div class="options">
+    <div class="option-content">
+      <h6>控制台</h6>
+      <ul class="panel">
+        <li>
+          <label for="size">大小</label>
+          <select name="size">
+            <option label="超大" value="large"></option>
+            <option label="大" value="big"></option>
+            <option label="普通" value="medium"></option>
+            <option label="小" value="small"></option>
+            <option label="mini" value="mini"></option>
+          </select>
+        </li>
+        <li>
+          <label for="ripple">水波</label>
+          <label><input name="ripple" value="true" type="radio" />开</label>
+          <label><input name="ripple" value="false" type="radio" />关</label>
+        </li>
+        <li>
+          <label for="radius">圆角</label>
+          <label><input name="ripple" value="true" type="radio" />开</label>
+          <label><input name="ripple" value="false" type="radio" />关</label>
+        </li>
+        <li>
+          <input type="range" min="3" max="30" step="5" value="0">
+          <input type="checkbox" value="0" checked>
+        </li>
+      </ul>
+    </div>
+  </div>
   <script src='./bundle.js'></script>
+  <script>
+    //设置策略树(状态机)
+    let status = {
+      'primary':()=>{
+        console.log('主要按钮')
+      },
+      'danger':()=>{
+        console.log('危险 do something')
+      },
+      'success':()=>{
+        console.log('成功 do something')
+      },
+      'warning':()=>{
+        console.log('警告 do something')
+      }
+    }
+
+    function handleType(type){
+      status[type]()
+    }
+    handleType('warning')
+  </script>
   <!-- built files will be auto injected -->
 </body>
 </html>

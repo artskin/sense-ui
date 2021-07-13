@@ -1,29 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="icon" href="/favicon.png">
-    <title>Web Components:Sense-Input</title>
-    <link rel="stylesheet" href="//at.alicdn.com/t/font_1740253_6k2gywha9yj.css">
-	<link rel="stylesheet" href="./style/base.css">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="icon" href="/favicon.png">
+  <title>Web Components:Sense-Input</title>
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1740253_6k2gywha9yj.css">
+  <link rel="stylesheet" href="./style/base.css">
 </head>
 <body class="sense-ui">
 
   <h1>Sense-Input</h1>
   <hr>
   <h2>大小</h2>
-  <s-input type="text" value="" label="用户名" placeholder="请输入用户名">
-    <i slot="icon-left" class="icon-child"></i>
-  </s-input><br><br>
-  <s-input type="password" label="用户名" radius value="" placeholder="请输入密码">
-    <i slot="icon-left" class="icon-bluray"></i>
-  </s-input><br><br>
-  <s-input type="text" icon-left="icon-prompt" value="危险按钮" invalid></s-input><br><br>
-  <s-input type="text" size="mini" disabled value="表单内容"></s-input><br><br>
-  <s-input type="text" size="small" value="警告:small"></s-input><br><br>
-
+  <form method="get" action="#">
+    Name: <input type="text" name="usr_name" required="required" /><br><br>
+    <s-input type="text" value="" label="用户名" placeholder="请输入用户名">
+      <i slot="icon-left" class="icon-child"></i>
+    </s-input><br><br>
+    <s-input type="password" label="用户名" radius value="" placeholder="请输入密码">
+      <i slot="icon-left" class="icon-bluray"></i>
+    </s-input><br><br>
+    <s-input type="text" icon-left="icon-prompt" value="危险按钮" invalid></s-input><br><br>
+    <s-input type="url" size="mini" disabled value="表单内容"></s-input><br><br>
+    <s-input type="email" size="small" required="required" value="email"></s-input><br><br>
+    <input type="submit" value="提交">
+  </form>
   <dl>
     <dt>invalid</dt>
     <dd>无效的</dd>

@@ -1,36 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="icon" href="/favicon.png">
-    <title>Web Components:webpack-starter</title>
-    <link rel="stylesheet" href="//at.alicdn.com/t/font_1740253_wjc1qmt0mz.css">
-    <link rel="stylesheet" href="./style/base.css">
-  </head>
-  <body class="sense-ui">
-    <h1>Web Components:progress</h1>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="icon" href="/favicon.png">
+  <title>Web Components:webpack-starter</title>
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1740253_wjc1qmt0mz.css">
+  <link rel="stylesheet" href="./style/base.css">
+</head>
+<body class="sense-ui">
+  <h1>Web Components:progress</h1>
+  
+  <hr>
+  <h2>html5 &lt;progress&gt; 原生展示(各个浏览器不同)</h2>
+  <progress value="20" max="100"></progress><br>
+  <progress value="100" max="100"></progress>
+
+  <hr>
+  <h2>s-progress:line</h2>
+  <s-progress type="line" value="0" max="100"></s-progress><br>
+  <s-progress id="autorun" type="line" status="active" style="--transition-set:width 2.4s linear;--growSpeed:11s;" value="0" max="100" growing="true"></s-progress><br>
+  <s-progress type="line" status="error" value="80" max="100"></s-progress><br>
+  <s-progress type="line" status="success" value="100" max="100"></s-progress>
+
+  <hr>
+  <h2>s-progress:circle</h2>
+  <s-progress type="circle" value="20" max="100"></s-progress><br>
+  <s-progress type="circle" status="success" value="0" max="100"></s-progress>
+  
+  <hr>
+  <script src='./bundle.js'></script>
+  <!-- built files will be auto injected -->
+  <script>
+    const el =document.querySelector('#autorun')
+    let progressArr = [10,30,80,100]
+    let timer
+    let i =0;
     
-    <hr>
-    <h2>html5 &lt;progress&gt; 原生展示(各个浏览器不同)</h2>
-    <progress value="20" max="100"></progress><br>
-    <progress value="100" max="100"></progress>
+    function growNumber(){
+      if(i<progressArr.length-1){
+        growSpeed = el.value/100;
+        el.value = progressArr[i] +'';
+        if(growSpeed){
+          el.style.setProperty('--growSpeed',Math.ceil(10-growSpeed-i) +'s');
+        }
+      }else{
+        el.value = '100'
+        clearInterval(timer)
+      }
+      console.log(i,el.value,'速度',10-growSpeed-i)
+      i++
+    }
+    growNumber()
+    timer = setInterval(growNumber,2000)
 
-    <hr>
-    <h2>s-progress:line</h2>
-    <s-progress type="line" value="20" max="100"></s-progress><br>
-    <s-progress type="line" status="active" value="80" max="100"></s-progress><br>
-    <s-progress type="line" status="error" value="80" max="100"></s-progress><br>
-    <s-progress type="line" status="success" value="100" max="100"></s-progress>
-
-    <hr>
-    <h2>s-progress:circle</h2>
-    <s-progress type="circle" value="20" max="100"></s-progress><br>
-    <s-progress type="circle" status="success" value="100" max="100"></s-progress>
-		
-		<hr>
-		<script src='./bundle.js'></script>
-    <!-- built files will be auto injected -->
-  </body>
+  </script>
+</body>
 </html>
