@@ -80,4 +80,7 @@ function showThemes(){
   })
 }
 
-$_('.bg-cover').style.height = document.body.scrollHeight+'px';
+if($_('.bg-cover')){
+  $_('.bg-cover').style.height = document.body.scrollHeight+'px';
+}
+

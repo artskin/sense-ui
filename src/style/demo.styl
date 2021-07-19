@@ -4,11 +4,13 @@ html,body{
   height: 100%;
   padding: 0;
   margin: 0;
-  color: var(--primary-text)
+  color: var(--primary-text);
+  
 }
 body.index{
   background: var(--default);
   position: relative;
+  
 }
 @keyframes flotage {
   0% {
@@ -351,30 +353,33 @@ body{
   // background-size: cover;
 }
 .options{
+  
   position: absolute;
   right :0;
   top :0;
   width :200px;
   padding:15px;
-  box-shadow: 0 0 15px rgba(0,0,0,.3);
+  box-shadow: 0 0 20px rgba(0,0,0,.2);
   border: 1px solid rgba(0,0,0,.1);
   overflow: hidden;
   border-radius:0 0  0 10px;
-  &:before{
+  &::before{
+    
     content: '';
     position: absolute;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    filter: blur(30px);
-    //background: rgba(255,255,255,.9);
-    background-image: url('/images/bg.jpg')
-    background-attachment: fixed;
-    background-position: center top;
-    background-size: cover;
+    // filter: blur(30px);
+    // background-image: url('/images/bg.jpg')
+    // background-attachment: fixed;
+    // background-position: center top;
+    // background-size: cover;
     z-index: 0;
-    opacity: .7;
+    //opacity: .7;
+    background: rgba(255,255,255,.5);
+    backdrop-filter: var(--backdrop-value);
   }
   .option-content{
     position: relative;
