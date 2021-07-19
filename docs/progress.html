@@ -20,7 +20,7 @@
   <hr>
   <h2>s-progress:line</h2>
   <s-progress type="line" value="0" max="100"></s-progress><br>
-  <s-progress id="autorun" type="line" status="active" style="--transition-set:width 2.4s linear;--growSpeed:11s;" value="0" max="100" growing="true"></s-progress><br>
+  <s-progress id="autorun" type="line" status="active" style="--transition-set:width 2s linear;" value="0" max="100" growing="true"></s-progress><br>
   <s-progress type="line" status="error" value="80" max="100"></s-progress><br>
   <s-progress type="line" status="success" value="100" max="100"></s-progress>
 
@@ -34,27 +34,30 @@
   <!-- built files will be auto injected -->
   <script>
     const el =document.querySelector('#autorun')
-    let progressArr = [10,30,80,100]
+    let progressArr = [10,30,70,100]
     let timer
     let i =0;
     
     function growNumber(){
-      if(i<progressArr.length-1){
-        growSpeed = el.value/100;
-        el.value = progressArr[i] +'';
-        if(growSpeed){
-          el.style.setProperty('--growSpeed',Math.ceil(10-growSpeed-i) +'s');
+      if(i<progressArr.length-2 && parseFloat(el.value) <100){
+        el.value = progressArr[i+1] +'';
+        numberSpeed = parseFloat(el.value)/10;
+        //console.log(progressArr[i],numberSpeed)
+        if(numberSpeed){
+          el.style.setProperty('--numberSpeed',Math.ceil(12-numberSpeed+1) +'s');
         }
+        i++
       }else{
-        el.value = '100'
+        //console.log('清除');
         clearInterval(timer)
+        el.value = '100'
+        el.style.setProperty('--transition-set','width '+'100m'+'s linear');
       }
-      console.log(i,el.value,'速度',10-growSpeed-i)
-      i++
+      console.log(i,'value='+el.value,'speed='+el.style.getPropertyValue('--numberSpeed'))
+      
     }
-    growNumber()
+    //growNumber()
     timer = setInterval(growNumber,2000)
-
   </script>
 </body>
 </html>
