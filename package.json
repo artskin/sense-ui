@@ -1,32 +1,97 @@
 {
-  "name": "Sense-UI",
-  "version": "1.0.0",
-  "description": "",
-  "main": "src/index.ts",
-  "dependencies": {
-    "lit": "^2.0.0-rc.2",
-    "tslib": "^2.3.0"
-  },
-  "devDependencies": {
-    "copy-webpack-plugin": "^5.1.2",
-    "css-loader": "^3.6.0",
-    "lit-element": "^2.5.1",
-    "mini-css-extract-plugin": "^0.9.0",
-    "style-loader": "^1.3.0",
-    "stylus": "^0.54.8",
-    "stylus-loader": "^3.0.2",
-    "ts-loader": "^6.2.2",
-    "typescript": "^3.9.10",
-    "webpack": "^4.46.0",
-    "webpack-cli": "^3.3.12",
-    "webpack-dev-server": "^3.11.2"
+  "name": "wc-workspace",
+  "description": "Webcomponent wc-workspace following open-wc recommendations",
+  "license": "MIT",
+  "author": "wc-workspace",
+  "version": "0.0.0",
+  "type": "module",
+  "main": "dist/src/index.js",
+  "module": "dist/src/index.js",
+  "exports": {
+    ".": "./dist/src/index.js",
+    "./wc-workspace.js": "./dist/src/wc-workspace.js"
   },
   "scripts": {
-    "dev": "webpack-dev-server --hot --inline",
-    "build": "webpack --mode production",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev:main": "pnpm -r --filter @sense/main run dev",
+    "dev:timer": "pnpm -r --filter @sense/timer run dev",
+    "build:main": "pnpm -r --filter ./packages/main run build",
+    "build:timer": "pnpm -r --filter @sense/timer run build",
+    "analyze": "cem analyze --litelement",
+    "start": "tsc && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"wds\"",
+    "build": "tsc && npm run analyze -- --exclude dist",
+    "prepublish": "tsc && npm run analyze -- --exclude dist",
+    "lint": "eslint --ext .ts,.html . --ignore-path .gitignore && prettier \"**/*.ts\" --check --ignore-path .gitignore",
+    "format": "eslint --ext .ts,.html . --fix --ignore-path .gitignore && prettier \"**/*.ts\" --write --ignore-path .gitignore",
+    "test": "tsc && wtr --coverage",
+    "test:watch": "tsc && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"wtr --watch\"",
+    "storybook": "tsc && npm run analyze -- --exclude dist && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"wds -c .storybook/server.mjs\"",
+    "storybook:build": "tsc && npm run analyze -- --exclude dist && build-storybook"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "dependencies": {
+    "lit": "^2.7.6"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.26.2",
+    "@custom-elements-manifest/analyzer": "^0.8.4",
+    "@open-wc/eslint-config": "^12.0.0",
+    "@open-wc/testing": "^3.2.0",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "^20.4.5",
+    "@typescript-eslint/eslint-plugin": "^6.2.0",
+    "@typescript-eslint/parser": "^6.2.0",
+    "@web/dev-server": "^0.3.0",
+    "@web/dev-server-storybook": "^0.7.4",
+    "@web/test-runner": "^0.17.0",
+    "concurrently": "^8.2.0",
+    "eslint": "^8.45.0",
+    "eslint-config-prettier": "^8.9.0",
+    "husky": "^4.3.8",
+    "less": "^4.1.3",
+    "lint-staged": "^10.5.4",
+    "prettier": "^2.8.8",
+    "tslib": "^2.6.1",
+    "typescript": "^5.1.6",
+    "vite": "^4.4.7",
+    "vite-plugin-dts": "^3.3.1"
+  },
+  "customElements": "custom-elements.json",
+  "eslintConfig": {
+    "parser": "@typescript-eslint/parser",
+    "extends": [
+      "@open-wc",
+      "prettier"
+    ],
+    "plugins": [
+      "@typescript-eslint"
+    ],
+    "rules": {
+      "no-unused-vars": "off",
+      "@typescript-eslint/no-unused-vars": [
+        "error"
+      ],
+      "import/no-unresolved": "off",
+      "import/extensions": [
+        "error",
+        "always",
+        {
+          "ignorePackages": true
+        }
+      ]
+    }
+  },
+  "prettier": {
+    "singleQuote": true,
+    "arrowParens": "avoid"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.ts": [
+      "eslint --fix",
+      "prettier --write"
+    ]
+  }
 }
