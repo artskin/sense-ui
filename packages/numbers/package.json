@@ -1,0 +1,23 @@
+{
+  "name": "@sense/number-count",
+  "private": true,
+  "version": "0.0.1",
+  "author": "artskin <artskin@163.com>",
+  "type": "module",
+  "main": "dist/number-count.umd.js",
+  "module": "dist/number-count.es.js",
+  "types": "dist/types/number-count.d.ts",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "tsc": "tsc",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.2",
+    "vite": "^4.4.5"
+  },
+  "dependencies": {
+    "@sense/utils": "workspace:^0.0.1"
+  }
+}

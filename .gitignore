@@ -7,7 +7,8 @@
 .vscode/
 build/
 .VSCodeCounter/
-.DS_Store
+.DS_Store/
+dist/
 
 # User-specific files
 *.rsuser
