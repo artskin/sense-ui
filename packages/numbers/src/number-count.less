@@ -1,0 +1,32 @@
+:host{
+  display:inline-block;
+  overflow:hidden;
+  text-align:center;
+  --fade-time: 0.8s;
+}
+#number{
+  display: block;
+  width: .6em;
+  height: 1em;
+  overflow: hidden;
+  position: relative;
+  
+  &::after{
+    content:'0 1 2 3 4 5 6 7 8 9';
+    position:absolute;
+    color:currentColor;
+    font-weight: normal;
+    display: block;
+    width: .6em;
+    line-height: 1em;
+    left: 0em;
+    top: 0;
+    transition: all var(--fade-time) ease 0s;
+    pointer-events: none;
+  }
+}
+.transform{
+  &::after{
+    transform: translateY(var(--value,0em));
+  }
+}

@@ -14,6 +14,7 @@
   "scripts": {
     "dev:main": "pnpm -r --filter @sense/main run dev",
     "dev:timer": "pnpm -r --filter @sense/timer run dev",
+    "dev:numbers": "pnpm -r --filter @sense/number-count run dev",
     "build:main": "pnpm -r --filter ./packages/main run build",
     "build:timer": "pnpm -r --filter @sense/timer run build",
     "analyze": "cem analyze --litelement",
@@ -28,7 +29,7 @@
     "storybook:build": "tsc && npm run analyze -- --exclude dist && build-storybook"
   },
   "dependencies": {
-    "lit": "^2.7.6"
+    "lit": "^2.8.0"
   },
   "devDependencies": {
     "@changesets/cli": "^2.26.2",

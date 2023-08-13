@@ -4,22 +4,22 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Timer - web-components</title>
-    <link rel="stylesheet" href="./index.css" />
-    <script type="module" src="/src/index.ts"></script>
+    <title>Vite + Lit + TS</title>
+    <script type="module" src="./src/index.ts"></script>
     <style>
-      wc-timer{
+      number-count{
         font-size: 60px;
         color: blueviolet;
       }
     </style>
   </head>
   <body>
-    <h1>时间组件</h1>
-    <input type="time" value="13:30">
-    <wc-timer split="/"></wc-timer>
-    <br>
-    <wc-timer split=":" type="slide"></wc-timer>
-
+    <h1>Number Count🧬 </h1>
+    <number-count></number-count>
   </body>
+  <script>
+    window.customElements.whenDefined('number-count').then((ev)=>{
+      console.log('is defined',ev.prototype);
+    });
+  </script>
 </html>

@@ -23,10 +23,12 @@ export class TimeCount extends LitElement {
 
   @property({ type: String }) sort = "asc";// asc | desc
 
+  @property({ type: String }) type = "slide";
+
+
   constructor() {
     super();
     this.__shadowRoot = this.attachShadow({ mode: 'open' });
-   
   }
 
   connectedCallback() {
@@ -34,14 +36,18 @@ export class TimeCount extends LitElement {
     const sheet = new CSSStyleSheet();
     sheet.replaceSync(timerStyle);
     this.__shadowRoot!.adoptedStyleSheets.push(sheet);
-    const customProperties = ['--h','--s','--m',];
+    const customProperties = ['--h','--s','--m'];
     customProperties.forEach((item:string) => {
-      CSS.registerProperty({
-        name: item,
-        syntax: '<integer>',
-        inherits: false,
-        initialValue: '0',
-      })
+      try {
+        window.CSS.registerProperty({
+          name: item,
+          syntax: '<integer>',
+          inherits: false,
+          initialValue: '0',
+        })
+      } catch (error) {
+        //console.warn(error)
+      }
     });
   }
 
@@ -55,7 +61,7 @@ export class TimeCount extends LitElement {
 
   firstUpdated(){
     const time = this.shadowRoot!.querySelector('.time');
-    const d = new Date();
+    const d = new Date(2006,1,12,21,20,12);
     const h = d.getHours();
     const m = d.getMinutes();
     const s = d.getSeconds();
@@ -65,14 +71,8 @@ export class TimeCount extends LitElement {
   }
 
   render() {
-    // window.CSS.registerProperty({
-    //   name: '--s',
-    //   syntax: '<integer>',
-    //   inherits: false,
-    //   initialValue: '0',
-    // });
     return html`
-      <div class="time" id="time">
+      <div class="time">
         <span class="hour" data-split="${this.split}"></span>
         <span class="minitus" data-split="${this.split}"></span>
         <span class="seconds"></span>

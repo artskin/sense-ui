@@ -9,8 +9,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@sense/utils": "workspace:^1.0.0",
-    "lit": "^2.7.6"
+    "@sense/utils": "workspace:^0.0.1",
+    "lit": "^2.8.0"
   },
   "devDependencies": {
     "typescript": "^5.0.2",
