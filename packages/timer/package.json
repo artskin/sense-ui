@@ -1,0 +1,25 @@
+{
+  "name": "@sense/timer",
+  "private": true,
+  "version": "1.0.0",
+  "author": "guliqiang <guliqiang@sensetime.com>",
+  "type": "module",
+  "main": "dist/timer.umd.js",
+  "module": "dist/timer.es.js",
+  "types": "dist/types/timer.d.ts",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && tsc",
+    "tsc": "tsc",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@sense/utils": "workspace:^0.0.1",
+    "lit": "^2.8.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.2",
+    "vite": "^4.4.5",
+    "vite-plugin-dts": "^3.3.1"
+  }
+}
