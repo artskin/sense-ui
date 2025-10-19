@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="icon" href="./favicon.svg">
+  <title>双11好价分享</title>
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1740253_6k2gywha9yj.css">
+  <link rel="stylesheet" href="./css/html-native-ui.min.css">
+  <style>
+    h1{
+      text-align: center;
+    }
+    .redpack{
+      background-color: rgb(250, 223, 215);
+      padding: 10px;
+      border-radius: 5px;
+      h2{
+        font-weight: normal;
+        font-size: 14px;
+        margin: 0;
+      }
+    }
+    .col{
+      display: flex;
+      justify-content: space-between;
+    }
+    .col>div{
+      width: calc(50% - 0.5em);
+      text-align: center;
+      padding: .5em;
+      border-radius: 6px;
+      
+      img{
+        display: inline-block;
+      }
+      a{
+        display: inline-block;
+        padding: 0 1em;
+        text-decoration: none;
+      }
+      a:link{
+        color: #000;
+      }
+      .red-wrap{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        outline: 1px solid #e87f7f;
+        border-radius: 6px;
+        padding: .5em;
+      }
+    }
+  </style>
+</head>
+<body class="sense-ui">
+  <main class="bg-red-100">
+    <h1 title="双十一无门槛红包">双11无门槛红包</h1>
+    <section class="redpack">
+      <h2>最高1111</h2>
+      <div class="col">
+        <div class="jd">
+          <input id="jdcode" type="hidden" value="15:/抢紅包，购痛快~最高11111元紅包等你来！￥B3s9E0ah6xBRMh5G￥ MF5681 ，⇴亰▾Dσδδng"/>
+          <div class="red-wrap">
+            <img src="./images/jd.svg" width="39" alt="" srcset="">
+            <a href="https://u.jd.com/BG3Mqiv" data-clipboard-target="#jdcode" class="btn" target="_blank">🧧领取</a>
+          </div>
+        </div>
+        <div class="tb">
+          <input id="tbcode" type="hidden" value="0$uPMCfXieLzW$:// MU5183"/>
+          <div class="red-wrap">
+            <img src="./images/tb.svg" width="40" alt="" srcset="">
+            <a href="https://m.tb.cn/h.SRG7o8l" data-clipboard-target="#tbcode" class="btn" target="_blank">🧧领取</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+  </main>
+
+<script src="./js/clipboard.min.js" type="text/javascript"></script>
+<script>
+  new ClipboardJS('.button');
+</script>
+</body>
+</html>
