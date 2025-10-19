@@ -13,7 +13,7 @@
       text-align: center;
     }
     .redpack{
-      background-color: rgb(250, 223, 215);
+      background-color: rgb(250, 233, 228);
       padding: 10px;
       border-radius: 5px;
       h2{
@@ -31,25 +31,44 @@
       text-align: center;
       padding: .5em;
       border-radius: 6px;
-      
+      a,img{
+        z-index: 1;
+      }
       img{
         display: inline-block;
+        background-color: #fff;
+        border-radius: 50%;
       }
       a{
         display: inline-block;
-        padding: 0 1em;
+        padding: 0 .5em;
         text-decoration: none;
+        color: #df572e;
       }
       a:link{
-        color: #000;
+        
       }
       .red-wrap{
         display: flex;
         align-items: center;
-        justify-content: center;
-        outline: 1px solid #e87f7f;
+        justify-content: space-between;
+        outline: 1px solid #df572e;
         border-radius: 6px;
         padding: .5em;
+        position: relative;
+        overflow: hidden;
+        background-color: #df572e;
+        &::after{
+          content: " ";
+          display: block;
+          width: 160px;
+          height: 160px;
+          border-radius: 90px;
+          position: absolute;
+          background-color: #fff;
+          right: -80px;
+          z-index: 0;
+        }
       }
     }
   </style>
