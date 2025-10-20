@@ -7,9 +7,13 @@ body{
     linear-gradient(to bottom, transparent -100px,#fff 100vh),
     linear-gradient(25deg, #f9edd2be,#ffd1dece),
     radial-gradient(30% 200px at 100px 50px, rgba(249,167,176,0.5),transparent);
+    margin: 0;
+    padding: 12px;
+    position: relative;
 }
 h1{
   text-align: center;
+  display: none;
   /* 文字渐变 */
   background: linear-gradient(5deg, #f3df7e 0%,  #f5ab65 100%);
   -webkit-background-clip: text;
@@ -21,9 +25,8 @@ em{
   font-style: normal;
 }
 .redpack{
-  background-color: rgb(250, 233, 228,0.8);
-  border: 1px solid #fff;
-  padding: 10px;
+  background-color: rgb(250, 253, 255,0.8);
+  padding: 8px;
   border-radius: 5px;
   h2{
     font-weight: normal;
@@ -55,9 +58,6 @@ em{
     text-decoration: none;
     color: #aa3b28;
   }
-  a:link{
-    
-  }
   .red-wrap{
     outline: 1px solid #df572e;
     border-radius: 6px;
@@ -68,11 +68,10 @@ em{
     font-size: 12px;
     color: #fff;
     a{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: .5em .8em .5em 1.2em;
-    
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: .5em .8em .5em 1.2em;
     }
     /* 背景渐变 */
     background: linear-gradient(5deg, #bb3227 0%,  #ea5321 100%);
@@ -98,7 +97,7 @@ em{
   background-color: #fff;
   background: linear-gradient(5deg, #ffaf8a 0%, #fdccab 40%, #fae7d6 100%);
   border-radius: 50px;
-  padding: .3em .8em;
+  padding: .4em .8em;
 }
 .pattern {
   position : relative ;
