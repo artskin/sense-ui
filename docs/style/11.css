@@ -59,7 +59,6 @@ em{
     
   }
   .red-wrap{
-    
     outline: 1px solid #df572e;
     border-radius: 6px;
     padding: .1em;
@@ -73,14 +72,7 @@ em{
     align-items: center;
     justify-content: space-between;
     padding: .5em .8em .5em 1.2em;
-    em{
-      z-index: 9;
-      display: inline-block;
-      background-color: #fff;
-      background: linear-gradient(5deg, #ffaf8a 0%, #fdccab 40%, #fae7d6 100%);
-      border-radius: 50px;
-      padding: .3em .8em;
-    }
+    
     }
     /* 背景渐变 */
     background: linear-gradient(5deg, #bb3227 0%,  #ea5321 100%);
@@ -99,4 +91,29 @@ em{
       box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.43);
     }
   }
+}
+.col>div a em{
+  z-index: 9;
+  display: inline-block;
+  background-color: #fff;
+  background: linear-gradient(5deg, #ffaf8a 0%, #fdccab 40%, #fae7d6 100%);
+  border-radius: 50px;
+  padding: .3em .8em;
+}
+.pattern {
+  position : relative ;
+  background-color : #3bb78f ;
+  background-image : linear-gradient( 315 deg, #3bb78f 0% , #0bab64 74% );
+}
+  
+.pattern:before {
+  content : "" ;
+  position : absolute ;
+  bottom : 0 ;
+  left : 0 ;
+  width : 100% ;
+  height : 215px ;
+  background : url('wave.png');
+  background-size: cover;
+  background-repeat: no-repeat;
 }
