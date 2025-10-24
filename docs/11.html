@@ -18,7 +18,7 @@
   <main class="bg-red-100">
     <h1 title="双十一无门槛红包">双11好价攻略</h1>
     <section class="redpack">
-      <h2>每日可领，最高1111</h2>
+      <h2 class="title2">每日可领，最高1111元无门槛红包</h2>
       <div class="col">
         <div class="jd">
           <div class="red-wrap">
@@ -42,7 +42,7 @@
       </div>
     </section>
     <section>
-      <h2>必领神券</h2>
+      <h2 class="title2">必领神券</h2>
       <div class="">
         <div class="quan">
           <dl class="col">
@@ -56,7 +56,11 @@
                 满100元可用<br>
                 至高膨胀至1000元
               </span>
-              <button class="btn" data-href="https://u.jd.com/BOfEUiM">20:00开枪</button>
+              <p>
+                <em id="countdown">--:--:--</em>
+                <a class="btn btn-primary" href="https://u.jd.com/BOfEUiM">20:00开枪</a>
+              </p>
+              
             </dd>
           </dl>
         </div>
@@ -85,6 +89,108 @@
     }
     
     e.clearSelection();
+  });
+  // 获取DOM元素
+  const countdownElement = document.getElementById('countdown');
+  let animationFrameId = null;
+  let lastUpdateTime = 0;
+
+  // 获取今日20点的时间戳
+  function getTargetTime() {
+      const now = new Date();
+      // 创建今日20点的时间对象
+      const targetTime = new Date(now);
+      targetTime.setHours(20, 0, 0, 0); // 设置为20:00:00.000
+      
+      // 如果当前时间已过今日20点，则目标时间为明日20点
+      if (now > targetTime) {
+          targetTime.setDate(targetTime.getDate() + 1);
+      }
+      
+      return targetTime.getTime();
+  }
+
+  // 格式化时间，确保两位数显示
+  function formatTime(number) {
+      return number.toString().padStart(2, '0');
+  }
+
+  // 更新倒计时显示
+  function updateCountdown(timestamp) {
+      // 使用requestAnimationFrame的时间戳参数
+      if (!lastUpdateTime) lastUpdateTime = timestamp;
+      const elapsed = timestamp - lastUpdateTime;
+      
+      // 每秒更新一次
+      if (elapsed >= 1000) {
+          lastUpdateTime = timestamp;
+          
+          const targetTime = getTargetTime();
+          const now = Date.now();
+          const timeDifference = targetTime - now;
+
+          // 检查倒计时是否结束
+          if (timeDifference <= 0) {
+              countdownElement.textContent = "00:00:00";
+              cancelAnimationFrame(animationFrameId);
+              
+              // 添加动画效果
+              countdownElement.style.transform = 'scale(1.2)';
+              setTimeout(() => {
+                  countdownElement.style.transform = 'scale(1)';
+                  // 重新开始倒计时（指向下一个20点）
+                  initCountdown();
+              }, 500);
+              return;
+          }
+
+          // 计算剩余的小时、分钟和秒
+          const hours = Math.floor(timeDifference / (1000 * 60 * 60));
+          const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+          const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+          // 更新显示
+          countdownElement.textContent = `${formatTime(hours)}:${formatTime(minutes)}:${formatTime(seconds)}`;
+          
+          // 更新状态提示
+          if (hours === 0 && minutes < 10) {
+              // 添加动画效果
+              if (seconds % 2 === 0) {
+                  countdownElement.style.color = '#ff6b35';
+              } else {
+                  countdownElement.style.color = '#333';
+              }
+          } else {
+              countdownElement.style.color = '#333';
+          }
+      }
+      
+      // 继续动画循环
+      animationFrameId = requestAnimationFrame(updateCountdown);
+  }
+
+  // 初始化倒计时
+  function initCountdown() {
+      // 清除现有动画帧
+      if (animationFrameId) {
+          cancelAnimationFrame(animationFrameId);
+      }
+      
+      // 重置变量
+      lastUpdateTime = 0;
+      
+      // 启动动画循环
+      animationFrameId = requestAnimationFrame(updateCountdown);
+  }
+
+  // 页面加载完成后启动倒计时
+  window.addEventListener('load', initCountdown);
+  
+  // 页面可见性变化时重新同步时间
+  document.addEventListener('visibilitychange', function() {
+      if (!document.hidden) {
+          initCountdown();
+      }
   });
 </script>
 
