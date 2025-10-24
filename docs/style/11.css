@@ -1,3 +1,6 @@
+:root{
+  --primary: #df572e;
+}
 html{
   height: 100%;
 }
@@ -57,6 +60,10 @@ em{
     padding: 0 .5em;
     text-decoration: none;
     color: #aa3b28;
+    span{
+      font-size: 14px;
+      color: #fff;
+    }
   }
   .red-wrap{
     outline: 1px solid #df572e;
@@ -145,3 +152,6 @@ em{
   
   justify-content: space-between;
 } */
+ .dialog-success-tip{
+  top: 30%;
+ }
