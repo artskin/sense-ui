@@ -80,11 +80,14 @@ em{
     background-color: #df572e;
     font-size: 12px;
     color: #fff;
+    height: 45px;
     a{
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding: .5em .8em .5em 1.2em;
+      height: 45px;
+      box-sizing: border-box;
     }
     /* 背景渐变 */
     background: linear-gradient(5deg, #bb3227 0%,  #ea5321 100%);
