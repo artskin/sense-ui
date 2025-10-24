@@ -5,6 +5,9 @@
 html{
   height: 100%;
 }
+.text-primary{
+  color: var(--primary);
+}
 body{
   background-color: #fceee3;
   background:
@@ -173,7 +176,7 @@ em{
   justify-content: space-between;
 } */
  .dialog-success-tip{
-  top: 30%;
+  top: 35%;
  }
 
  .btn-primary{

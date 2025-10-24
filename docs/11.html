@@ -31,7 +31,7 @@
         <div class="tb">
           
           <div class="red-wrap" data-clipboard-text="0$uPMCfXieLzW$:// MU5183">
-            <a href="javascript:void(0);" data-clipboard-target="#tbcode" class="btn">
+            <a href="javascript:void(0);" data-action="copy" data-clipboard-target="#tbcode" class="btn">
                <span>淘宝</span>
               <em>🧧领取</em>
             </a>
@@ -58,9 +58,8 @@
               </span>
               <p>
                 <em id="countdown">--:--:--</em>
-                <a class="btn btn-primary" href="https://u.jd.com/BOfEUiM">20:00开枪</a>
+                <a class="btn btn-primary" data-action="copy" data-clipboard-text="https://u.jd.com/BOfEUiM" href="javascript:void(0);">20:00开枪</a>
               </p>
-              
             </dd>
           </dl>
         </div>
@@ -68,7 +67,7 @@
     </section>
   </main>
 <dialog class="dialog-success-tip">
-  <p>口令已领取，请打开淘宝App收红包</p>
+  <div class="tip-content">loading</div>
   <!-- <form method="dialog">
     <button>关闭</button>
   </form> -->
@@ -79,12 +78,13 @@
  const clipboard = new ClipboardJS('.btn');
  const dialog = document.querySelector('dialog');
  clipboard.on('success', function(e) {
-    console.info('Text:', e);
-    if(e.text.includes('MU5183')){
-      dialog.querySelector('p').textContent = '口令已领取，请打开淘宝App收红包';
+    console.info('Text:', e,e.trigger.dataset.action);
+    if(e?.trigger?.dataset?.action ==='copy'){
+      const appName = e.text.includes('jd') ? "京东":"淘宝"
+      dialog.querySelector('.tip-content').innerHTML = `口令已领取，请打开 <strong class="text-primary">${appName}</strong> App收红包`;
       dialog.show();
       setTimeout(() => {
-        dialog.close();
+        //dialog.close();
       }, 2000);
     }
     
