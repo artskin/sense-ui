@@ -15,8 +15,10 @@
   </style>
 </head>
 <body class="sense-ui">
+  <header>
+    <h1 title="双十一无门槛红包">双11每日红包</h1>
+  </header>
   <main class="bg-red-100">
-    <h1 title="双十一无门槛红包">双11好价攻略</h1>
     <section class="redpack">
       <h2 class="title2">每日可领，最高1111元无门槛红包</h2>
       <div class="col">
@@ -84,7 +86,7 @@
       dialog.querySelector('.tip-content').innerHTML = `口令已领取，请打开 <strong class="text-primary">${appName}</strong> App收红包`;
       dialog.show();
       setTimeout(() => {
-        //dialog.close();
+        dialog.close();
       }, 2000);
     }
     

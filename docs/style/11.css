@@ -20,7 +20,6 @@ body{
 }
 h1{
   text-align: center;
-  display: none;
   /* 文字渐变 */
   background: linear-gradient(5deg, #f3df7e 0%,  #f5ab65 100%);
   -webkit-background-clip: text;
