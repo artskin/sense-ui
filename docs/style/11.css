@@ -5,6 +5,11 @@
 html{
   height: 100%;
 }
+@media screen and (max-width: 768px) {
+  html{
+    font-size: 16px;
+  }
+}
 .text-primary{
   color: var(--primary);
 }
@@ -37,13 +42,13 @@ em{
   h2{
     font-weight: normal;
     margin: 0;
-    padding-left: .5em;
+    padding-left: .5rem;
     color:var(--primary-opacity);
-    font-size: 12px;
+    font-size: .9rem;
   }
   a{
     display: inline-block;
-    padding: 0 .5em;
+    padding: 0 .5rem;
     text-decoration: none;
     color: #aa3b28;
     span{
@@ -60,9 +65,9 @@ em{
   justify-content: space-between;
 }
 .col>div{
-  width: calc(50% - 0.5em);
+  width: calc(50% - 0.5rem);
   text-align: center;
-  padding: .5em;
+  padding: .5rem;
   border-radius: 6px;
   a,img{
     z-index: 1;
@@ -76,7 +81,7 @@ em{
   .red-wrap{
     outline: 1px solid #df572e;
     border-radius: 6px;
-    padding: .1em;
+    padding: .1rem;
     position: relative;
     overflow: hidden;
     background-color: #df572e;
@@ -87,7 +92,7 @@ em{
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: .5em .8em .5em 1.2em;
+      padding: .5rem .8rem .5rem 1.2rem;
       height: 45px;
       box-sizing: border-box;
     }
@@ -115,7 +120,7 @@ em{
   background-color: #fff;
   background: linear-gradient(5deg, #ffaf8a 0%, #fdccab 40%, #fae7d6 100%);
   border-radius: 50px;
-  padding: .4em .8em;
+  padding: .4rem .6rem;
 }
 .pattern {
   position : relative ;
@@ -149,7 +154,7 @@ em{
   }
   dd{
     margin-left: 0;
-    padding:0 1em;
+    padding:0 1rem;
     flex: 1;
     display: flex;
     align-items: center;
@@ -165,7 +170,7 @@ em{
       display: block;
       text-align: center;
       font-size: 12px;
-      padding-bottom: .5em;
+      padding-bottom: .5rem;
     }
   }
 }
@@ -180,7 +185,7 @@ em{
 
  .btn-primary{
   display: inline-block;
-  padding: 0.5em 1em;
+  padding: 0.5rem 1rem;
   border-radius: 5px;
   background-color: var(--primary);
   color: #fff;
