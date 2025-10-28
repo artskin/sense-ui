@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Let Your Skin Exhale | 护肤品牌</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+        
+        .container {
+            display: flex;
+            width: 900px;
+            max-width: 100%;
+            height: 500px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* 左侧区域 - 模拟人物图片 */
+        .left-panel {
+            flex: 1;
+            background: linear-gradient(135deg, #ff8c00, #ffa500);
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        /* 模拟人物面部和眉毛区域 */
+        .face {
+            width: 200px;
+            height: 250px;
+            background-color: #8B4513; /* 深肤色 */
+            border-radius: 50% 50% 40% 40%;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .eyebrow-area {
+            position: absolute;
+            top: 60px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .eyebrow {
+            width: 100px;
+            height: 8px;
+            background-color: #333;
+            border-radius: 4px;
+            position: relative;
+        }
+        
+        .brush {
+            position: absolute;
+            top: -15px;
+            right: -10px;
+            width: 30px;
+            height: 40px;
+            background: #333;
+            border-radius: 5px 5px 0 0;
+            transform: rotate(15deg);
+        }
+        
+        .brush:before {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 5px;
+            width: 20px;
+            height: 15px;
+            background: #333;
+            border-radius: 0 0 5px 5px;
+        }
+        
+        .brush:after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 7px;
+            width: 16px;
+            height: 20px;
+            background: #ddd;
+            border-radius: 3px 3px 8px 8px;
+        }
+        
+        /* 右侧区域 - 文字内容 */
+        .right-panel {
+            flex: 1;
+            background-color: #556B2F; /* 橄榄绿色 */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+            position: relative;
+        }
+        
+        .text-container {
+            position: relative;
+            text-align: center;
+            padding: 30px;
+        }
+        
+        .decorative-border {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 2px solid #F5F5DC; /* 米白色边框 */
+            border-radius: 5px;
+        }
+        
+        /* 四个角的圆点装饰 */
+        .corner-dot {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background-color: #F5F5DC;
+            border-radius: 50%;
+        }
+        
+        .dot-tl { top: -4px; left: -4px; }
+        .dot-tr { top: -4px; right: -4px; }
+        .dot-bl { bottom: -4px; left: -4px; }
+        .dot-br { bottom: -4px; right: -4px; }
+        
+        /* 延伸线条 */
+        .extension-line {
+            position: absolute;
+            width: 30px;
+            height: 2px;
+            background-color: #F5F5DC;
+        }
+        
+        .line-left { 
+            left: -30px; 
+            top: 50%; 
+            transform: translateY(-50%);
+        }
+        
+        .line-right { 
+            right: -30px; 
+            top: 50%; 
+            transform: translateY(-50%);
+        }
+        
+        /* 文字样式 */
+        .slogan {
+            color: white;
+            font-size: 42px;
+            font-weight: bold;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .subtext {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 16px;
+            max-width: 300px;
+            margin: 0 auto;
+            line-height: 1.5;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                height: auto;
+            }
+            
+            .left-panel, .right-panel {
+                width: 100%;
+            }
+            
+            .left-panel {
+                height: 300px;
+            }
+            
+            .slogan {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left-panel">
+            <div class="face">
+                <div class="eyebrow-area">
+                    <div class="eyebrow">
+                        <div class="brush"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="right-panel">
+            <div class="text-container">
+                <div class="decorative-border">
+                    <div class="corner-dot dot-tl"></div>
+                    <div class="corner-dot dot-tr"></div>
+                    <div class="corner-dot dot-bl"></div>
+                    <div class="corner-dot dot-br"></div>
+                    
+                    <div class="extension-line line-left"></div>
+                    <div class="extension-line line-right"></div>
+                </div>
+                
+                <h1 class="slogan">Let your skin<br>exhale</h1>
+                <p class="subtext">Discover our natural skincare collection designed to let your skin breathe freely and restore its natural balance.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
